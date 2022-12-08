@@ -5,55 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <script src="https://kit.fontawesome.com/c7222e8417.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-  
   <title>Home</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
+<!-- Topo -->
+<header>
+  <nav id="navbar"> 
+    <p>Juholanda portfolio</p>
+    <a href="https://www.linkedin.com/in/julianahb/" target="_blank"> <img src="images/linkedin.svg"/> </a>
+  </nav>
+</header>
+
 <body>
-   <!-- Topo -->
-  <header>
-    <nav id="navbar"> 
-      <p>Juholanda portfolio</p>
-      <img src="images/linkedin.svg"/>
-    </nav>
-  </header>
-
-  <main>
-    <div class="home-portfolio">
-      <div id="main-banner" class="gradient-text">   
-        <div id ="main-banner">
-          <div>
-          <h1 style="margin-bottom: 5vh;">About me</h1>
-          <p>Hi there! 
-          I'm Juliana, UX researcher and designer for web, mobile and data visualization. 
-          I worked in several market segments and different working formats. My biggest passion 
-          as a designer is to explore how people visualize and interact with information.</p>
-        </div>
-        
-        <div class="work-scroll">
-          <i class="fa-solid fa-arrow-down"></i>
-          
-                    <h1 href="#">My work</a>
-        </div>  
-      </div>
-      </div>
-      <div>
-      <h1 style="color: white;">Título</h1>  
-      
-    </div>
-    </div>
-    
+<!-- Body -->
+<!-- Main banner -->
+<section id="about">
+  <div id="main-banner" class="gradient-text">
+    <div id="about-me-h1" >  
+      <h1 style="margin-bottom: 5vh;">About me</h1>
+      <div><p class="about-me-p">Hi there! <br>
+        I'm Juliana, UX researcher and designer for web, mobile and data visualization. 
+        I worked in several market segments and different working formats. My biggest passion 
+        as a designer is to explore how people visualize and interact with information.</p></div>
   </div>
+    <div class="work-scroll"><div class="fas fa-arrow-down" id="icon"></div><h1 href="#">My work</a></div>  
+  </div>
+</section>  
 
-  </main>
+<!-- Work --> 
+<div class="home-portfolio">
+  <div class="cards-list">
+<!-- Card via --> 
+<div class="card">
+  <div class="img-card-box"><img id="img-card" src="images/via-pic.png" style="width: 100%"/></div>
+    <div class="content-box">
+      <h2>Mobile app for e-commerce</h2>
+      <p>Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company</p>
+      <div><button class="button" type="button">Check this project <i class="fas fa-arrow-right"></i></button></div>
+  </div>
+</div>
+
+<!-- Card pnipe --> 
+<div class="card">
+  <div class="img-card-box"><img id="img-card" src="images/pnipe-pic.png" style="width: 100%"/></div>
+    <div class="content-box">
+      <h2>Prototyping in collaboration</h2>
+      <p>UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.</p>
+      <div><button class="button" type="button">Check this project <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+  </div>
+  
+<!-- Card museum app --> 
+<div class="card">
+  <div class="img-card-box"><img id="img-card" src="images/museu-pic.png" style="width: 100%"/></div>
+    <div class="content-box">
+      <h2>Museum APP project</h2>
+      <p>This app design is my project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. </p>
+      <div><button class="button" type="button">Check this project <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+  </div> 
+
+<!-- Card dlab --> 
+<div class="card">
+  <div class="img-card-box"><img id="img-card" src="images/dlab.png" style="width: 100%"/></div>
+    <div class="content-box">
+      <h2>Thinking with scrap</h2>
+      <p>Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands. </p>
+      <div><button class="button" type="button">Check this project <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+  </div> 
+
+<!-- Card Icpedu --> 
+<div class="card">
+  <div class="img-card-box"><img id="img-card" src="images/icpedu.png" style="width: 100%"/></div>
+    <div class="content-box">
+      <h2>ICPEdu platform</h2>
+      <p>Research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions, providing the infrastructure for issuing digital certificates and security keys.</p>
+      <div><button class="button" type="button">Check this project <i class="fas fa-arrow-right"></i></button></div>
+    </div>
+  </div> 
+
+</div>
+
+
+
+</div>
+  
+  <!-- </div>-->
 
   <footer></footer>
 </body>
