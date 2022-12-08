@@ -70,6 +70,7 @@ body {
   justify-content: space-around;}
 .content-box h2{font-size: 48px; color: white;}
 .content-box p{font-size: 24px; color: white;}
+@media only screen and (min-width: 1600px){}
 
 @media only screen and (max-width: 1000px) {
   .card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;} 
@@ -79,7 +80,6 @@ body {
   .content-box h2{font-size: 40px; color: white; margin-bottom: 8px}
   .content-box p{font-size: 24px; color: white; margin-bottom: 24px}}
 
-@media only screen and (min-width: 1600px){}
 
 button {
   background-color: #DBFF00;
@@ -112,7 +112,6 @@ font-size: inherit;}
   -moz-text-fill-color: transparent;}
 
 /* Animation */  
-
 @keyframes text-h1 {
   0% {
     opacity: 0;
