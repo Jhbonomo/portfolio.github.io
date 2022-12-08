@@ -16,16 +16,6 @@ body {
   flex-direction: column;
   animation: text-h1 1s;}
 
-/* Animation */  
-
-@keyframes text-h1 {
-  0% {
-    opacity: 0;
-    transform: translateY(-80px);}
-  100% {
-    opacity: 1;
-    transform: translateY(0);}}
-
 
 /* Main banner */  
 #main-banner{
@@ -120,6 +110,16 @@ font-size: inherit;}
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;}
+
+/* Animation */  
+
+@keyframes text-h1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);}
+  100% {
+    opacity: 1;
+    transform: translateY(0);}}
 
 
  
