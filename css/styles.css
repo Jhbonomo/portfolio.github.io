@@ -4,11 +4,13 @@ body {
 #navbar {
   color: aliceblue;
   background-color: #181818;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   height: 10vh;
-  padding: 3vw;
-  align-items: center;}
+  padding: 0 3vw;
+  align-items: center;
+  position: fixed;}
 
 #about {    
   align-items: center;
@@ -17,7 +19,7 @@ body {
   animation: text-h1 1s;}
 
 
-/* Main banner */  
+/* Main banner home */  
 #main-banner{
   height: 90vh;
   padding: 4vw;
@@ -29,15 +31,7 @@ body {
 #main-banner h1{font-size: inherit; color: white;}  
 #main-banner p {font-size: 32px;}
   
-@media only screen and (max-width: 600px) {
-  #main-banner p {font-size: 24px;}
-  #main-banner h1 {font-size: 40px;}
-  #main-banner {padding:4vw;}
-  #icon {font-size: 8vw;}}
 
-@media only screen and (min-width: 1600px) {#main-banner{max-width: 1600px;}
-#main-banner h1{font-size: 64px; color: white; }  
-#main-banner p {font-size: 40px;}}
  
 /* Work */  
 .work-scroll {
@@ -49,28 +43,50 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;}
+
+button {
+  background-color: #DBFF00;
+  padding: 16px;
+  font-size: 24px;
+  font-family: 'Sora', sans-serif;}  
   
-/* CARD */  
+/* CARDS */  
 .cards-list {
-  display: flex;
-  align-items: center;
-  flex-direction:column;
   max-width: 1000px;
   animation: text-h1 2s ; animation-delay: 1s;}
+
+/* CARD Modulo */  
 .card {
   display: flex;
   flex-wrap: wrap;
   color: white;
   margin-bottom: 1vh;}
+
+/* CARD-image */  
 .img-card-box{width: 50%; padding-right: 24px;}
+
+
+
+/* CARD-info */  
 .content-box{
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;}
+
+/* CARD-info-text */  
 .content-box h2{font-size: 48px; color: white;}
-.content-box p{font-size: 24px; color: white;}
-@media only screen and (min-width: 1600px){}
+.content-box p{font-size: 20px; color: white;}
+
+
+
+
+  
+/* ICON my work */
+#icon {
+  margin-right: 1vw;
+font-size: inherit;}
+
 
 @media only screen and (max-width: 1000px) {
   .card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;} 
@@ -79,20 +95,27 @@ body {
   .img-card-box{width: 100%; padding-right: 0}
   .content-box h2{font-size: 40px; color: white; margin-bottom: 8px}
   .content-box p{font-size: 24px; color: white; margin-bottom: 24px}}
-
-
-button {
-  background-color: #DBFF00;
-  padding: 16px;
-  font-size: 24px;
-  font-family: 'Sora', sans-serif;}
   
-/* ICON */
-#icon {
-  margin-right: 1vw;
-font-size: inherit;}
+@media only screen and (max-width: 600px) {
+  #main-banner p {font-size: 24px;}
+  #main-banner h1 {font-size: 40px;}
+  #main-banner {padding:4vw;}
+  #icon {font-size: 8vw;}}
+  
+@media only screen and (min-width: 1600px) {#main-banner{max-width: 1600px;}
+  #main-banner h1{font-size: 64px; color: white; }  
+  #main-banner p {font-size: 40px;}}
 
-/* GRADIENTE */
+/* Animation */  
+@keyframes text-h1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);}
+  100% {
+    opacity: 1;
+    transform: translateY(0);}}
+
+ /* Gradiente */
 .gradient-text {
   /* Fallback: Set a background color. */
   background-color: red;
@@ -110,15 +133,3 @@ font-size: inherit;}
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;}
-
-/* Animation */  
-@keyframes text-h1 {
-  0% {
-    opacity: 0;
-    transform: translateY(-80px);}
-  100% {
-    opacity: 1;
-    transform: translateY(0);}}
-
-
- 
