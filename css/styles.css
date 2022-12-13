@@ -20,9 +20,10 @@ body {
 
 
 /* Main banner home */  
-#main-banner{
+#main-banner {
   height: 90vh;
   padding: 4vw;
+  margin-top: 10vh;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -31,8 +32,9 @@ body {
 #main-banner h1{font-size: inherit; color: white;}  
 #main-banner p {font-size: 32px;}
   
+/* Main banner interno */  
+#main-pic {min-height: 60vh; margin-top: 10vh; display: flex; align-items: center; justify-content: center;}
 
- 
 /* Work */  
 .work-scroll {
   display: flex;
@@ -65,8 +67,6 @@ button {
 /* CARD-image */  
 .img-card-box{width: 50%; padding-right: 24px;}
 
-
-
 /* CARD-info */  
 .content-box{
   width: 50%;
@@ -77,16 +77,11 @@ button {
 /* CARD-info-text */  
 .content-box h2{font-size: 48px; color: white;}
 .content-box p{font-size: 20px; color: white;}
-
-
-
-
   
 /* ICON my work */
 #icon {
   margin-right: 1vw;
 font-size: inherit;}
-
 
 @media only screen and (max-width: 1000px) {
   .card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;} 
