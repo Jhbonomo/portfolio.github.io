@@ -1,6 +1,5 @@
 body {
   background-color:black;}
-
 #navbar {
   color: aliceblue;
   background-color: #181818;
@@ -62,7 +61,8 @@ button {
   display: flex;
   flex-wrap: wrap;
   color: white;
-  margin-bottom: 1vh;}
+  margin-bottom: 1vh;
+}
 
 /* CARD-image */  
 .img-card-box{width: 50%; padding-right: 24px;}
@@ -75,8 +75,8 @@ button {
   justify-content: space-around;}
 
 /* CARD-info-text */  
-.content-box h2{font-size: 48px; color: white;}
-.content-box p{font-size: 20px; color: white;}
+.content-box h2{font-size: 32px; color: white;}
+.content-box p{font-size: 16px; color: white;}
   
 /* ICON my work */
 #icon {
