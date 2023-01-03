@@ -17,6 +17,7 @@ body {background-color:black;}
   flex-direction: column;
   animation: text-h1 1s;}
 
+#icon {margin-right: 1vw;font-size: inherit;}
 
 /* Main banner home */  
 #main-banner {
@@ -30,7 +31,7 @@ body {background-color:black;}
   justify-content: space-between;
   font-size: 48px;}
 #main-banner h1{font-size: inherit; color: white;}  
-#main-banner p {font-size: 32px;}
+#main-banner p {font-size: 40px;}
   
 /* Main banner interno */  
 #main-pic {min-height: 60vh; margin-top: 10vh; display: flex; align-items: center; justify-content: center;}
@@ -86,13 +87,8 @@ button {
 /* CARD-info-text */  
 .content-box h2{font-size: 32px; color: white;}
 .content-box p{font-size: 24px; color: white;}
-  
-/* ICON my work */
-#icon {
-  margin-right: 1vw;
-font-size: inherit;}
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
   .card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;} 
   .content-box {width: 100%;}
   .cards-list{margin: 0;}
@@ -100,15 +96,12 @@ font-size: inherit;}
   .content-box h2{font-size: 40px; color: white; margin-bottom: 8px}
   .content-box p{font-size: 24px; color: white; margin-bottom: 24px}}
   
-/* @media only screen and (max-width: 600px) {
-  #main-banner p {font-size: 24px;}
-  #main-banner h1 {font-size: 40px;}
-  #main-banner {padding:4vw;}
-  #icon {font-size: 8vw;}}
- */ 
-@media only screen and (min-width: 1600px) {#main-banner{max-width: 1600px;}
+
+@media only screen and (min-width: 1400px) {
+  #main-banner{max-width: 1600px;}
   #main-banner h1{font-size: 64px; color: white; }  
-  #main-banner p {font-size: 40px;}}
+  #main-banner p {font-size: 40px;}
+}
 
 /* Animation */  
 @keyframes text-h1 {
