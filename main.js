@@ -46,8 +46,7 @@ let htmlCode = ``;
 
 cardsArray.forEach(function(singleCard) {
 htmlCode =
-htmlCode +
-    `
+  `${htmlCode}
       <div class="card">
       <img class="img-card-box" src="${singleCard.pictureUrl}"/>
       <div class"content-box">
