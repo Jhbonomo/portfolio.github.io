@@ -4,14 +4,14 @@ const cardsArray = [
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via-pic.png",
-    goToPage: "pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
   },
     
     { // Pnipe
     title: "Prototyping in collaboration",
     description: "UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.",
     pictureUrl: "images/pnipe-pic.png",
-    goToPage: "pages/e-commerce-app.html"
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
   },
 
     
@@ -19,7 +19,7 @@ const cardsArray = [
     title: "Museum APP project",
     description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
     pictureUrl: "images/museu-pic.png",
-    goToPage: "pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
     },
 
     
@@ -27,14 +27,14 @@ const cardsArray = [
         title: "Thinking with scrap",
         description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
         pictureUrl: "images/dlab.png",
-        goToPage: "pages/e-commerce-app.html",
+        linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
     },
 
     {// Dlab
     title: "ICPEdu platform",
     description: "Research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions, providing the infrastructure for issuing digital certificates and security keys.",
     pictureUrl: "images/icpedu.png",
-    goToPage: "pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
     },
 ];
 
@@ -52,7 +52,7 @@ htmlCode =
       <div class"content-box">
         <h2>${singleCard.title}</h2>
         <p>${singleCard.description}</p>
-        <div><a href="https://jhbonomo.github.io/portfolio.github.io/${goToPage}"><button class="button" type="button"> Check this project <i calass="fas fa-arrow-right"></i></button></a></div>
+        <div><a href="${linkPage}"><button class="button" type="button"> Check this project <i calass="fas fa-arrow-right"></i></button></a></div>
       </div>
       </div>
   `;
