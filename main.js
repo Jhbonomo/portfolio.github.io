@@ -4,14 +4,14 @@ const cardsArray = [
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
   },
     
     { // Pnipe
     title: "Prototyping in collaboration",
     description: "UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.",
     pictureUrl: "images/pnipe-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
   },
 
     
@@ -19,7 +19,7 @@ const cardsArray = [
     title: "Museum APP project",
     description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
     pictureUrl: "images/museu-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
     },
 
     
@@ -27,14 +27,14 @@ const cardsArray = [
         title: "Thinking with scrap",
         description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
         pictureUrl: "images/dlab.png",
-        linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
+        linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
     },
 
     {// Dlab
     title: "ICPEdu platform",
     description: "Research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions, providing the infrastructure for issuing digital certificates and security keys.",
     pictureUrl: "images/icpedu.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/pages/e-commerce-app.html",
+    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
     },
 ];
 
