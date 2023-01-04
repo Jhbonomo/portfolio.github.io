@@ -105,12 +105,16 @@ button {
 }
 
 @media only screen and (max-width: 1000px) {
-  #card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;} 
-  .content-box {width: 100%;}
   .cards-list{margin: 0;}
-  .img-card-box{width: 100%; padding-right: 0}
-  .card-info h2{font-size: 28px; color: white; margin-bottom: 8px}
-  .card-info p{font-size: 16px; color: white; margin-bottom: 24px}}
+  #card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;}
+  .img-card-box{width: 100%; padding-right: 0;}
+  #card h2{font-size: 24px; color: white; margin: 16px 0;}
+  #card p{font-size: 16px; color: white; margin-bottom: 24px;}
+  #main-banner p {font-size:24px}
+}
+
+
+
 @media only screen and (min-width: 1400px) {
   #main-banner{max-width: 1600px;}
   #main-banner h1{font-size: 64px; color: white; }  
