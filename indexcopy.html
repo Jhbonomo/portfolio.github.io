@@ -46,7 +46,33 @@
 <div class="cards-list"> </div>
 
 <script src="main.js"></script>
+<script>
+  const sectionOne = document.querySelector('.card');
+  const sections = document.querySelectorAll('.card');
 
+  const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: "-50px"
+  };
+  const observer = new IntersectionObserver(function(entries,observer) {
+    entries.forEach(entry => {
+      console.log(entry.target)
+      if(!entry.isIntersecting) {
+        entry.target.classList.replace("init-hidden-off", "init-hidden")
+
+      }
+      
+      entry.target.classList.replace("init-hidden", "init-hidden-off")
+
+    });
+
+  }, options);
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+</script>
 
 <footer></footer>
   

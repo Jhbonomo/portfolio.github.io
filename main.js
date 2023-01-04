@@ -1,10 +1,12 @@
+
+
 const cardsArray = [ 
     
     { // Via
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
+    linkPage: "pages/e-commerce-app.html",
   },
     
     { // Pnipe
@@ -17,7 +19,7 @@ const cardsArray = [
     
     {// Museu project
     title: "Museum APP project",
-    description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
+    description: "This app design is my project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
     pictureUrl: "images/museu-pic.png",
     linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
     },
@@ -47,12 +49,12 @@ let htmlCode = ``;
 cardsArray.forEach(function(singleCard) {
 htmlCode =
   `${htmlCode}
-      <div class="card">
+      <div id="card" class="hidden">
       <img class="img-card-box" src="${singleCard.pictureUrl}"/>
-      <div class"content-box">
+      <div class="card-info">
         <h2>${singleCard.title}</h2>
         <p>${singleCard.description}</p>
-        <div><a href="${linkPage}"><button class="button" type="button"> Check this project <i calass="fas fa-arrow-right"></i></button></a></div>
+        <div><a href="${singleCard.linkPage}"><button class="button" type="button"> Check this project <i calass="fas fa-arrow-right"></i></button></a></div>
       </div>
       </div>
   `;
