@@ -54,7 +54,7 @@ htmlCode =
       <div class="card-info">
         <h2>${singleCard.title}</h2>
         <p>${singleCard.description}</p>
-        <div><a href="${singleCard.linkPage}"><button class="button" type="button"> Check this project <i calass="fas fa-arrow-right"></i></button></a></div>
+        <div><a href="${singleCard.linkPage}"><button class="button" type="button"> Check this project <div class="fas fa-arrow-right" id="icon"></div></button></a></div>
       </div>
       </div>
   `;
