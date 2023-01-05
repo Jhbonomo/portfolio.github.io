@@ -1,3 +1,4 @@
+h1{font-size: 48px;};
 h2{font-size: 48px; color: black;}
 p{font-size: 20px; line-height: 1.5; color: black;}
 h3{font-size: 32px;}
@@ -23,9 +24,8 @@ h3{font-size: 32px;}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 48px;
   animation: animated-text 1s ease-in;}
-#main-banner h1{font-size: 32px inherit; color: white;}  
+
 #main-banner p {font-size: 24px;}
 /* Work text*/
 .work-scroll {
@@ -95,6 +95,7 @@ cursor: pointer;}
 /* responsivo */    
 @media only screen and (max-width: 800px) {
   /*home*/
+  h1{font-size: 40px;};
   .cards-list{margin: 0;}
   #card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;}
   .img-card-box{width: 100%; padding-right: 0;}
