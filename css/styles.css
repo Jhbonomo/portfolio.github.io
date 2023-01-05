@@ -1,9 +1,6 @@
-.content-case {
-  display:flex;flex-direction: column; align-items: center;
-  
-}
+h2{font-size: 48px; color: black;}
+p{font-size: 20px; line-height: 1.5; color: white;}
 #navbar {
-  color: aliceblue;
   background-color: #181818;
   width: 100%;
   display: flex;
@@ -14,8 +11,7 @@
   position: fixed;
   z-index: 100;}
 
-
-  /* Main banner home */  
+  /* Home */  
 #main-banner {
   height: 90vh;
   padding: 4vw;
@@ -26,63 +22,38 @@
   flex-direction: column;
   justify-content: space-between;
   font-size: 48px;
-  animation: animated-text 1s ease-in;
-  }
-
-
+  animation: animated-text 1s ease-in;}
 #main-banner h1{font-size: 32px inherit; color: white;}  
 #main-banner p {font-size: 24px;}
-
-/* Work*/
+/* Work text*/
 .work-scroll {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 48px;
- }
-
-
-
-
+  font-size: 48px;}
 #icon {margin-right: 1vw;font-size: inherit;}
-.home-portfolio{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 800px;}
-
-  /* CARDS */  
+/* CARDS */  
 .cards-list {
   display: flex;
   flex-direction: column;
   max-width: 1000px;}
-
-  /* CARD Modulo */  
+/* CARD Modulo */  
 #card {
   display: flex;
   flex-direction: row;
   color: white;
-  margin-bottom: 1vh;
-}
-
-
-  /* CARD-image */  
+  margin-bottom: 1vh;}
+/* CARD-image */  
 .img-card-box{padding-right: 24px;width: 40%;}
 #img-card{width: 100%;}
-
 /* CARD-info */  
 .card-info{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;}
-
-  /* CARD-info-text */  
-h2{font-size: 48px; color: black;}
-p{font-size: 20px; line-height: 1.5; color: black;}
-
+/* CARD-info-text */  
 #card h2{font-size: 48px; color: white;}
 #card p{font-size: 20px; line-height: 1.5; color: white;}
-
 button {
   background-color: #DBFF00;
   padding: 16px;
@@ -90,27 +61,24 @@ button {
   font-family: 'Sora', sans-serif;
   font-weight: 500;
 cursor: pointer;}  
-
-
 .hidden{
   opacity: 0;
   transform: translateY(20%);
   transition: all 1s; 
-  filter: blur(5px);
-}
+  filter: blur(5px);}
 .show{
   opacity: 1;
   filter: blur(0);
-  transform: translateY(0);
-}
+  transform: translateY(0);}
 
+/*interno*/
+.content-case {
+  display:flex;flex-direction: column; align-items: center;}
 .info-case {
   background-color: #DBFF00;
   margin: 0 0 -20% -10%;
     padding: 16px;
-    max-width: 400px;
-}
-
+    max-width: 400px;}
 #main-pic {
   min-height: 60vh; 
   margin-top: 10vh; 
@@ -119,10 +87,10 @@ cursor: pointer;}
   justify-content: center; 
   background-color: #A043E9;
   width: 100vw;}
-  
-  #main-pic img {
-    max-width: 40%;
-  }
+#main-pic img {
+    max-width: 40%;}
+
+/* responsivo */    
 @media only screen and (max-width: 800px) {
   /*home*/
   .cards-list{margin: 0;}
@@ -140,30 +108,18 @@ cursor: pointer;}
       padding: 16px;
       max-width: 400px;
       margin: -5% 10px 0 10px;
-  }
-
-}
-
-
-
+  }}
 @media only screen and (min-width: 1500px) {
   #main-banner{max-width: 1600px;}
   #main-banner h1{font-size: 64px; color: white; }  
   #main-banner p {font-size: 40px;}}
-
-  /* Main banner interno */  
-
 /* Animation */ 
 @keyframes animated-text {
   0% {
     transform: translateY(-50px); }
   100% {
-    transform: translateY(0); }
-  }
-
-
-
-    /* Gradiente */
+    transform: translateY(0); }}
+/* Gradiente */
 .gradient-text {
   /* Fallback: Set a background color. */
   background-color: red;
@@ -177,8 +133,8 @@ cursor: pointer;}
 
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  background-clip: text;}
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;}
