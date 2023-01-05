@@ -1,5 +1,3 @@
-
-
 const cardsArray = [ 
     
     { // Via
@@ -32,7 +30,7 @@ const cardsArray = [
         linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
     },
 
-    {// Dlab
+    {// ICPEdu
     title: "ICPEdu platform",
     description: "Research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions, providing the infrastructure for issuing digital certificates and security keys.",
     pictureUrl: "images/icpedu.png",
@@ -61,6 +59,8 @@ htmlCode =
 });
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
+
+
 
 
 

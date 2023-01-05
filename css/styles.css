@@ -1,5 +1,7 @@
-body {background-color:black;}
-
+.content-case {
+  display:flex;flex-direction: column; align-items: center;
+  
+}
 #navbar {
   color: aliceblue;
   background-color: #181818;
@@ -12,7 +14,6 @@ body {background-color:black;}
   position: fixed;
   z-index: 100;}
 
- #about-me{ animation: text-h1 .3s;} 
 
   /* Main banner home */  
 #main-banner {
@@ -25,12 +26,11 @@ body {background-color:black;}
   flex-direction: column;
   justify-content: space-between;
   font-size: 48px;
- 
-
+  animation: animated-text 1s ease-in;
   }
 
 
-#main-banner h1{font-size: 32px inherit; color: white; }  
+#main-banner h1{font-size: 32px inherit; color: white;}  
 #main-banner p {font-size: 24px;}
 
 /* Work*/
@@ -47,10 +47,9 @@ body {background-color:black;}
 #icon {margin-right: 1vw;font-size: inherit;}
 .home-portfolio{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 900px;}
+  max-width: 800px;}
 
   /* CARDS */  
 .cards-list {
@@ -78,6 +77,9 @@ body {background-color:black;}
   justify-content: space-evenly;}
 
   /* CARD-info-text */  
+h2{font-size: 48px; color: black;}
+p{font-size: 20px; line-height: 1.5; color: black;}
+
 #card h2{font-size: 48px; color: white;}
 #card p{font-size: 20px; line-height: 1.5; color: white;}
 
@@ -86,7 +88,9 @@ button {
   padding: 16px;
   font-size: 18px;
   font-family: 'Sora', sans-serif;
-  font-weight: 500;}  
+  font-weight: 500;
+cursor: pointer;}  
+
 
 .hidden{
   opacity: 0;
@@ -100,13 +104,44 @@ button {
   transform: translateY(0);
 }
 
+.info-case {
+  background-color: #DBFF00;
+  margin: 0 0 -20% -10%;
+    padding: 16px;
+    max-width: 400px;
+}
+
+#main-pic {
+  min-height: 60vh; 
+  margin-top: 10vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #A043E9;
+  width: 100vw;}
+  
+  #main-pic img {
+    max-width: 40%;
+  }
 @media only screen and (max-width: 800px) {
+  /*home*/
   .cards-list{margin: 0;}
   #card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;}
   .img-card-box{width: 100%; padding-right: 0;}
   #card h2{font-size: 24px; color: white; margin: 16px 0;}
   #card p{font-size: 16px; color: white; margin-bottom: 24px;}
   #main-banner p {font-size: 24px}
+  
+  /*interna*/
+  #main-pic {display: flex; flex-direction: column; justify-content: flex-start; }
+  #main-pic img {max-width: 80%; margin-top: 5vh;}
+  .info-case{
+    background-color: #DBFF00;
+      padding: 16px;
+      max-width: 400px;
+      margin: -5% 10px 0 10px;
+  }
+
 }
 
 
@@ -117,30 +152,14 @@ button {
   #main-banner p {font-size: 40px;}}
 
   /* Main banner interno */  
-#main-pic {min-height: 60vh; margin-top: 10vh; display: flex; align-items: center; justify-content: center;}
 
 /* Animation */ 
-@keyframes text-h1 {
+@keyframes animated-text {
   0% {
-    opacity: 0;
-    transform: translateY(-80px);}
+    transform: translateY(-50px); }
   100% {
-    opacity: 1;
-    transform: translateY(0);}}
-
- /* @keyframes 
-text-h1 {
-  
-
-}
- 0% {
-    opacity: 0;
-    transform: translateY(-400px);}
-  100% {
-    opacity: 1;
-    transform: translateY(0);}}
-    */
-
+    transform: translateY(0); }
+  }
 
 
 
