@@ -25,13 +25,13 @@ const cardsArray = [
   {
     title: "Design documentation and reports",
     description: "I Created data Studio reports with Google Analytics metrics to provide a monitoring interface directly related to the changes implemented by my squad. The squad process was also documented and published at Via's confluence.",   
-    pictureUrl: "",
+    pictureUrl: null,
   },
 
   {
     title: "Other contributions",
     description: "<b>UX app tribe:</b> conversations among designers from others squads to exchange materials and talk through the desired common goals specially when the squads overlapped.<br><b>Support implementation:</b> As any new change should be properly tagged to obtain user metrics, I reviewed the current tag book to properly implement Analytics on the new implementations.<br><b>Supported QA and Project managers:</b> I supported my peers with the testing and validation phases, also keeping up with firebase and Jira\.<br><b>UX Benchmarking:</b> I teamed up with other designers to compare Via's products with other e-commerce platforms to identify strenghts, weakness and opportunities for Via's apps.",   
-    pictureUrl: "",
+    pictureUrl: null,
   },
 
     
@@ -44,7 +44,8 @@ let htmlCode = ``;
 // to get each single elephant object from the array and use them to build out html string, we need to open up our array, and we do that using forEach method. The forEach method, finds each item(object) in the array and returns them, this means we get 4 items that are objects back.
 
 cardsArray.forEach(function(singleCard) {
-htmlCode =
+if(singleCard.pictureUrl !== null) {
+  htmlCode =
   `${htmlCode}
     <div style="width:100vw; padding: 20px; max-width:800px;" >
     <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
@@ -52,7 +53,17 @@ htmlCode =
     <div class="content-case"><img src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
 </div> 
   `;
-});
+} else {
+  htmlCode =
+  `${htmlCode}
+    <div style="width:100vw; padding: 20px; max-width:800px;" >
+    <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
+    <p >${singleCard.description}</p><br>
+</div> 
+  `;
+}}
+
+);
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
 
