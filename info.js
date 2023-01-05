@@ -3,28 +3,28 @@ const cardsArray = [
     {
     title: "Login and onboarding journeys",
     description: "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
-    pictureUrl: "/images/via-pic_1.png",
+    pictureUrl: "images/via-pic_1.png",
   },
     
     {
     title: "Browse and fast access journeys",
     description: "Prior to the Black Friday, we included fast access cards to present featured categories (e.g. mobile, home appliances, electronics...) on the homepage.",
-    pictureUrl: "/images/pnipe-pic.png",
+    pictureUrl: "images/via-pic_1.png",
   },
 
   {
     title: "User location and delivery address",
     description: "Product analysis of the flow across user journeys from the user address and the location components. I monitored the behaviour through Smartlook and Google Analytics. The main problem was the lack of persistence and integration of the components across the user journey on the app.",
-    pictureUrl: "/images/pnipe-pic.png",
+    pictureUrl: "images/via-pic_1.png",
   },
   {
     title: "Applying new Design System",
     description: "UI changes to improve accessibility over text styles, color system and other  formatting issues.", 
-    pictureUrl: "/images/pnipe-pic.png",
+    pictureUrl: "images/via-pic_1.png",
   },
   {
     title: "Design documentation and reports",
-    description: "I Created data Studio reports with Google Analytics metrics to provide a monitoring interface directly related to the changes implemented by my squad. The squad process was also documented and published at Via's confluence.",   pictureUrl: "/images/pnipe-pic.png",
+    description: "I Created data Studio reports with Google Analytics metrics to provide a monitoring interface directly related to the changes implemented by my squad. The squad process was also documented and published at Via's confluence.",   pictureUrl: "/images/via-pic_1.png",
   },
 
   {
@@ -45,7 +45,7 @@ cardsArray.forEach(function(singleCard) {
 htmlCode =
   `${htmlCode}
     <div style="width:100vw; padding: 20px; max-width:800px;" >
-    <h2 style="margin-bottom: 8px; color:black">${singleCard.title}</h2><br>
+    <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
     <p >${singleCard.description}</p><br>
     <div class="content-case"><img src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
 </div> 

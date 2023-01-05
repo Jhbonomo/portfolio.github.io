@@ -1,5 +1,6 @@
 h2{font-size: 48px; color: black;}
-p{font-size: 20px; line-height: 1.5; color: white;}
+p{font-size: 20px; line-height: 1.5; color: black;}
+h3{font-size: 32px;}
 #navbar {
   background-color: #181818;
   width: 100%;
@@ -10,6 +11,7 @@ p{font-size: 20px; line-height: 1.5; color: white;}
   align-items: center;
   position: fixed;
   z-index: 100;}
+#navbar p {color: wheat;}
 
   /* Home */  
 #main-banner {
