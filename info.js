@@ -1,4 +1,4 @@
-const cardsArray = [ 
+const viaArray = [ 
     
     {
     title: "Login and onboarding journeys",
@@ -42,28 +42,29 @@ const cardsArray = [
 let htmlCode = ``;
 
 // to get each single elephant object from the array and use them to build out html string, we need to open up our array, and we do that using forEach method. The forEach method, finds each item(object) in the array and returns them, this means we get 4 items that are objects back.
-
-cardsArray.forEach(function(singleCard) {
-if(singleCard.pictureUrl !== null) {
-  htmlCode =
-  `${htmlCode}
-    <div style="width:100vw; padding: 20px; max-width:800px;" >
-    <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
-    <p >${singleCard.description}</p><br>
-    <div class="content-case"><img src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
-</div> 
+  viaArray.forEach(function(singleCard) {
+  if(singleCard.pictureUrl !== null) {
+    htmlCode =
+    `${htmlCode}
+      <div style="width:100vw; padding: 20px; max-width:800px;" >
+        <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
+        <p >${singleCard.description}</p><br>
+        <div class="content-case"><img src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
+      </div> 
   `;
-} else {
-  htmlCode =
-  `${htmlCode}
-    <div style="width:100vw; padding: 20px; max-width:800px;" >
-    <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
-    <p >${singleCard.description}</p><br>
-</div> 
+  } else {
+    htmlCode =
+    `${htmlCode}
+      <div style="width:100vw; padding: 20px; max-width:800px;" >
+      <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
+      <p >${singleCard.description}</p><br>
+    </div> 
   `;
 }}
 
 );
+
+
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
 
