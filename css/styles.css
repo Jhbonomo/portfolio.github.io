@@ -1,4 +1,4 @@
-h1{font-size: 48px;};
+h1{font-size: 56px;};
 h2{font-size: 48px; color: black;}
 p{font-size: 20px; line-height: 1.5; color: black;}
 h3{font-size: 32px;}
@@ -26,7 +26,7 @@ h3{font-size: 32px;}
   justify-content: space-between;
   animation: animated-text 1s ease-in;}
 
-#main-banner p {font-size: 24px;}
+#main-banner p {font-size: 32px;}
 /* Work text*/
 .work-scroll {
   display: flex;
@@ -78,7 +78,7 @@ cursor: pointer;}
   display:flex;flex-direction: column; align-items: center;}
 .info-case {
   background-color: #DBFF00;
-  margin: 0 0 -20% -10%;
+  margin: 0 0 0 -10%;
     padding: 16px;
     max-width: 400px;}
 #main-pic {
@@ -90,7 +90,7 @@ cursor: pointer;}
   background-color: #A043E9;
   width: 100vw;}
 #main-pic img {
-    max-width: 40%;}
+    max-width: 50%;}
 
 /* responsivo */    
 @media only screen and (max-width: 800px) {

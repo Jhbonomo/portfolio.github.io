@@ -3,38 +3,38 @@ const cardsArray = [
     { // Via
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
-    pictureUrl: "images/via-pic.png",
-    linkPage: "e-commerce-app.html",
+    pictureUrl: "images/via/thumb.png",
+    linkPage: "pages/via.html",
   },
     
     { // Pnipe
     title: "Prototyping in collaboration",
     description: "UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.",
-    pictureUrl: "images/pnipe-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
+    pictureUrl: "images/pnipe/thumb.png",
+    linkPage: "pages/pnipe.html",
   },
 
     
     {// Museu project
     title: "Museum APP project",
     description: "This app design is my project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
-    pictureUrl: "images/museu-pic.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
+    pictureUrl: "images/museu/thumb.png",
+    linkPage: "pages/museu.html",
     },
 
     
     {// Dlab
         title: "Thinking with scrap",
         description: "Design installation and research project to investigate the creative process of prototyping in early stages of a projects at DesignLab, a collaborative space for innovative solutions within the ecosystem of the University of Twente - Netherlands.",
-        pictureUrl: "images/dlab.png",
-        linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
+        pictureUrl: "images/dlab/thumb.png",
+        linkPage: "pages/dlab.html",
     },
 
     {// ICPEdu
     title: "ICPEdu platform",
     description: "Research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions, providing the infrastructure for issuing digital certificates and security keys.",
-    pictureUrl: "images/icpedu.png",
-    linkPage: "https://jhbonomo.github.io/portfolio.github.io/",
+    pictureUrl: "images/icpedu/thumb.png",
+    linkPage: "pages/icpedu.html",
     },
 ];
 
