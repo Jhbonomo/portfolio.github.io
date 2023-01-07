@@ -78,7 +78,7 @@ const pnipeBanner = [
   imgBanner: "../images/pnipe/main-banner.png",
   bgColor: "#47C7D8",
   info: "PNIPE is an initiative from the Ministry of Science and Technology to gather information about resources from brazilian Institutions for Science, Technology and Innovation.",
-  buttonTitle: "Go to Museum app case",
+  buttonTitle: "Go to DesignLab case",
   buttonUrl: "dlab.html"
   },]
 /*
