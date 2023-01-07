@@ -79,7 +79,7 @@ const pnipeBanner = [
   bgColor: "#47C7D8",
   info: "PNIPE is an initiative from the Ministry of Science and Technology to gather information about resources from brazilian Institutions for Science, Technology and Innovation.",
   buttonTitle: "Go to Museum app case",
-  buttonUrl: "..museu.html"
+  buttonUrl: "museu.html"
   },]
 
 const museuArray = [ 
@@ -136,7 +136,7 @@ const museuBanner = [
   bgColor: "#FF4C41",
   info: "This app design is a conceptual project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
   buttonTitle: "Go to Thinking with scrap case",
-  buttonUrl: "..dlab.html"
+  buttonUrl: "dlab.html"
 
 },];
 
@@ -175,7 +175,7 @@ const dlabArray = [
 ];
 const dlabBanner = [
 {buttonTitle: "Go to ICPedu case",
-buttonUrl: "..icpedu.html"}
+buttonUrl: "icpedu.html"}
 ];
 
 const icpeduArray = [ 
