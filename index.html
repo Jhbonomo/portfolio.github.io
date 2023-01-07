@@ -36,25 +36,16 @@
 
 <!-- Work --> 
 <div class="cards-list"> </div>
-<script src="navbar.js"></script>
-<script src="main.js"></script>
-<script>
+<footer id="footer"></footer>
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-    console.log(entry);
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } 
-  });
-  });
-  
-  const hiddenElements = document.querySelectorAll('.hidden');
-  hiddenElements.forEach((el) => observer.observe(el));
-  
+<script src="src/navbar.js"></script>
+<script src="main.js"></script>
+<script src="src/footer.js"></script>
+<script src="src/animation.js">
+
   </script>
 
-<footer></footer>
+
   
   
 

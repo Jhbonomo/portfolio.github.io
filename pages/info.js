@@ -42,6 +42,9 @@ const viaBanner = [
   imgBanner: "/images/via/main-banner.png",
   bgColor: "#A043E9",
   info: "Product designer for mobile apps of three e-commerce brands: Casas Bahia, Ponto and Extra. I was part of the APP experience squad, a cross-functional team that worked together with other squads.",
+  buttonTitle: "Go to PNIPE case",
+  buttonUrl: "pnipe.html"
+
 },]
 const pnipeArray = [ 
     
@@ -49,6 +52,7 @@ const pnipeArray = [
   title: "Coming up with an idea",
   description: "Seeking a more effective solution, the project manager and I included stakeholders and developers on an early stage of the prduct using Figma as a collaborative environment. This process was later reviewed and much was adapted to other projects by the National Education and Research Network.<br>We refined user journeys ideas with the developing team, also giving them more time to look into technical solutions before the story was added to their backlog. Meanwhile the same file was used with Client and users to validate ideas, strategy and to elaborate the content such as translations, images, etc.",
   pictureUrl: "/images/pnipe/img-1.png",
+
 },
   
   {
@@ -74,7 +78,9 @@ const pnipeBanner = [
   imgBanner: "/images/pnipe/main-banner.png",
   bgColor: "#47C7D8",
   info: "PNIPE is an initiative from the Ministry of Science and Technology to gather information about resources from brazilian Institutions for Science, Technology and Innovation.",
-},]
+  buttonTitle: "Go to Museum app case",
+  buttonUrl: "museu.html"
+  },]
 
 const museuArray = [ 
     
@@ -129,7 +135,10 @@ const museuBanner = [
   imgBanner: "/images/museu/main-banner.png",
   bgColor: "#FF4C41",
   info: "This app design is a conceptual project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
-},]
+  buttonTitle: "Go to Thinking with scrap case",
+  buttonUrl: "dlab.html"
+
+},];
 
 const dlabArray = [ 
     
@@ -137,6 +146,7 @@ const dlabArray = [
   title: "About the designlab Twente",
   description: "DesignLAB is a coworking space at the University of Twente to bring science and society together through design, education, entrepreneurship and research. The main goal is to  connect multidisciplinary fields and encourage co-creation around the creative process.",
   pictureUrl: null,
+
 },
 
 {
@@ -163,6 +173,10 @@ const dlabArray = [
 },
 
 ];
+const dlabBanner = [
+{buttonTitle: "Go to ICPedu case",
+buttonUrl: "icpedu.html"}
+];
 
 const icpeduArray = [ 
     
@@ -175,7 +189,7 @@ const icpeduArray = [
   {
   title: "User interviews",
   description: "I conducted a series of interviews with stakeholders from institutions identified as “user operator”.  These users are workers from the university. They operate the system and educate end-users on how to use it.<br>They valued the system for optimizing the use of resources and speeding up processes, but many efforts needed to be taken to help end-user to understand what is and how digital certificates work.",
-  pictureUrl: "/images/icepedu/img-02.png",
+  pictureUrl: "/images/icpedu/img-02.png",
 },
 
 {
@@ -195,6 +209,8 @@ const icpeduBanner = [
   imgBanner: "/images/icpedu/main-banner.png",
   bgColor: "#FF9238",
   info: "UX research and design for ICPEdu platform, a digital certification service offered by the National Education and Research Network (RNP) to higher education institutions.",
+  buttonTitle: "Go to all works",
+  buttonUrl: "/index.html"
 },]
 
 // defining variable to retrieve the html strings
@@ -222,6 +238,7 @@ switch (page) {
     break;
   case 'dlab':
     pageArray = dlabArray;
+    bannerArray = dlabBanner;
     break;
   case 'icpedu':
     pageArray = icpeduArray;
@@ -229,30 +246,40 @@ switch (page) {
     break;
 }
 
+let footerCode = '';
+
+const footer = document.querySelector("#footer");
+footer.innerHTML = footerCode;
+
 //retrieve paragraphs info
 pageArray.forEach(function(singleCard) {
   if(singleCard.pictureUrl !== null) {
+
     htmlCode =
     `${htmlCode}
-      <div style="width:100vw; padding: 20px; max-width:800px;" >
-        <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
+      <div class="hidden"; style="width:100vw; padding: 20px; max-width:800px";>
+        <h3 style="margin-bottom: 8px;">${singleCard.title}</h3><br>
         <p >${singleCard.description}</p><br>
         <div class="content-case"><img src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
       </div> 
   `;
+
   } else {
     htmlCode =
     `${htmlCode}
       <div style="width:100vw; padding: 20px; max-width:800px;" >
-      <h3 style="margin-bottom: 8px; color:black">${singleCard.title}</h3><br>
+      <h3 style="margin-bottom: 8px;">${singleCard.title}</h3><br>
       <p >${singleCard.description}</p><br>
     </div> 
   `;
 }});
 
+bannerArray.forEach(function(banner) {
+footerCode = 
+`<div class="next-project">
+<a href=" ${banner.buttonUrl}"><button class="button" type="button"> ${banner.buttonTitle} <div class="fas fa-arrow-right" id="icon"></div></button></a></div>`
 
 if(page !== "dlab") {
-bannerArray.forEach(function(banner) {
 bannerCode = 
 `<div id="main-pic" style="background-color:${banner.bgColor};"> 
 <img src="${banner.imgBanner}">
@@ -260,14 +287,17 @@ bannerCode =
   <p style="color:black">${banner.info}</p>
 </div> </div>
   `;
-})
+  
+
+
 const portfolioBanner = document.querySelector("#banner");
 portfolioBanner.innerHTML = bannerCode;
-}
 
+}})
 //insert html code on cards list
 
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
-
+const newFooter = document.querySelector("#footer");
+footer.innerHTML = footerCode;
 
