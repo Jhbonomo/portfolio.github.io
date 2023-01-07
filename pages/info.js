@@ -4,24 +4,24 @@ const viaArray = [
     {
     title: "Login and onboarding journeys",
     description: "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
-    pictureUrl: "..../images/via/img-1.png",
+    pictureUrl: "../images/via/img-1.png",
   },
     
     {
     title: "Browse and fast access journeys",
     description: "Prior to the Black Friday, we included fast access cards to present featured categories (e.g. mobile, home appliances, electronics...) on the homepage.",
-    pictureUrl: "..../images/via/img-2.png",
+    pictureUrl: "../images/via/img-2.png",
   },
 
   {
     title: "User location and delivery address",
     description: "Product analysis of the flow across user journeys from the user address and the location components. I monitored the behaviour through Smartlook and Google Analytics. The main problem was the lack of persistence and integration of the components across the user journey on the app.",
-    pictureUrl: "..../images/via/img-3.png",
+    pictureUrl: "../images/via/img-3.png",
   },
   {
     title: "Applying new Design System",
     description: "UI changes to improve accessibility over text styles, color system and other  formatting issues.", 
-    pictureUrl: "..../images/via/img-4.png",
+    pictureUrl: "../images/via/img-4.png",
   },
   {
     title: "Design documentation and reports",
