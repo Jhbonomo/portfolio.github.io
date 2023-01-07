@@ -81,7 +81,7 @@ const pnipeBanner = [
   buttonTitle: "Go to Museum app case",
   buttonUrl: "museu.html"
   },]
-
+/*
 const museuArray = [ 
     
   {
@@ -140,6 +140,7 @@ const museuBanner = [
 
 },];
 
+*/
 const dlabArray = [ 
     
   {
