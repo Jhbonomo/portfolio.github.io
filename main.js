@@ -15,12 +15,12 @@ const cardsArray = [
   },
 
     
-    {// Museu project
+   /* {// Museu project
     title: "Museum APP project",
     description: "This app design is my project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
     pictureUrl: "images/museu/thumb.png",
     linkPage: "pages/museu.html",
-    },
+    },*/
 
     
     {// Dlab
