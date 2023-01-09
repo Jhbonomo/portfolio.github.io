@@ -3,6 +3,7 @@ h1{font-size: 56px;};
 h2{font-size: 48px;}
 p{font-size: 20px; line-height: 1.5;}
 h3{font-size: 32px;}
+.dlab {width: 100vw;}
 #navbar {
   background-color: #181818;
   width: 100%;
@@ -118,7 +119,10 @@ cursor: pointer;}
     display: flex;
     justify-content: flex-end;
   width: 100vw;
-background-color: #DBFF00;}
+background-color: #DBFF00;};
+
+
+
 @media only screen and (min-width: 1500px) {
   #main-banner{max-width: 1600px;}
   #main-banner h1{font-size: 64px; color: white; }  
