@@ -285,7 +285,7 @@ bannerCode =
 `<div id="main-pic" style="background-color:${banner.bgColor};"> 
 <img src="${banner.imgBanner}">
   <div class="info-case">
-  <p style="color:black">${banner.info}</p>
+  <p style="color:#0E0E0E">${banner.info}</p>
 </div> </div>
   `;
   
