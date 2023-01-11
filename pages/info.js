@@ -183,19 +183,19 @@ const icpeduArray = [
     
   {
   title: "Context",
-  description: "The ICPEdu platform was first lauched focusing on a single user. With the increase of use during pandemics, I was assigned to the team responsible for expanding the platform to other 2 users profiles (admin from universities and from the RNP itself). ",
-  pictureUrl: "../images/icpedu/img-01.png",
+  description: "The first version of ICPEdu platform focused on a single user. With the increase of use during pandemics, I started working for the platform with the goal to expand ICPEdu to other 2 users profiles (admins from universities and from the RNP itself).",
+  pictureUrl: "../images/icpedu/img-01.gif",
 },
   
   {
   title: "User interviews",
-  description: "I conducted a series of interviews with stakeholders from institutions identified as “user operator”.  These users are workers from the university. They operate the system and educate end-users on how to use it.<br>They valued the system for optimizing the use of resources and speeding up processes, but many efforts needed to be taken to help end-user to understand what is and how digital certificates work.",
+  description: "I’ve conducted user interviews with system administrators from the universities. They manage the system within the university and provide support for end-users.<br><br>In the overall, They valued the system for reducing costs and speeding up processes, but many efforts had to be taken to help the end-user on understanding what is a digital certificate and how it works.",
   pictureUrl: "../images/icpedu/img-02.png",
 },
 
 {
   title: "Product analysis",
-  description: "I've conducted an heuristic analysis to identify usability problems on the current interface. The main problem was towards the user flow. Because they didn't understand the steps, users would constantly issue new certificates and didn't know how to actually use it for signing documents. I also analysed the design system and made changes to improve the visual accessibility.",
+  description: "I've also done a product analysis to identify usability problems on the current interface. The main problem was towards the user flow. Because they didn't understand the steps, users would constantly issue new certificates and didn't know how to actually use it for signing documents. I also looked into the design system and made changes to improve the visual accessibility.",
   pictureUrl: "../images/icpedu/img-03.png",
 },
 {
