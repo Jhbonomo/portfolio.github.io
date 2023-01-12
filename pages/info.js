@@ -1,7 +1,12 @@
 //array for each case
 const viaArray = [ 
+  {
+    title: "The APP Experience squad",
+    description: "Via has three marketplace brands each for a different target audience. The brand's mobile applications are whitelabel, meaning they all behave the same with a different design system. <br><br> My squad, APP Experience, was a cross-functional team that worked together with other ones (buying journey, discovery, onboarding etc.) composed by me as product designer, developers, Scrum master, Project Manager and QA. My main role was to detail user scenarios (Figma and Jira) to improve users journeys for the three mobile applications.",
+    pictureUrl: null,
+  }, 
     
-    {
+  {
     title: "Login and onboarding journeys",
     description: "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
     pictureUrl: "../images/via/img-1.png",
@@ -31,7 +36,7 @@ const viaArray = [
 
   {
     title: "Other contributions",
-    description: "<b>UX app tribe:</b> conversations among designers from others squads to exchange materials and talk through the desired common goals specially when the squads overlapped.<br><b>Support implementation:</b> As any new change should be properly tagged to obtain user metrics, I reviewed the current tag book to properly implement Analytics on the new implementations.<br><b>Supported QA and Project managers:</b> I supported my peers with the testing and validation phases, also keeping up with firebase and Jira\.<br><b>UX Benchmarking:</b> I teamed up with other designers to compare Via's products with other e-commerce platforms to identify strenghts, weakness and opportunities for Via's apps.",   
+    description: "<b>UX app tribe:</b> conversations among designers from others squads to exchange materials and talk through the desired common goals specially when the squads overlapped.<br><br><b>Support implementation:</b> As any new change should be properly tagged to obtain user metrics, I reviewed the current tag book to properly implement Analytics on the new implementations.<br><br><b>Supported QA and Project managers:</b> I supported my peers with the testing and validation phases, also keeping up with firebase and Jira\.<br><br><b>UX Benchmarking:</b> I teamed up with other designers to compare Via's products with other e-commerce platforms to identify strenghts, weakness and opportunities for Via's apps.",   
     pictureUrl: null,
   },
 
