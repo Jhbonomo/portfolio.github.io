@@ -64,7 +64,18 @@ button {
   font-size: 18px;
   font-family: 'Sora', sans-serif;
   font-weight: 500;
-cursor: pointer;}  
+  cursor: pointer; 
+  border: 1px solid #DBFF00;}  
+
+
+
+.card-info button:hover {
+  background-color: transparent;
+  color: white;
+
+}
+
+
 .hidden{
   opacity: 0;
   transform: translateY(20%);
@@ -115,11 +126,17 @@ cursor: pointer;}
       margin: -5% 10px 0 10px;
   }}
 
-  .next-project {width: 100vw;
+
+
+.next-project {width: 100vw;
     display: flex;
     justify-content: flex-end;
   width: 100vw;
-background-color: #DBFF00;};
+background-color: #DBFF00;
+cursor: pointer; 
+  border: 1px solid #DBFF00;}
+
+
 
 
 
