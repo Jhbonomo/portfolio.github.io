@@ -1,11 +1,23 @@
 //array for each case
 const viaArray = [ 
   {
-    title: "The APP Experience squad",
-    description: "Via has three marketplace brands each for a different target audience. The brand's mobile applications are whitelabel, meaning they all behave the same with a different design system. <br><br> My squad, APP Experience, was a cross-functional team that worked together with other ones (buying journey, discovery, onboarding etc.) composed by me as product designer, developers, Scrum master, Project Manager and QA. My main role was to detail user scenarios (Figma and Jira) to improve users journeys for the three mobile applications.",
+    title: "The products",
+    description: "Via has three marketplace brands each for a different target audience. The brand's mobile applications are whitelabel, meaning they all behave the same with a different design system.",
     pictureUrl: null,
   }, 
-    
+  
+  {
+    title: "My teams",
+    description: "I was product designer at the APP Experience squad, a cross-functional team that worked together with other squads (buying journey, discovery, onboarding etc.). It was composed by me as product designer iOS and Android developers, Scrum master, Project Manager and QA. <br> <br> I was also part of the UX tribe at Via, which product designers from different squads/teams would gather regularly to talk about the user experience of Via's products, to support each other across different user journeys and be part of design critiques of each other's works.",
+    pictureUrl: null,
+  },
+  
+  {
+    title: "Contributions",
+    description: "To enable the backlog and evaluate the impact of the solutions, I had to articulate myself in a complex environment of stakeholders from different teams: project managers, marketing, data intelligence, tech leaders and designers. Eventually I also supported the QA with the testing and guided the changes on the tag book, guaranteeing the analytics would be properly implemented. <br><br> To maintain a design legacy at Via, I documented and published at Via's confluence all the APP experience work, detailing the design decisions and the technical challenges. Alongside those reports, I created monitoring dashboards on DataStudio to provide a monitoring interface directly related to the changes implemented by my squad to be consumed by other stakeholders at Via.", 
+    pictureUrl: null,
+  },
+  
   {
     title: "Login and onboarding journeys",
     description: "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
@@ -28,17 +40,12 @@ const viaArray = [
     description: "UI changes to improve accessibility over text styles, color system and other  formatting issues.", 
     pictureUrl: "../images/via/img-4.png",
   },
-  {
-    title: "Design documentation and reports",
-    description: "I Created data Studio reports with Google Analytics metrics to provide a monitoring interface directly related to the changes implemented by my squad. The squad process was also documented and published at Via's confluence.",   
-    pictureUrl: null,
-  },
 
-  {
+  /*{
     title: "Other contributions",
     description: "<b>UX app tribe:</b> conversations among designers from others squads to exchange materials and talk through the desired common goals specially when the squads overlapped.<br><br><b>Support implementation:</b> As any new change should be properly tagged to obtain user metrics, I reviewed the current tag book to properly implement Analytics on the new implementations.<br><br><b>Supported QA and Project managers:</b> I supported my peers with the testing and validation phases, also keeping up with firebase and Jira\.<br><br><b>UX Benchmarking:</b> I teamed up with other designers to compare Via's products with other e-commerce platforms to identify strenghts, weakness and opportunities for Via's apps.",   
     pictureUrl: null,
-  },
+  },*/
 
     
 ];
