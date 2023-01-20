@@ -40,13 +40,6 @@ const viaArray = [
     description: "UI changes to improve accessibility over text styles, color system and other  formatting issues.", 
     pictureUrl: "../images/via/img-4.png",
   },
-
-  /*{
-    title: "Other contributions",
-    description: "<b>UX app tribe:</b> conversations among designers from others squads to exchange materials and talk through the desired common goals specially when the squads overlapped.<br><br><b>Support implementation:</b> As any new change should be properly tagged to obtain user metrics, I reviewed the current tag book to properly implement Analytics on the new implementations.<br><br><b>Supported QA and Project managers:</b> I supported my peers with the testing and validation phases, also keeping up with firebase and Jira\.<br><br><b>UX Benchmarking:</b> I teamed up with other designers to compare Via's products with other e-commerce platforms to identify strenghts, weakness and opportunities for Via's apps.",   
-    pictureUrl: null,
-  },*/
-
     
 ];
 const viaBanner = [ 
