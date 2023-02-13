@@ -1,7 +1,7 @@
 
 h1{font-size: 56px;};
 h2{font-size: 48px;}
-p, li {font-size: 20px; line-height: 1.5;}
+p{font-size: 20px; line-height: 1.5;}
 h3{font-size: 32px;}
 .dlab {width: 100vw;}
 #navbar {
