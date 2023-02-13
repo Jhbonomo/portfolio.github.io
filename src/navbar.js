@@ -18,3 +18,4 @@ navBarCode =
     
 const nav = document.querySelector("#navbar");
 nav.innerHTML = navBarCode;
+
