@@ -1,0 +1,71 @@
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  /*background-color: #FCFAF7;*/
+}
+:root {
+    --highlight-color: #44E259;
+    --hover-color: #DBFF00;
+    --text-color: #141414;
+    --select-color: #DBFF00;
+
+  }
+
+html {
+    font-family: 'Sora', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+p, li {
+    font-size: 1.1rem;
+    line-height: 150%;
+    margin-bottom: 16px;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 120%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-transform:uppercase;
+
+}
+h3 {
+    margin-top: 1.2rem;
+    margin-bottom: 1.1rem;
+    font-size: 1.5rem;
+
+
+}
+
+body {
+    margin: 0;
+}
+
+button {
+    font-family: 'Sora', sans-serif;
+}
+
+mark {
+    background-color: rgb(213, 213, 213) ;
+    padding: 0 8px;
+
+}
