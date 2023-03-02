@@ -9,11 +9,11 @@ const viaArray = [
     },
 
     {
-        title: "<h3>My teams</h3>",
-        description: "I was product designer at the APP Experience squad, a cross-functional team that worked together with other squads (buying journey, discovery, onboarding etc.). It was composed by me as product designer iOS and Android developers, Scrum master, Project Manager and QA. <br> <br> I was also part of the UX tribe at Via, which product designers from different squads/teams would gather regularly to talk about the user experience of Via's products, to support each other across different user journeys and be part of design critiques of each other's works.",
+        title: "<h3>My team</h3>",
+        description: "My squad was composed by me as product designer, iOS and Android developers, Scrum master, Project Manager and QA. <br> <br> I was also part of the UX tribe at Via, which product designers from different squads/teams would gather regularly to talk about the user experience of Via's products, to support each other across different user journeys and be part of design critiques of each other's works.",
         pictureUrl: "../images/via/img-5.png",
         order: "2",
-        caption: "Study of the user address and location across the user journeys ",
+        caption: "Study of the user address and location across different user journeys on the apps - My squad was responsible to look at features present in different user journeys ",
     },
 
     {
@@ -25,7 +25,7 @@ const viaArray = [
     },
 
     {
-        title: "<h3>Login and onboarding journeys</h3>",
+        title: "<h4>Login and onboarding journeys</h4>",
         description: "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
         pictureUrl: "../images/via/img-1.png",
         order: "4",
@@ -33,7 +33,7 @@ const viaArray = [
     },
 
     {
-        title: "<h3>Browse and fast access journeys</h3>",
+        title: "<h4>Browse and fast access journeys</h4>",
         description: "Prior to the Black Friday, we included fast access cards to present featured categories (e.g. mobile, home appliances, electronics...) on the homepage.",
         pictureUrl: "../images/via/img-2.png",
         order: "5",
@@ -41,14 +41,14 @@ const viaArray = [
     },
 
     {
-        title: "<h3>User location and delivery address</h3>",
+        title: "<h4>User location and delivery address</h4>",
         description: "Product analysis of the flow across user journeys from the user address and the location components. I monitored the behaviour through Smartlook and Google Analytics. The main problem was the lack of persistence and integration of the components across the user journey on the app.",
         pictureUrl: "../images/via/img-3.png",
         order: "6",
         caption: "User location and delivery address</h3>",
     },
     {
-        title: "<h3>Applying new Design System</h3>",
+        title: "<h4>Applying new Design System</h4>",
         description: "UI changes to improve accessibility over text styles, color system and other formatting issues.",
         pictureUrl: "../images/via/img-4.png",
         order: "7",
@@ -61,7 +61,8 @@ const museuArray = [
 
     {
         title: "<h3>About the project</h3>",
-        description: "This app design is a conceptual project for a UX course\. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro\. ",
+        description: "This app design is a <b>conceptual project for the <a target='_blank' href='https://www.coursera.org/professional-certificates/google-ux-design-de'> Google UX design course at Coursera<a></b>\. The goal was to design a history app for a gallery. I chose to design an APP for the National Museum of Rio de Janeiro\.<br><br> I chose this museum not only for being a real case scenario, but also for its current reality. Because of a recent tragedy, they’re facing many challenges on keeping the museum alive. The visitations, for example, have been closed for years and the collections are still being rescued). In addition, there are a lot of material online about the new Museum strategy, governance and social media to be used for a generative design research for the APP."
+        ,
         pictureUrl: null,
         caption: null,
         order: "1",
@@ -69,7 +70,7 @@ const museuArray = [
 
     {
         title: "<h3>About the museum</h3>",
-        description: "The National Museum of Rio de Janeiro, the oldest Museum in Brazil, has a collection of scientific and cultural artifacts in the fields of Geology, Paleontology, Archaeology, Ethnology and Anthropological Biology.<br>Aside from the exhibitions, the Museum is also a science and research environment from the University of Rio de Janeiro, also hosting many cultural, scientific and educational initiatives for the community. ",
+        description: "The National Museum of Rio de Janeiro, the oldest Museum in Brazil, has a collection of scientific and cultural artifacts in the fields of Geology, Paleontology, Archaeology, Ethnology and Anthropological Biology.<br><br>Aside from the exhibitions, the Museum is also a science and research environment from the University of Rio de Janeiro, also hosting many cultural, scientific and educational initiatives for the community. ",
         pictureUrl: "../images/museu/wikipedia_halley oliveira.jpeg",
         caption: "The Museum is located on a historical site, the São Cristovão Palace(Photo: Halley Oliveira/Wikimedia)",
         order: "2",
@@ -77,7 +78,7 @@ const museuArray = [
 
     {
         title: "<h3>The fire</h3>",
-        description: "In 2018 the Museum was hit by a massive fire, damaging the building and the collection. Some examples of important pieces that was either damaged or extinct by the fire are Luzia, one of the oldest human remains from Americas, a 13 meter high dinosaur and an Egyptian mummy with almost 2 thousand years.<br>After the fire, the community initiated a big and long task force for rescuing everything they could in the museum. At the same time, national and international entities from the public and private sector  joined forces to come up with a long-term plan of reconstruction, sponsorship and governance for the museum.",
+        description: "In 2018 the Museum was hit by a massive fire, damaging the building and the collection. Some examples of important pieces that was either damaged or extinct by the fire are Luzia, one of the oldest human remains from Americas, a 13 meter high dinosaur and an Egyptian mummy with almost 2 thousand years.<br><br>After the fire, the community initiated a big and long task force for rescuing everything they could in the museum. At the same time, national and international entities from the public and private sector  joined forces to come up with a long-term plan of reconstruction, sponsorship and governance for the museum.",
         pictureUrl: "../images/museu/elpais_marcelo-sayao.jpeg",
         caption: "The big fire (Photo: Marcelo Sayo/El pais)",
         order: "3",
@@ -85,51 +86,51 @@ const museuArray = [
 
     {
         title: "<h3>Discovery process</h3>",
-        description: "Include text",
+        description: "The discovery process involved understanding the current state of the museum, first a generative research was held on the current reality, the efforts to rebuild the museum and the ones to keep the activities running. There are many materials such as webinars, presence on social media and reports from the past years. On a second moment I interviewed a member from the educational sector of the Museum.",
         pictureUrl: null,
         caption: null,
         order: "4",
     },
 
-
+    {
+        title: "<h4>Desk research and benchmarking</h4>",
+        description: "In the research, the educational section from the museum stood out as a key stakeholder, for being responsible to build bridges between the museum activities (research, history, collection, etc.) with the public.<br><br>A big problem is that currently many activities with the public are suspended or were reinvented beyond the museum infrastructure, a lot is also done virtually.<br><br> In addition I also did a benchmarking of mobile application from 4 important products correlated to museum and education.",
+        pictureUrl: "../images/museu/museu_05.png",
+        caption: "Mobile APPs Benchmarking",
+        order: "5",
+    },
 
     {
         title: "<h4>Stakeholder interview</h4>",
-        description: "I reached out to a person responsible from the educational section of the Museum for an interview about the initiatives taken place and the challenges the Museum has been facing since 2018. This interview had the purpose of setting the main direction and requirements of my project.",
+        description: "I reached out to a person responsible from the educational section of the Museum for an interview about the initiatives taken place and the challenges the Museum has been facing since 2018. This interview had the purpose to identify possible key strategies on a business perspective and to better define what end users would potentially use the APP.",
         pictureUrl: null,
         caption: null,
         order: "6",
     },
-    {
-        title: "<h4>Desk research</h4>",
-        description: "Besides the interview, I conducted a desk research looking for everything available about the Museum's history and reconstruction.",
-        pictureUrl: null,
-        caption: null,
-        order: "7",
-    },
-    {
-        title: "<h4>The problem</h4>",
-        description: "The museum is now being rebuilt and closed to visitation. Currently many activities with the public are suspended or were reinvented beyond the museum infrastructure, a lot is also done virtually.",
-        pictureUrl: null,
-        caption: null,
-        order: "4",
-    },
+
 
 
     {
         title: "<h3>Design and prototyping</h3>",
-        description: "Include text",
-        pictureUrl: null,
-        caption: null,
-        order: "4",
+        description: "Considering the scenario from the discovery process, the goal of the APP is to keep the community informed and engaged in the museum activities, such as exhibition (permanent and temporary), didactic-scientific projects, campaigns and cultural events.  Moreover, the APP will focus on supporting teachers and the education section from the Museum to provide content for students.",
+        pictureUrl: "../images/museu/userjourney.png",
+        caption: "Example of user journey",
+        order: "7",
     },
 
     {
-        title: "<h4>Goals</h4>",
-        description: "I've established a focus on education for the APP in order to differ from other ones I benchmarked. The take outs from this phase were: <br>The goals of the education section of the museum, responsible for the exhibitions to the public and the educational initiatives towards formal education and science research. <br>Identify the potential users of the app: museum stakeholders, the general public, teachers from formal education and researchers.<br> A little more on the goal of this project is to keep the community informed and engaged in the museum activities, such as exhibitions, didactic-scientific projects, campaigns and cultural events.",
-        pictureUrl: "../images/museu/img-03.png",
-        caption: null,
+        title: "<h4>User journeys and Wireframing</h4>",
+        description: "The information architecture and the collections were organized in a way it would be possible to attend the permanent collections but also to create educational unities to provide educational content for teachers to use in class", 
+        pictureUrl: "../images/museu/museu_02.png",
+        caption: "Example of user journey",
         order: "8",
+    },
+    {
+        title: "<h4>Prototype</h4>",
+        description: "The information architecture and the collections were organized in a way it would be possible to attend the permanent collections but also to create educational unities to provide educational content for teachers to use in class", 
+        pictureUrl: "../images/museu/museu_01.png",
+        caption: "Home and example of a collection",
+        order: "9",
     },
 
 
