@@ -49,20 +49,18 @@ navBarCode =
 
 </nav>`
 
-
 const nav = document.querySelector("#header");
 nav.innerHTML = navBarCode;
 
-} else {
-let indexBarCode = '';
 
-indexBarCode =
+} else {
+
+navBarCode =
     `<a href="index.html" style="text-decoration: none ;"><span style="color:white">Juholanda portfolio</span></a>
     <div><a href="https://www.linkedin.com/in/julianahb/" target="_blank"> <img src="images/linkedin.svg"/> </a></div>`
-
-
-const indexPage = document.getElementById('index-page');
-indexPage.innerHTML = indexBarCode;
+   
+    const homemenu = document.querySelector("#index-page");
+    homemenu.innerHTML = navBarCode;
 
 }
 
