@@ -1,4 +1,4 @@
-//array for each case
+//rray for each case
 const viaArray = [
     {
         title: "<h3>The products</h3>",
