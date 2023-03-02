@@ -4,7 +4,7 @@ const cardsArray = [
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via/thumb.png",
-    linkPage: "pages/via.html",
+    linkPage: "pages/e-commerce.html",
   },
     
     { // Pnipe
@@ -15,12 +15,12 @@ const cardsArray = [
   },
 
     
-   /* {// Museu project
+  {// Museu project
     title: "Museum APP project",
     description: "This app design is my project for a UX course. I chose as my educational project the design of an APP for the National Museum of Rio de Janeiro. ",
     pictureUrl: "images/museu/thumb.png",
-    linkPage: "pages/museu.html",
-    },*/
+    linkPage: "pages/museum.html",
+    },
 
     
     {// Dlab
@@ -47,12 +47,12 @@ let htmlCode = ``;
 cardsArray.forEach(function(singleCard) {
 htmlCode =
   `${htmlCode}
-      <div id="card" class="hidden">
+      <div id="card">
       <img class="img-card-box" src="${singleCard.pictureUrl}"/>
       <div class="card-info">
         <h2>${singleCard.title}</h2>
         <p>${singleCard.description}</p>
-        <div><a href="${singleCard.linkPage}"><button class="button" type="button"> Check this project <div class="fas fa-arrow-right" id="icon"></div></button></a></div>
+        <div><a href="${singleCard.linkPage}"><button class="button-thumb" type="button"> Check this project <div class="fas fa-arrow-right" id="icon"></div></button></a></div>
       </div>
       </div>
   `;
