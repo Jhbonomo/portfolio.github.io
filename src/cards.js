@@ -4,7 +4,7 @@ const cardsArray = [
     title: "Mobile app for e-commerce",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via/thumb.png",
-    linkPage: "../pages/e-commerce.html",
+    linkPage: "./pages/e-commerce.html",
   },
     
     { // Pnipe
