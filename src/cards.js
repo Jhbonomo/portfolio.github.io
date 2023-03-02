@@ -11,7 +11,7 @@ const cardsArray = [
     title: "Prototyping in collaboration",
     description: "UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.",
     pictureUrl: "images/pnipe/thumb.png",
-    linkPage: "../pages/pnipe.html",
+    linkPage: "pages/pnipe.html",
   },
 
     
