@@ -2,7 +2,7 @@
 const viaArray = [
     {
         title: "<h3>The products</h3>",
-        description: "Product designer consultant of mobile apps for Via, a big retailing brazilian company. I was part of the APP experience squad, a cross-functional team that worked together with other squads\ on Via's three marketplace brands: Casas Bahia, Ponto and Extra, each for a different target audience. The brand's mobile applications are whitelabel, meaning they all behave the same with a different design system.",
+        description: "As a product design consultant for mobile apps at Via, a leading Brazilian retail company, I was part of the APP Experience Squad. This cross-functional team collaborated with other squads to manage the mobile applications for Via’s three marketplace brands: Casas Bahia, Ponto, and Extra. Each brand targeted a distinct audience, and their mobile apps were whitelabel, meaning they shared the same functionality but featured unique design systems.",
         pictureUrl: null,
         order: "1",
         caption: null,
