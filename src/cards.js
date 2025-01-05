@@ -1,7 +1,7 @@
 const cardsArray = [ 
     
     { // Via
-    title: "Mobile app for marketplace",
+    title: "Mobile APP for marketplace",
     description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
     pictureUrl: "images/via/thumb.png",
     linkPage: "pages/e-commerce.html",
