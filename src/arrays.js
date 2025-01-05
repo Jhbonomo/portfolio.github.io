@@ -3,30 +3,28 @@ const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.
-",
+      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.",
     pictureUrl: null,
     order: "1",
     caption: null,
   },
 
   {
-    title: "<h3>My team</h3>",
+    title: "<h3>Contributions</h3>",
     description:
-      "Our squad was a cross-functional group dedicated to refining user journeys and ensuring a seamless experience across different user journeys on the mobile apps. I also engaged in Via’s UX Tribe—a collective of designers across squads. This forum fostered collaboration, shared insights, and facilitated design critiques to improve the overall user experience of Via’s products. ",
-    pictureUrl: "../images/via/img-5.png",
-    order: "2",
-    caption:
-      "Analyzed user addresses and locations across app journeys, focusing on features in various user flows as part of my squad's responsibilities. ",
+      "I collaborated with iOS and Android developers, a Scrum Master, a Project Manager, and QA to deliver seamless mobile experiences. As part of Via’s UX tribe, I worked with designers to improve user journeys, exchange feedback, and conduct design critiques. I also engaged with stakeholders, including project managers, marketers, data experts, and tech leads, to align solutions.",
+      pictureUrl: null,
+      order: "2",
+    caption:"Analyzed user addresses and locations across app journeys, focusing on features in various user flows as part of my squad's responsibilities. ",
   },
 
   {
-    title: "<h3>Contributions</h3>",
+    title: "<h3>Monitoring metrics</h3>",
     description:
-      "To drive the backlog and evaluate solutions, I collaborated with stakeholders across teams, including project managers, marketing, data intelligence, tech leads, and designers. I also supported QA with testing and guided updates to the tag book, ensuring accurate analytics implementation.To leave a design legacy at Via, I documented app experience work on Confluence, detailing design decisions and technical challenges. Additionally, I created DataStudio dashboards to help stakeholders monitor the impact of changes delivered by my squad.",
+      "Created dashboards to monitor changes implemented by the squad, providing actionable insights for stakeholders, for example, a monitoring dashboard to track the login and onboarding process, directly linking user metrics to the enhancements made by the squad.",
     pictureUrl: "../images/via/img-6.png",
     order: "3",
-    caption: "Illustrative example of a Dashboard on the login",
+    caption: "Illustrative example of a Dashboard for the biometric login project",
   },
 
   {
