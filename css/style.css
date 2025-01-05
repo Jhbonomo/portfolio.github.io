@@ -1,3 +1,26 @@
+.content-case{
+    text-align: center;
+}
+
+.content-case > img {
+    width: 80%;
+}
+p {
+ font-size: 14px;
+}
+h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+
+h3 {
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
 .hidden{
     opacity: 0;
     transform: translateY(10%);
@@ -74,6 +97,8 @@ background-color: transparent;}
     top: 80px;
     grid-area: indice;
     align-self: flex-start;
+    width: 100%;
+    gap: 4px
 
 
 }
@@ -93,10 +118,11 @@ background-color: transparent;}
     border: none;
     text-align: left;
     font-size: 0.75rem;
-    padding: 16px 8px;
-    width: 100%;
+    padding: 8px 16px;
+    width: auto;
     cursor: pointer;
     background-color: transparent;
+    border-radius: 24px;
 }
 .btn-scroll-into.active {
     border: none;
@@ -111,12 +137,17 @@ background-color: transparent;}
     display: flex;
     flex-direction: column;
     align-items: left;
-    grid-area: main;}
+    grid-area: main;
+    max-width: 700px;
+}
+  
 /* text page */
 .main {
     display: flex;
     flex-direction: column;
-    margin: 16px;}
+    margin: 16px;
+    justify-items: center;
+}
 .text-body {
     max-width: 768px;
     width: 100%;}
@@ -156,6 +187,7 @@ width: 100%;}
     margin-right: 1vw;
     font-size: inherit;}
 
+
 .cards-list {
     display: flex;
     flex-direction: column;
@@ -193,13 +225,13 @@ width: 100%;}
     color: #F5F5F5;}
 
 .button-thumb {
-    background-color: #DBFF00;
+    background-color: var(--highlight-color);
     padding: 16px;
     font-size: 18px;
     font-family: 'Sora', sans-serif;
     font-weight: 500;
     cursor: pointer; 
-    border: 1px solid #DBFF00;  
+    border: 1px solid var(--highlight-color);  
 
 }
 .gradient-text {
@@ -234,7 +266,7 @@ width: 100%;}
 
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .cards-list{margin: 0;}
     #card{display: flex; flex-direction: column; align-content: space-around; margin: 16px;}
@@ -242,6 +274,11 @@ width: 100%;}
     #card h2{font-size: 24px; color: #F5F5F5; margin: 16px 0;}
     #card p{font-size: 16px; color: #F5F5F5; margin-bottom: 24px;}
     #about-banner p {font-size: 24px}
+
+    .content-case{
+        text-align: center;
+        width: 100%;
+    }
 
     .indice {
         display: none;
@@ -259,7 +296,7 @@ width: 100%;}
         grid-template-columns: 1fr 3fr 1fr;}
 
         #about-banner{max-width: 900px;}
-  #about-banner h1{font-size: 64px; color: #F5F5F5; }  
+  #about-banner h1{font-size: 48px; color: #F5F5F5; }  
 
 }
 

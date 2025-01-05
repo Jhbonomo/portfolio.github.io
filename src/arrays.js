@@ -3,7 +3,7 @@ const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.",
+      "I worked on the mobile apps for Via's, a leading Brazilian retailer. Via owns three marketplace brands: Casas Bahia, Ponto, and Extra." ,
     pictureUrl: null,
     order: "1",
     caption: null,
@@ -12,51 +12,57 @@ const viaArray = [
   {
     title: "<h3>Contributions</h3>",
     description:
-      "I collaborated with iOS and Android developers, a Scrum Master, a Project Manager, and QA to deliver seamless mobile experiences. As part of Via’s UX tribe, I worked with designers to improve user journeys, exchange feedback, and conduct design critiques. I also engaged with stakeholders, including project managers, marketers, data experts, and tech leads, to align solutions.",
-      pictureUrl: null,
+      "I was part of the APP Experience Squad, responsible to the overall experience across diferent user journeys aiming to deliver seamless mobile experiences. The team was also composed by iOS and Android developers, a Scrum Master, a Project Manager, and QA. I was also paet of Via’s UX tribe, collaborating with designers to improve user journeys, exchange feedback, and be part of design critiques. ",
+      pictureUrl: "../images/via/img-5.png",
       order: "2",
-    caption:"Analyzed user addresses and locations across app journeys, focusing on features in various user flows as part of my squad's responsibilities. ",
+      caption:
+        "Product analysis of user flow for UX tribe",
   },
 
+  
+
   {
-    title: "<h3>Monitoring metrics</h3>",
+    title: "<h3>User location and delivery address</h3>",
     description:
-      "Created dashboards to monitor changes implemented by the squad, providing actionable insights for stakeholders, for example, a monitoring dashboard to track the login and onboarding process, directly linking user metrics to the enhancements made by the squad.",
-    pictureUrl: "../images/via/img-6.png",
+      "Our squad focused on features spanning multiple user journeys, such as managing user address and location information.  These components were inconsistent in persistence and integration across the journey, leading to usability issues. Through in-depth analysis using Smartlook and Google Analytics, I identified critical gaps and implemented solutions to ensure these features worked seamlessly across all the buying process.",
+    pictureUrl: "../images/via/img-3.png",
     order: "3",
-    caption: "Illustrative example of a Dashboard for the biometric login project",
+    caption: "User location and delivery address</h3>",
   },
 
   {
-    title: "<h4>Login and onboarding journeys</h4>",
+    title: "<h3>Login and onboarding journeys</h3>",
     description:
-      "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
+      "The login process posed a significant challenge, with high bounce rates disrupting critical user flows, especially during the purchasing journey. To tackle this, we optimized the biometric login page, streamlining the experience and minimizing friction. These enhancements resulted in a decrease in bounce rate in the buying journey, as reflected in improved user metrics. We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
     pictureUrl: "../images/via/img-1.png",
     order: "4",
     caption: "Biometric page: Facilitate the login journey",
   },
 
+
   {
-    title: "<h4>Browse and fast access journeys</h4>",
+    title: "<h3>Monitoring metrics</h3>",
     description:
-      "Prior to the Black Friday, we included fast access cards to present featured categories (e.g. mobile, home appliances, electronics...) on the homepage.",
-    pictureUrl: "../images/via/img-2.png",
+      "Created dashboards in Looker studio to monitor changes implemented by the squad, providing actionable insights for stakeholders, for example, a monitoring dashboard to track the login and onboarding process, directly linking user metrics to the enhancements made by the squad.",
+    pictureUrl: "../images/via/img-6.png",
     order: "5",
+    caption: "Illustrative example of a Dashboard for the biometric login project",
+  },
+
+  
+  {
+    title: "<h3>Browse and fast access journeys</h3>",
+    description:
+      "Ahead of Black Friday, navigation enhancements were prioritized to improve user engagement. We fast access cards in the homepage to highlight highly used categories such as mobile devices, home appliances, and electronicse, making it easier for users to find key items and boosting interaction.",
+    pictureUrl: "../images/via/img-2.png",
+    order: "6",
     caption: "Featured categories",
   },
 
   {
-    title: "<h4>User location and delivery address</h4>",
+    title: "<h3>Applying Design System</h3>",
     description:
-      "Product analysis of the flow across user journeys from the user address and the location components. I monitored the behaviour through Smartlook and Google Analytics. The main problem was the lack of persistence and integration of the components across the user journey on the app.",
-    pictureUrl: "../images/via/img-3.png",
-    order: "6",
-    caption: "User location and delivery address</h3>",
-  },
-  {
-    title: "<h4>Applying new Design System</h4>",
-    description:
-      "UI changes to improve accessibility over text styles, color system and other formatting issues.",
+      "The application’s UI was going through significant updates to align with new design system guidelines. These changes included improvements to text styles, color systems, and formatting, which enhanced accessibility and ensured a more inclusive user experience.",
     pictureUrl: "../images/via/img-4.png",
     order: "7",
     caption: "Adjustments on the APPs to the new Design system guidelines",
@@ -259,8 +265,9 @@ pageArray.forEach(function (singleCard) {
           ${singleCard.title}
 
           <p>${singleCard.description}</p>
-          <div class="content-case"><img style="width: 100%" src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
-          <p class="caption"><mark>${singleCard.caption}</mark></p>
+                    <p class="caption"><mark>${singleCard.caption}</mark></p>
+
+          <div class="content-case"><img src="${singleCard.pictureUrl}"/></div>
 
 
             </section>
