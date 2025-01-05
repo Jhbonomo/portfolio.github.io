@@ -3,8 +3,7 @@ const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.
-",
+      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.",
     pictureUrl: null,
     order: "1",
     caption: null,
