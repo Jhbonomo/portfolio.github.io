@@ -24,7 +24,7 @@ const pnipeArray = [
     description:
       "The discovery phase included regular focus group sessions with potential users from institutions and managers from the Ministry of Science and technology (client), fostering collaboration between the product team and Stakeholders.<br><br>We gathered insights on user needs, business goals, and platform challenges to develop prototypes, keeping stakeholders engaged and informed throughout. Developers were involved early in the process, contributing ideas and identifying challenges to ensure smoother implementation. Figma prototypes enabled quick testing and provided the client with valuable insights into how new features could impact their business and marketing strategies.",
     pictureUrl: "../images/pnipe/img-4.gif",
-    caption: "",
+    caption: "Product creation around the prototype",
     order: "3",
   },
 
@@ -33,7 +33,7 @@ const pnipeArray = [
     description:
       "The prototypes were finalized and delivered. My key responsibilities included specifying the interface of user scenarios. I also worked on evolving the design system as needed and ensuring the timely delivery of project assets and content and supporting initiatives such as launching strategy and an equipment dashboard during Covid.",
     pictureUrl: "../images/pnipe/img-5.png",
-    caption: "",
+    caption: "Platform evolution: features for publishing and sharing science and research facilities across the country",
     order: "4",
   },
 
@@ -43,7 +43,7 @@ const pnipeArray = [
     description:
       "After launching the MVP, we monitored user experience through Google Analytics and feedback from the support team. Based on these insights, we developed and prioritized a new roadmap for the product’s evolution. This included refining existing features and introducing new ones tailored to a new user profile: researchers seeking information on scientific and research infrastructures, along with opportunities for sharing resources.",
     pictureUrl: "../images/pnipe/product launch.png",
-    caption: "",
+    caption: "Dashboard panel fo equipment mapping initiative",
     order: "5",
   },
 
@@ -54,7 +54,7 @@ const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "Product designer for Via's mobile applications, a leading Brazilian retailer. Via owns three marketplace brands: Casas Bahia, Ponto, and Extra." ,
+      "Product designer for Via's mobile applications, a leading Brazilian retailer that owns three marketplace brands: Casas Bahia, Ponto, and Extra." ,
     pictureUrl: null,
     order: "1",
     caption: null,
@@ -63,7 +63,7 @@ const viaArray = [
   {
     title: "<h3>Contributions</h3>",
     description:
-      "I was part of the APP Experience Squad, responsible to the overall experience across diferent user journeys aiming to deliver seamless mobile experiences. The team was also composed by iOS and Android developers, a Scrum Master, a Project Manager, and QA. I was also paet of Via’s UX tribe, collaborating with designers to improve user journeys, exchange feedback, and be part of design critiques. ",
+      "I was part of the APP Experience Squad, responsible for enhancing the overall user experience across various journeys to deliver seamless mobile experiences. The team included iOS and Android developers, a Scrum Master, a Project Manager, and QA specialists. Additionally, I was an active member of Via’s UX tribe, collaborating with fellow designers to refine user journeys, exchange constructive feedback, and participate in design critique sessions.",
       pictureUrl: "../images/via/img-5.png",
       order: "2",
       caption:
@@ -74,27 +74,27 @@ const viaArray = [
   {
     title: "<h3>Feaured categories</h3>",
     description:
-      "Ahead of Black Friday, navigation enhancements were prioritized to improve user engagement. We fast access cards in the homepage to highlight highly used categories such as mobile devices, home appliances, and electronicse, making it easier for users to find key items and boosting interaction.",
+      "Ahead of Black Friday, we enhanced navigation by adding fast-access cards to the homepage, highlighting popular categories like mobile devices, home appliances, and electronics. This made it easier for users to locate key items, ultimately boosting interaction and improving the overall shopping experience.",
     pictureUrl: "../images/via/pontofrio-categorias.svg",
-    order: "6",
+    order: "3",
     caption: "Featured categories for Ponto Frio" 
   }, 
 
   {
     title: "<h3>User location and delivery address</h3>",
     description:
-      "Our squad focused on features spanning multiple user journeys, such as managing user address and location information.  These components were inconsistent in persistence and integration across the journey, leading to usability issues. Through in-depth analysis using Smartlook and Google Analytics, I identified critical gaps and implemented solutions to ensure these features worked seamlessly across all the buying process.",
+      "Our squad tackled features cutting across multiple user journeys, like managing user address and location details. These components lacked consistency in persistence and integration, creating usability challenges. Leveraging insights from Smartlook and Google Analytics, I pinpointed critical gaps and introduced solutions that ensured a seamless experience throughout the entire buying process.",
     pictureUrl: "../images/via/entrega.svg",
-    order: "3",
+    order: "4",
     caption: "User location and delivery address for Extra APP</h3>",
   },
 
   {
     title: "<h3>Login and onboarding journeys</h3>",
     description:
-      "The login process posed a significant challenge, with high bounce rates disrupting critical user flows, especially during the purchasing journey. To tackle this, we optimized the biometric login page, streamlining the experience and minimizing friction. These enhancements resulted in a decrease in bounce rate in the buying journey, as reflected in improved user metrics. We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
+      "The login process was a major challenge, with high bounce rates disrupting key user flows, particularly during the purchasing journey. To address this, we optimized the biometric login page, streamlining the experience to minimize friction. These improvements significantly reduced bounce rates, positively impacting the buying journey and reflected in enhanced user metrics.",
     pictureUrl: "../images/via/biometry.svg",
-    order: "4",
+    order: "5",
     caption: "Biometric page in Casas Bahia to facilitate the login during buying journey",
   },
 
@@ -102,9 +102,9 @@ const viaArray = [
   {
     title: "<h3>Monitoring metrics</h3>",
     description:
-      "Created dashboards in Looker studio to monitor changes implemented by the squad, providing actionable insights for stakeholders, for example, a monitoring dashboard to track the login and onboarding process, directly linking user metrics to the enhancements made by the squad.",
+      "I created monitoring dashboards in Looker Studio to track squad-implemented changes and deliver actionable insights to stakeholders. For example, I created a dashboard to report the login and onboarding processes, directly tying user metrics to the squad's enhancements.",
     pictureUrl: "../images/via/img-6.png",
-    order: "5",
+    order: "6",
     caption: "Illustrative example of a Dashboard for the biometric login project",
   },
 
@@ -112,7 +112,7 @@ const viaArray = [
   {
     title: "<h3>Applying Design System</h3>",
     description:
-      "The application’s UI was going through significant updates to align with new design system guidelines. These changes included improvements to text styles, color systems, and formatting, which enhanced accessibility and ensured a more inclusive user experience.",
+      "The app's UI underwent major updates to align with the new design system guidelines. These included enhancements to text styles, color systems, and formatting, improving accessibility and delivering a more inclusive user experience.",
     pictureUrl: "../images/via/design system.svg",
     order: "7",
     caption: "Adjustments on the APPs to the new Design system guidelines",
@@ -315,7 +315,7 @@ switch (page) {
 pageArray.forEach(function (singleCard) {
   if (singleCard.pictureUrl !== null && singleCard.caption !== null) {
     htmlCode = `${htmlCode}
-          <section href="#${singleCard.order}" id="section-${singleCard.order}">
+          <section class="section" href="#${singleCard.order}" id="section-${singleCard.order}">
           ${singleCard.title}
 
           <p>${singleCard.description}</p>
@@ -327,13 +327,49 @@ pageArray.forEach(function (singleCard) {
         `;
   } else {
     htmlCode = `${htmlCode}
-          <section href="#${singleCard.order}" id="section-${singleCard.order}">
+          <section class="section" href="#${singleCard.order}" id="section-${singleCard.order}">
             ${singleCard.title}
             <p >${singleCard.description}</p>
           </section> 
         `;
   }
 });
+
+// Função para verificar se a seção está visível na tela
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom > 0 &&
+    rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+    rect.right > 0
+  );
+}
+
+window.addEventListener('load', revealSections);
+
+
+// Seleciona todas as seções que você deseja animar
+const sections = document.querySelectorAll('.section');
+
+// Função para adicionar a classe 'visible' quando a seção estiver visível
+function revealSections() {
+  sections.forEach(section => {
+    if (isInViewport(section)) {
+      section.classList.add('.visible');
+    }
+  });
+}
+
+// Chama a função quando o usuário rola a página
+window.addEventListener('scroll', revealSections);
+
+// Verifica se as seções estão visíveis ao carregar a página
+document.addEventListener('DOMContentLoaded', revealSections);
+
+
+
+/* fim gpt */
 
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
