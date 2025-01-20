@@ -20,7 +20,7 @@ const pnipeArray = [
   },
 
   {
-    title: "<h3>Discovery and Collaboration Process</h3>",
+    title: "<h3>Discovery and Collaboration</h3>",
     description:
       "The discovery phase included regular focus group sessions with potential users from institutions and managers from the Ministry of Science and technology (client), fostering collaboration between the product team and Stakeholders.<br><br>We gathered insights on user needs, business goals, and platform challenges to develop prototypes, keeping stakeholders engaged and informed throughout. Developers were involved early in the process, contributing ideas and identifying challenges to ensure smoother implementation. Figma prototypes enabled quick testing and provided the client with valuable insights into how new features could impact their business and marketing strategies.",
     pictureUrl: "../images/pnipe/img-4.gif",
@@ -63,7 +63,7 @@ const viaArray = [
   {
     title: "<h3>Contributions</h3>",
     description:
-      "I was part of the APP Experience Squad, responsible for enhancing the overall user experience across various journeys to deliver seamless mobile experiences. The team included iOS and Android developers, a Scrum Master, a Project Manager, and QA specialists. Additionally, I was an active member of Via’s UX tribe, collaborating with fellow designers to refine user journeys, exchange constructive feedback, and participate in design critique sessions.",
+      "I was part of the APP Experience Squad, responsible for enhancing the overall user experience across various journeys to deliver seamless mobile experiences. The team included iOS and Android developers, a Scrum Master, a Project Manager, and QA. Additionally, I was an active member of Via’s UX tribe, collaborating with fellow designers to refine user journeys, exchange constructive feedback, and participate in design critique sessions.",
       pictureUrl: "../images/via/img-5.png",
       order: "2",
       caption:
