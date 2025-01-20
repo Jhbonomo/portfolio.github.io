@@ -1,18 +1,3 @@
-/* Defina a animação inicial */
-.section {
-    opacity: 1;
-    transform: translateY(20px); /* Inicia a seção deslocada para baixo */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  /* Adiciona a animação quando a classe 'visible' for adicionada */
-  .section.visible {
-    opacity: 0;
-    transform: translateY(0); /* A seção vai voltar para a posição original */
-  }
-  
-
-
 .content-case{
     text-align: center;
 }

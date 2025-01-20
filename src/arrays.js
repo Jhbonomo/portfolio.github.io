@@ -335,41 +335,5 @@ pageArray.forEach(function (singleCard) {
   }
 });
 
-// Função para verificar se a seção está visível na tela
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.bottom > 0 &&
-    rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
-    rect.right > 0
-  );
-}
-
-window.addEventListener('load', revealSections);
-
-
-// Seleciona todas as seções que você deseja animar
-const sections = document.querySelectorAll('.section');
-
-// Função para adicionar a classe 'visible' quando a seção estiver visível
-function revealSections() {
-  sections.forEach(section => {
-    if (isInViewport(section)) {
-      section.classList.add('.visible');
-    }
-  });
-}
-
-// Chama a função quando o usuário rola a página
-window.addEventListener('scroll', revealSections);
-
-// Verifica se as seções estão visíveis ao carregar a página
-document.addEventListener('DOMContentLoaded', revealSections);
-
-
-
-/* fim gpt */
-
 const portfolioCards = document.querySelector(".cards-list");
 portfolioCards.innerHTML = htmlCode;
