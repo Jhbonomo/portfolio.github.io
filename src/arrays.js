@@ -1,64 +1,119 @@
 //array for each case
+
+const pnipeArray = [
+  {
+    title: "<h3>About the Platform </h3>",
+    description:
+      "The National Research Infrastructure platform is an initiative by the Ministry of Science and Technology to gather data on laboratories and equipment nationwide. It enables researchers to access and request resources, fostering collaboration and innovation while aiding the Ministry in shaping policies to enhance research infrastructure.",
+    pictureUrl: "../images/pnipe/img-01.png",
+    caption: "",
+    order: "1",
+  },
+
+  {
+    title: "<h3>My role</h3>",
+    description:
+      "I led the design process for the MVP launch of the platform, focusing on collaborative prototyping and integrating developer feedback during the discovery phase. I also changed the project tool to Figma to foster stakeholder collaboration, enabling efficient user validation, better understanding of user journeys, and more technical, actionable feedback. These improvements became foundational also to the company’s prototyping approach in subsequent projects.",
+    pictureUrl: null,
+    caption: "",
+    order: "2",
+  },
+
+  {
+    title: "<h3>Discovery and Collaboration</h3>",
+    description:
+      "The discovery phase included regular focus group sessions with potential users from institutions and managers from the Ministry of Science and technology (client), fostering collaboration between the product team and Stakeholders.<br><br>We gathered insights on user needs, business goals, and platform challenges to develop prototypes, keeping stakeholders engaged and informed throughout. Developers were involved early in the process, contributing ideas and identifying challenges to ensure smoother implementation. Figma prototypes enabled quick testing and provided the client with valuable insights into how new features could impact their business and marketing strategies.",
+    pictureUrl: "../images/pnipe/img-4.gif",
+    caption: "Product creation around the prototype",
+    order: "3",
+  },
+
+  {
+    title: "<h3>The product</h3>",
+    description:
+      "The prototypes were finalized and delivered. My key responsibilities included specifying the interface of user scenarios. I also worked on evolving the design system as needed and ensuring the timely delivery of project assets and content and supporting initiatives such as launching strategy and an equipment dashboard during Covid.",
+    pictureUrl: "../images/pnipe/img-5.png",
+    caption: "Platform evolution: features for publishing and sharing science and research facilities across the country",
+    order: "4",
+  },
+
+
+  {
+    title: "<h3>Product launch and evaluation</h3>",
+    description:
+      "After launching the MVP, we monitored user experience through Google Analytics and feedback from the support team. Based on these insights, we developed and prioritized a new roadmap for the product’s evolution. This included refining existing features and introducing new ones tailored to a new user profile: researchers seeking information on scientific and research infrastructures, along with opportunities for sharing resources.",
+    pictureUrl: "../images/pnipe/product launch.png",
+    caption: "Dashboard panel fo equipment mapping initiative",
+    order: "5",
+  },
+
+
+]
+
 const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "As a Product Designer for Via, a leading Brazilian retail company, I worked on mobile applications for its three marketplace brands: Casas Bahia, Ponto, and Extra, each catering to distinct audiences. In my role within the APP Experience Squad—a cross-functional team that collaborated with other squads—I focused on enhancing the user experience across these brands. Through close collaboration, thorough documentation, and data-driven design decisions, I contributed to creating intuitive and engaging mobile experiences that aligned with the unique needs of each brand's audience.",
+      "Product designer for Via's mobile applications, a leading Brazilian retailer that owns three marketplace brands: Casas Bahia, Ponto, and Extra." ,
     pictureUrl: null,
     order: "1",
     caption: null,
   },
 
   {
-    title: "<h3>My team</h3>",
-    description:
-      "Our squad was a cross-functional group dedicated to refining user journeys and ensuring a seamless experience across different user journeys on the mobile apps. I also engaged in Via’s UX Tribe—a collective of designers across squads. This forum fostered collaboration, shared insights, and facilitated design critiques to improve the overall user experience of Via’s products. ",
-    pictureUrl: "../images/via/img-5.png",
-    order: "2",
-    caption:
-      "Analyzed user addresses and locations across app journeys, focusing on features in various user flows as part of my squad's responsibilities. ",
-  },
-
-  {
     title: "<h3>Contributions</h3>",
     description:
-      "To drive the backlog and evaluate solutions, I collaborated with stakeholders across teams, including project managers, marketing, data intelligence, tech leads, and designers. I also supported QA with testing and guided updates to the tag book, ensuring accurate analytics implementation.To leave a design legacy at Via, I documented app experience work on Confluence, detailing design decisions and technical challenges. Additionally, I created DataStudio dashboards to help stakeholders monitor the impact of changes delivered by my squad.",
-    pictureUrl: "../images/via/img-6.png",
+      "I was part of the APP Experience Squad, responsible for enhancing the overall user experience across various journeys to deliver seamless mobile experiences. The team included iOS and Android developers, a Scrum Master, a Project Manager, and QA. Additionally, I was an active member of Via’s UX tribe, collaborating with fellow designers to refine user journeys, exchange constructive feedback, and participate in design critique sessions.",
+      pictureUrl: "../images/via/img-5.png",
+      order: "2",
+      caption:
+        "Product analysis of user flow for UX tribe",
+  },
+
+   
+  {
+    title: "<h3>Feaured categories</h3>",
+    description:
+      "Ahead of Black Friday, we enhanced navigation by adding fast-access cards to the homepage, highlighting popular categories like mobile devices, home appliances, and electronics. This made it easier for users to locate key items, ultimately boosting interaction and improving the overall shopping experience.",
+    pictureUrl: "../images/via/pontofrio-categorias.svg",
     order: "3",
-    caption: "Illustrative example of a Dashboard on the login",
-  },
+    caption: "Featured categories for Ponto Frio" 
+  }, 
 
   {
-    title: "<h4>Login and onboarding journeys</h4>",
+    title: "<h3>User location and delivery address</h3>",
     description:
-      "We reduced the bounce rate on the login process that would affect several parts of the interface, especially the buying journey, visible on user metrics.",
-    pictureUrl: "../images/via/img-1.png",
+      "Our squad tackled features cutting across multiple user journeys, like managing user address and location details. These components lacked consistency in persistence and integration, creating usability challenges. Leveraging insights from Smartlook and Google Analytics, I pinpointed critical gaps and introduced solutions that ensured a seamless experience throughout the entire buying process.",
+    pictureUrl: "../images/via/entrega.svg",
     order: "4",
-    caption: "Biometric page: Facilitate the login journey",
+    caption: "User location and delivery address for Extra APP</h3>",
   },
 
   {
-    title: "<h4>Browse and fast access journeys</h4>",
+    title: "<h3>Login and onboarding journeys</h3>",
     description:
-      "Prior to the Black Friday, we included fast access cards to present featured categories (e.g. mobile, home appliances, electronics...) on the homepage.",
-    pictureUrl: "../images/via/img-2.png",
+      "The login process was a major challenge, with high bounce rates disrupting key user flows, particularly during the purchasing journey. To address this, we optimized the biometric login page, streamlining the experience to minimize friction. These improvements significantly reduced bounce rates, positively impacting the buying journey and reflected in enhanced user metrics.",
+    pictureUrl: "../images/via/biometry.svg",
     order: "5",
-    caption: "Featured categories",
+    caption: "Biometric page in Casas Bahia to facilitate the login during buying journey",
   },
 
+
   {
-    title: "<h4>User location and delivery address</h4>",
+    title: "<h3>Monitoring metrics</h3>",
     description:
-      "Product analysis of the flow across user journeys from the user address and the location components. I monitored the behaviour through Smartlook and Google Analytics. The main problem was the lack of persistence and integration of the components across the user journey on the app.",
-    pictureUrl: "../images/via/img-3.png",
+      "I created monitoring dashboards in Looker Studio to track squad-implemented changes and deliver actionable insights to stakeholders. For example, I created a dashboard to report the login and onboarding processes, directly tying user metrics to the squad's enhancements.",
+    pictureUrl: "../images/via/img-6.png",
     order: "6",
-    caption: "User location and delivery address</h3>",
+    caption: "Illustrative example of a Dashboard for the biometric login project",
   },
+
+
   {
-    title: "<h4>Applying new Design System</h4>",
+    title: "<h3>Applying Design System</h3>",
     description:
-      "UI changes to improve accessibility over text styles, color system and other formatting issues.",
-    pictureUrl: "../images/via/img-4.png",
+      "The app's UI underwent major updates to align with the new design system guidelines. These included enhancements to text styles, color systems, and formatting, improving accessibility and delivering a more inclusive user experience.",
+    pictureUrl: "../images/via/design system.svg",
     order: "7",
     caption: "Adjustments on the APPs to the new Design system guidelines",
   },
@@ -239,6 +294,10 @@ let page = document.body.id;
 let pageArray = "";
 
 switch (page) {
+  case "pnipe":
+    pageArray = pnipeArray;
+    break;
+
   case "e-commerce":
     pageArray = viaArray;
     break;
@@ -256,19 +315,19 @@ switch (page) {
 pageArray.forEach(function (singleCard) {
   if (singleCard.pictureUrl !== null && singleCard.caption !== null) {
     htmlCode = `${htmlCode}
-          <section href="#${singleCard.order}" id="section-${singleCard.order}">
+          <section class="section" href="#${singleCard.order}" id="section-${singleCard.order}">
           ${singleCard.title}
 
           <p>${singleCard.description}</p>
-          <div class="content-case"><img style="width: 100%" src="${singleCard.pictureUrl}" style="width: 90%;"/></div>
-          <p class="caption"><mark>${singleCard.caption}</mark></p>
+          <div class="content-case"><img src="${singleCard.pictureUrl}"/></div>
+          <p class="caption">${singleCard.caption}</p>
 
 
             </section>
         `;
   } else {
     htmlCode = `${htmlCode}
-          <section href="#${singleCard.order}" id="section-${singleCard.order}">
+          <section class="section" href="#${singleCard.order}" id="section-${singleCard.order}">
             ${singleCard.title}
             <p >${singleCard.description}</p>
           </section> 

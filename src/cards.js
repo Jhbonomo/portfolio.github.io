@@ -1,15 +1,15 @@
 const cardsArray = [ 
     
     { // Via
-    title: "Mobile APP for marketplace",
-    description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a big brazilian retailing company",
+    title: "Mobile APPs for marketplace",
+    description: "Product designer consultant (Capgemini/Via) of marketplace mobile apps for Via, a leading brazilian retailing company",
     pictureUrl: "images/via/thumb.png",
     linkPage: "pages/e-commerce.html",
   },
     
     { // Pnipe
-    title: "Prototyping in collaboration",
-    description: "UX analyst consultant for the National Research Infrastructure platform when I was working for several projects for the National Education and Research Network.",
+    title: "Designing for Science",
+    description: "Designer at National Research Infrastructure platform, an initiative from the Ministry of Science and Technology.",
     pictureUrl: "images/pnipe/thumb.png",
     linkPage: "pages/pnipe.html",
   },
