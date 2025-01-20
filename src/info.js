@@ -23,7 +23,7 @@ document.addEventListener('click', function (event) {})
 document.addEventListener('click', function (event) {
   if (!event.target.matches('.btn-scroll-into')) return;
   event.preventDefault();
-  var offset = 80 // sticky nav height
+  var offset = 60 // sticky nav height
   var el = document.getElementById(event.target.dataset.target); // element you are scrolling to
   window.scroll({ top: (el.offsetTop - offset), left: 0, behavior: 'smooth' });
 
