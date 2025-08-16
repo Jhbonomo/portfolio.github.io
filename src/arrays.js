@@ -74,7 +74,8 @@ const viaArray = [
   {
     title: "<h3>Feaured categories</h3>",
     description:
-      "Ahead of Black Friday, we enhanced navigation by adding fast-access cards to the homepage, highlighting popular categories like mobile devices, home appliances, and electronics. This made it easier for users to locate key items, ultimately boosting interaction and improving the overall shopping experience.",
+      "Ahead of Black Friday, we enhanced navigation by adding quick-access cards to the homepage, spotlighting popular categories like mobile devices and electronics. This made it easier for users to locate key items, ultimately boosting interaction and improving user engagement during peak sales.",
+      
     pictureUrl: "../images/via/pontofrio-categorias.svg",
     order: "3",
     caption: "Featured categories for Ponto Frio" 
