@@ -4,7 +4,7 @@ const pnipeArray = [
   {
     title: "<h3>About the Platform </h3>",
     description:
-      "The National Research Infrastructure platform is an initiative by the Ministry of Science and Technology to gather data on laboratories and equipment nationwide. It enables researchers to access and request resources, fostering collaboration and innovation while aiding the Ministry in shaping policies to enhance research infrastructure.",
+      "The National Research Infrastructure platform is an initiative by the Ministry of Science and Technology to gather data on laboratories and equipment nationwide. It enables researchers to access and request resources, fostering collaboration and innovation while aiding the Ministry in shaping policies to enhance research infrastructure. ",
     pictureUrl: "../images/pnipe/img-01.png",
     caption: "",
     order: "1",
