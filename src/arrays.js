@@ -54,70 +54,68 @@ const viaArray = [
   {
     title: "<h3>About</h3>",
     description:
-      "Product designer for Via's mobile applications, a leading Brazilian retailer that owns three marketplace brands: Casas Bahia, Ponto, and Extra." ,
+      "Product designer for Via's mobile applications, a leading Brazilian retailer that owns three marketplace brands: Casas Bahia, Ponto, and Extra. I was part of the APP Experience Squad, improving mobile journeys for seamless user experiences alongside developers, QA, and project leads. I also contributed to Via's UX tribe, collaborating with designers to refine flows, share feedback, and join critique sessions.",
     pictureUrl: null,
     order: "1",
     caption: null,
   },
 
-  {
-    title: "<h3>Contributions</h3>",
+    {
+    title: "<h3>Applying Design System</h3>",
     description:
-      "I was part of the APP Experience Squad, responsible for enhancing the overall user experience across various journeys to deliver seamless mobile experiences. The team included iOS and Android developers, a Scrum Master, a Project Manager, and QA. Additionally, I was an active member of Via’s UX tribe, collaborating with fellow designers to refine user journeys, exchange constructive feedback, and participate in design critique sessions.",
-      pictureUrl: "../images/via/img-5.png",
-      order: "2",
+      "The app's UI underwent major updates to align with the new design system guidelines. These included enhancements to text styles, color systems, and formatting, improving accessibility and delivering a more inclusive user experience.",
+    pictureUrl: "../images/via/design system.svg",
+    order: "2",
+    caption: "Adjustments on the APPs to the new Design system guidelines",
+  },
+
+  {
+    title: "<h3>Product analysis</h3>",
+    description:
+      "Our squad tackled features cutting across multiple user journeys, like managing user address and location details.",
+      pictureUrl: "../images/via/entrega.svg",
+      order: "3",
       caption:
         "Product analysis of user flow for UX tribe",
   },
+ 
+  {
+    title: "<h3>User location and delivery address</h3>",
+    description:
+      "These components lacked consistency in persistence and integration, creating usability challenges. Leveraging insights from Smartlook and Google Analytics, I pinpointed critical gaps and introduced solutions that ensured a seamless experience throughout the entire buying process.",
+    pictureUrl: "../images/via/img-5.png",
+    order: "4",
+    caption: "User location and delivery address for Extra APP</h3>",
+  },
 
-   
   {
     title: "<h3>Feaured categories</h3>",
     description:
       "Ahead of Black Friday, we enhanced navigation by adding quick-access cards to the homepage, spotlighting popular categories like mobile devices and electronics. This made it easier for users to locate key items, ultimately boosting interaction and improving user engagement during peak sales.",
       
     pictureUrl: "../images/via/pontofrio-categorias.svg",
-    order: "3",
+    order: "5",
     caption: "Featured categories for Ponto Frio" 
   }, 
-
-  {
-    title: "<h3>User location and delivery address</h3>",
-    description:
-      "Our squad tackled features cutting across multiple user journeys, like managing user address and location details. These components lacked consistency in persistence and integration, creating usability challenges. Leveraging insights from Smartlook and Google Analytics, I pinpointed critical gaps and introduced solutions that ensured a seamless experience throughout the entire buying process.",
-    pictureUrl: "../images/via/entrega.svg",
-    order: "4",
-    caption: "User location and delivery address for Extra APP</h3>",
-  },
 
   {
     title: "<h3>Login and onboarding journeys</h3>",
     description:
       "The login process was a major challenge, with high bounce rates disrupting key user flows, particularly during the purchasing journey. To address this, we optimized the biometric login page, streamlining the experience to minimize friction. These improvements significantly reduced bounce rates, positively impacting the buying journey and reflected in enhanced user metrics.",
     pictureUrl: "../images/via/biometry.svg",
-    order: "5",
+    order: "6",
     caption: "Biometric page in Casas Bahia to facilitate the login during buying journey",
   },
-
 
   {
     title: "<h3>Monitoring metrics</h3>",
     description:
       "I created monitoring dashboards in Looker Studio to track squad-implemented changes and deliver actionable insights to stakeholders. For example, I created a dashboard to report the login and onboarding processes, directly tying user metrics to the squad's enhancements.",
     pictureUrl: "../images/via/img-6.png",
-    order: "6",
+    order: "7",
     caption: "Illustrative example of a Dashboard for the biometric login project",
   },
 
-
-  {
-    title: "<h3>Applying Design System</h3>",
-    description:
-      "The app's UI underwent major updates to align with the new design system guidelines. These included enhancements to text styles, color systems, and formatting, improving accessibility and delivering a more inclusive user experience.",
-    pictureUrl: "../images/via/design system.svg",
-    order: "7",
-    caption: "Adjustments on the APPs to the new Design system guidelines",
-  },
 ];
 
 const museuArray = [
