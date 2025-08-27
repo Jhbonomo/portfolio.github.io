@@ -388,12 +388,21 @@ mark {
     touch-action: manipulation; /* Optimize for touch */
 }
 
+/* Projects header container for inline layout */
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
 /* Projects title in cases section */
 .projects-title {
     font-size: 48px;
     font-weight: 700;
     color: #000000;
-    margin: 0 0 2rem 0;
+    margin: 0;
     line-height: 1.2;
 }
 
@@ -435,10 +444,14 @@ mark {
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin: 0;
     transition: opacity 0.3s ease;
-    align-self: flex-start;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    align-self: flex-end;
 }
 
 .back-button:hover {
@@ -770,7 +783,6 @@ mark {
         border: none;
         border-radius: 8px;
         padding: 12px 16px;
-        margin-bottom: 20px;
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
