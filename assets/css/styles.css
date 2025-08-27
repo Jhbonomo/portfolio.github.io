@@ -736,48 +736,55 @@ mark {
         background: #fff;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        padding: 20px;
+        margin: 16px 16px 0 16px;
     }
     
-    /* Make back button more prominent */
+    /* Position back button at the top with proper spacing */
     .back-button {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: rgba(0, 0, 0, 0.8);
+        position: relative;
+        background: #000;
         color: #fff;
-        border: 2px solid rgba(255, 255, 255, 0.3);
+        border: none;
         border-radius: 8px;
-        padding: 0.75rem 1rem;
-        z-index: 1001;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        align-self: flex-start;
+    }
+    
+    .back-button:hover {
+        background: #333;
+        transform: translateY(-1px);
+    }
+    
+    /* Clean up the projects title */
+    .cases > h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        color: #000;
+        line-height: 1.2;
+    }
+    
+    /* Clean up the projects container */
+    .cases > .projects {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
 }
 
 /* ==========================================================================
-   CSS-ONLY FALLBACK FOR MOBILE NAVIGATION
+   MOBILE NAVIGATION STYLES
    ========================================================================== */
 
-/* If JavaScript is disabled, show projects section on mobile after a delay */
 @media (max-width: 1023px) {
-    /* After 5 seconds, show projects section if it's still hidden */
-    .cases:not([style*="display: flex"]):not([style*="display:block"]) {
-        animation: showProjectsFallback 5s forwards;
-    }
-    
-    @keyframes showProjectsFallback {
-        0% {
-            display: none;
-            opacity: 0;
-            transform: translateY(100%);
-        }
-        100% {
-            display: flex !important;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
     /* Make the projects heading more prominent and always visible */
     .projects-heading {
         position: fixed !important;
