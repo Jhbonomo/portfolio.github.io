@@ -27,7 +27,7 @@
                 <label>Hue: <input type="range" id="hueSlider" min="0" max="360" value="120"></label>
             </div>
             <div class="content">
-                <h1><mark>Hi 👋, I'm Juliana.</mark></h1>
+                <h1><mark>Hi, I'm Juliana.</mark></h1>
                 <h2><mark>Officially, I'm a product designer.</mark></h2>
                 <h2><mark>In practice, I help humans and complex systems get along.</mark></h2>
                                                   <h2 class="reach-out"><mark>Reach out:</mark> <a href="https://www.linkedin.com/in/julianahb/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
@@ -272,19 +272,6 @@
             console.log('Window width:', window.innerWidth);
             console.log('Is mobile (< 1024px):', window.innerWidth < 1024);
             console.log('Projects heading element:', projectsHeading);
-            
-            // Fallback: If mobile and projects section is still hidden after 3 seconds, show it
-            if (window.innerWidth < 1024) {
-                setTimeout(() => {
-                    if (casesSection.style.display === 'none' || casesSection.style.display === '') {
-                        console.log('Fallback: Showing projects section');
-                        casesSection.style.display = 'flex';
-                        casesSection.style.transform = 'translateY(0)';
-                        casesSection.style.opacity = '1';
-                        aboutSection.style.display = 'none';
-                    }
-                }, 3000);
-            }
             
             // Handle resize events
             window.addEventListener('resize', handleMobileNavigation);
