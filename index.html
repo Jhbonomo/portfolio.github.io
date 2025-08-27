@@ -11,37 +11,11 @@
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#000000">
     <title>Juliana - UX Researcher & Product Designer</title>
-    <!-- Improved font loading with better fallbacks -->
+    <!-- Optimized font loading with single import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <!-- System font fallbacks -->
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        /* Critical font fallbacks to prevent FOUT (Flash of Unstyled Text) */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
-        /* Ensure content is visible even if custom fonts fail to load */
-        .content h1, .content h2 {
-            font-family: 'Zilla Slab', 'Special Elite', Georgia, 'Times New Roman', serif;
-            font-display: swap;
-        }
-        
-        .projects-heading {
-            font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-            font-display: swap;
-        }
-        
-        /* Prevent layout shifts during font loading */
-        .content h1, .content h2, .projects-heading {
-            font-size-adjust: 0.5;
-            font-synthesis: none;
-        }
-    </style>
 </head>
 <body>
 <div class="viewport">
@@ -71,7 +45,7 @@
     </div>
     <div class="cases" id="projects">
                  <div class="back-button" id="backButton">↑ Back</div>
-        <h2 style="font-size: 48px;">Projects</h2>
+        <h2 class="projects-title">Projects</h2>
         <div class="projects">
         <project-card
             categories="UX research | Product design | Product Strategy | Government affairs"
