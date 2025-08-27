@@ -209,13 +209,19 @@
                         
                         console.log('Projects heading clicked!');
                         
-                        // Show cases section
-                        casesSection.style.display = 'flex';
-                        casesSection.style.transform = 'translateY(0)';
-                        casesSection.style.opacity = '1';
+                        // Add slide-out class to about section (slides up and out)
+                        aboutSection.classList.add('slide-out');
                         
-                        // Hide about section
-                        aboutSection.style.display = 'none';
+                        // Show cases section and add slide-in class (slides up from bottom)
+                        casesSection.style.display = 'flex';
+                        casesSection.style.transform = 'translateY(100%)'; // Start from bottom
+                        casesSection.style.opacity = '0'; // Start invisible
+                        
+                        // Force a reflow to ensure the initial state is applied
+                        casesSection.offsetHeight;
+                        
+                        // Now add the slide-in class to trigger the animation
+                        casesSection.classList.add('slide-in');
                         
                         // Show back button
                         backButton.style.display = 'block';
@@ -233,13 +239,19 @@
                         
                         console.log('Back button clicked!');
                         
-                        // Hide cases section
-                        casesSection.style.display = 'none';
-                        casesSection.style.transform = 'translateY(100%)';
-                        casesSection.style.opacity = '0';
+                        // Add slide-out class to cases section (slides down and out)
+                        casesSection.classList.add('slide-out');
                         
-                        // Show about section
+                        // Show about section and add slide-in class (slides down from top)
                         aboutSection.style.display = 'flex';
+                        aboutSection.style.transform = 'translateY(-100%)'; // Start from top
+                        aboutSection.style.opacity = '0'; // Start invisible
+                        
+                        // Force a reflow to ensure the initial state is applied
+                        aboutSection.offsetHeight;
+                        
+                        // Now add the slide-in class to trigger the animation
+                        aboutSection.classList.add('slide-in');
                         
                         // Hide back button
                         backButton.style.display = 'none';
@@ -249,6 +261,23 @@
                     // Add both click and touchstart events for better mobile support
                     backButton.addEventListener('click', backClickHandler);
                     backButton.addEventListener('touchstart', backClickHandler);
+                    
+                    // Clean up animation classes after transitions complete
+                    aboutSection.addEventListener('transitionend', () => {
+                        if (aboutSection.classList.contains('slide-out')) {
+                            aboutSection.style.display = 'none';
+                            aboutSection.classList.remove('slide-out');
+                        }
+                        aboutSection.classList.remove('slide-in');
+                    });
+                    
+                    casesSection.addEventListener('transitionend', () => {
+                        if (casesSection.classList.contains('slide-out')) {
+                            casesSection.style.display = 'none';
+                            casesSection.classList.remove('slide-out');
+                        }
+                        casesSection.classList.remove('slide-in');
+                    });
                     
                     console.log('Mobile navigation setup complete. Projects heading is clickable.');
                 } else {
