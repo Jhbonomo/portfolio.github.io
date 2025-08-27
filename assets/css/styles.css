@@ -72,7 +72,7 @@ body {
     padding: 1rem; /* Mobile default */
     border-radius: 0;
     width: 100%; /* Mobile default */
-    display: none; /* Hidden by default on mobile */
+    display: flex; /* Show by default on mobile - will be controlled by JS */
     flex-direction: column;
     margin: 0; /* Mobile default */
     height: auto; /* Mobile default */
@@ -676,5 +676,82 @@ mark {
         z-index: 1001;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* ==========================================================================
+   CSS-ONLY FALLBACK FOR MOBILE NAVIGATION
+   ========================================================================== */
+
+/* If JavaScript is disabled, show projects section on mobile after a delay */
+@media (max-width: 1023px) {
+    /* After 5 seconds, show projects section if it's still hidden */
+    .cases:not([style*="display: flex"]):not([style*="display:block"]) {
+        animation: showProjectsFallback 5s forwards;
+    }
+    
+    @keyframes showProjectsFallback {
+        0% {
+            display: none;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        100% {
+            display: flex !important;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Make the projects heading more prominent and always visible */
+    .projects-heading {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 12px !important;
+        padding: 1rem 1.5rem !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
+        z-index: 1000 !important;
+        margin: 0 !important;
+        font-size: 20px !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        cursor: pointer !important;
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Add a pulsing animation to draw attention */
+    .projects-heading::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 12px;
+        animation: pulse 2s infinite;
+        z-index: -1;
+    }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 }

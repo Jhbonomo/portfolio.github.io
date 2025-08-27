@@ -173,40 +173,33 @@
                 }
                 
                 if (window.innerWidth < 1024) {
+                    // Mobile setup
                     projectsHeading.style.cursor = 'pointer';
-                    projectsHeading.style.userSelect = 'none'; // Prevent text selection on mobile
+                    projectsHeading.style.userSelect = 'none';
+                    
+                    // Initially hide the cases section on mobile
+                    casesSection.style.display = 'none';
+                    casesSection.style.transform = 'translateY(100%)';
+                    casesSection.style.opacity = '0';
                     
                     // Projects heading click handler
                     projectsClickHandler = (e) => {
-                        e.preventDefault(); // Prevent default behavior
-                        e.stopPropagation(); // Stop event bubbling
+                        e.preventDefault();
+                        e.stopPropagation();
                         
-                        console.log('Projects heading clicked!'); // Debug log
+                        console.log('Projects heading clicked!');
                         
-                        // Remove any existing animation classes from about
-                        aboutSection.classList.remove('slide-in');
-                        // Animate about section out
-                        aboutSection.classList.add('slide-out');
+                        // Show cases section
+                        casesSection.style.display = 'flex';
+                        casesSection.style.transform = 'translateY(0)';
+                        casesSection.style.opacity = '1';
                         
-                        // After animation, show cases section
-                        setTimeout(() => {
-                            aboutSection.style.display = 'none';
-                            casesSection.style.display = 'flex';
-                            // Trigger slide-in animation
-                            requestAnimationFrame(() => {
-                                casesSection.classList.add('slide-in');
-                            });
-                        }, 300); // Half of the animation duration
+                        // Hide about section
+                        aboutSection.style.display = 'none';
                         
-                        // Show back button with delay
-                        setTimeout(() => {
-                            backButton.style.display = 'block';
-                            backButton.style.opacity = '0';
-                            requestAnimationFrame(() => {
-                                backButton.style.transition = 'opacity 0.3s ease';
-                                backButton.style.opacity = '1';
-                            });
-                        }, 600);
+                        // Show back button
+                        backButton.style.display = 'block';
+                        backButton.style.opacity = '1';
                     };
                     
                     // Add both click and touchstart events for better mobile support
@@ -215,64 +208,40 @@
                     
                     // Back button click handler
                     backClickHandler = (e) => {
-                        e.preventDefault(); // Prevent default behavior
-                        e.stopPropagation(); // Stop event bubbling
+                        e.preventDefault();
+                        e.stopPropagation();
                         
-                        console.log('Back button clicked!'); // Debug log
+                        console.log('Back button clicked!');
                         
-                        // Animate cases section out
-                        casesSection.classList.remove('slide-in');
-                        casesSection.classList.add('slide-out');
+                        // Hide cases section
+                        casesSection.style.display = 'none';
+                        casesSection.style.transform = 'translateY(100%)';
+                        casesSection.style.opacity = '0';
                         
-                        // After animation, show about section and reset cases
-                        setTimeout(() => {
-                            casesSection.style.display = 'none';
-                            // Reset cases section to initial state for next use
-                            casesSection.classList.remove('slide-in', 'slide-out');
-                            // Remove any inline styles that might interfere
-                            casesSection.style.removeProperty('transform');
-                            casesSection.style.removeProperty('opacity');
-                            
-                            aboutSection.style.display = 'flex';
-                            // Trigger slide-in animation
-                            requestAnimationFrame(() => {
-                                aboutSection.classList.remove('slide-out');
-                                aboutSection.classList.add('slide-in');
-                            });
-                            
-                            // Clean up about section after slide-in animation completes
-                            setTimeout(() => {
-                                aboutSection.classList.remove('slide-in');
-                            }, 800); // Match the animation duration
-                        }, 300);
+                        // Show about section
+                        aboutSection.style.display = 'flex';
                         
                         // Hide back button
+                        backButton.style.display = 'none';
                         backButton.style.opacity = '0';
-                        setTimeout(() => {
-                            backButton.style.display = 'none';
-                        }, 300);
                     };
                     
                     // Add both click and touchstart events for better mobile support
                     backButton.addEventListener('click', backClickHandler);
                     backButton.addEventListener('touchstart', backClickHandler);
                     
-                    // Debug: Log mobile setup
                     console.log('Mobile navigation setup complete. Projects heading is clickable.');
                 } else {
-                    // Remove click functionality on larger screens
+                    // Desktop setup
                     projectsHeading.style.cursor = 'default';
                     projectsHeading.style.userSelect = 'auto';
-                    // Reset display states for larger screens
+                    
+                    // Show both sections on desktop
                     aboutSection.style.display = 'flex';
-                    casesSection.style.display = 'none';
+                    casesSection.style.display = 'flex';
+                    casesSection.style.transform = 'translateY(0)';
+                    casesSection.style.opacity = '1';
                     backButton.style.display = 'none';
-                    // Remove animation classes
-                    aboutSection.classList.remove('slide-out', 'slide-in');
-                    casesSection.classList.remove('slide-out', 'slide-in');
-                    // Remove any inline styles that might interfere
-                    casesSection.style.removeProperty('transform');
-                    casesSection.style.removeProperty('opacity');
                     
                     console.log('Desktop navigation setup complete.');
                 }
@@ -285,6 +254,19 @@
             console.log('Window width:', window.innerWidth);
             console.log('Is mobile (< 1024px):', window.innerWidth < 1024);
             console.log('Projects heading element:', projectsHeading);
+            
+            // Fallback: If mobile and projects section is still hidden after 3 seconds, show it
+            if (window.innerWidth < 1024) {
+                setTimeout(() => {
+                    if (casesSection.style.display === 'none' || casesSection.style.display === '') {
+                        console.log('Fallback: Showing projects section');
+                        casesSection.style.display = 'flex';
+                        casesSection.style.transform = 'translateY(0)';
+                        casesSection.style.opacity = '1';
+                        aboutSection.style.display = 'none';
+                    }
+                }, 3000);
+            }
             
             // Handle resize events
             window.addEventListener('resize', handleMobileNavigation);
