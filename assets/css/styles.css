@@ -1,0 +1,585 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&display=swap');
+
+
+
+/* ==========================================================================
+   CSS RESET & BASE STYLES
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* 
+   Breakpoint Strategy:
+   - Mobile: 0px - 767px (max-width: 767px)
+   - Tablet: 768px - 1023px (min-width: 768px) and (max-width: 1023px)
+   - Regular Desktop: 1024px - 1439px (min-width: 1024px) and (max-width: 1439px)
+   - Large Viewports: 1440px+ (min-width: 1440px)
+*/
+
+/* ==========================================================================
+   MOBILE FIRST - BASE STYLES (0px - 767px)
+   ========================================================================== */
+
+/* Global body styles - common across all breakpoints */
+body {
+    display: flex;
+    background-color: #111111;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column; /* Mobile/tablet default */
+}
+
+.viewport {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Gentler, smoother slide animation */
+}
+
+.cases {
+    background-color: #fff;
+    padding: 1rem; /* Mobile default */
+    border-radius: 0;
+    width: 100%; /* Mobile default */
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    margin: 0; /* Mobile default */
+    height: auto; /* Mobile default */
+    min-height: 50vh; /* Mobile default */
+    box-sizing: border-box;
+    overflow: hidden; /* Common across all breakpoints */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Gentler, smoother slide animation */
+    transform: translateY(100%); /* Start off-screen from bottom */
+    opacity: 0; /* Start invisible */
+    border-radius: clamp(20px, 2vw, 30px) clamp(20px, 2vw, 30px) 0 0;
+    margin: 20px;
+    width: auto;
+}
+
+h1, h2 {
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-size: 20px; /* Mobile default */
+    line-height: 125%;
+    text-align: left;
+    margin: 0;
+}
+
+p{
+    font-size: 1rem
+}
+mark {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+/* Typing cursor effect - removed */
+
+/* LinkedIn icon styling */
+.content h1 a,
+.content h2 a {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: .75rem;
+    color: #ffffff;
+    transition: opacity 0.5s ease;
+}
+
+.content h2 a {
+    opacity: 0; /* Start hidden */
+    margin-left: 0; /* Remove extra margin */
+    vertical-align: middle; /* Center vertically */
+}
+
+.content h2 a:hover {
+    opacity: 0.8;
+}
+
+
+/* Content Area - Global Styles */
+.content-wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px; /* Mobile default */
+    position: relative;
+    z-index: 2;
+    height: inherit;
+    justify-content: center;
+}
+
+.content h1, .content h2 {
+    font-family: 'Special Elite', cursive;
+    font-size: clamp(24px, 3vw, 32px); /* Mobile default - improved scaling */
+    font-weight: 400; /* Mobile default */
+    line-height: 140%;
+    text-align: center;
+    margin: 0;
+}
+
+
+
+/* Canvas & Animation - Mobile */
+.canvas-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #111111;
+}
+
+#canvas {
+    width: 100%; 
+    height: 100%;
+    z-index: -1;
+    display: block;
+}
+
+/* Controls Panel - Global Styles */
+.controls {
+    display: none; /* Hidden by default on mobile */
+    color: white;
+    z-index: 10;
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif !important;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.controls label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.controls input {
+    margin: 0;
+}
+
+/* Custom slider styling - Global */
+.controls input[type="range"] {
+    accent-color: var(--slider-color);
+    background: transparent;
+    cursor: pointer;
+    width: 80px;
+    height: 20px;
+    margin-bottom: 1rem;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+    background: var(--slider-color);
+    border: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+    background: var(--slider-color);
+    border: none;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.controls input[type="range"]::-webkit-slider-track {
+    background: rgba(255, 255, 255, 0.2);
+    height: 3px;
+    border-radius: 1px;
+}
+
+.controls input[type="range"]::-moz-range-track {
+    background: rgba(255, 255, 255, 0.2);
+    height: 3px;
+    border-radius: 1px;
+}
+
+.controls input[type="color"] {
+    width: 30px; /* Mobile default */
+    height: 25px; /* Mobile default */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Project Cards - Global styles */
+.projects {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    scrollbar-width: medium;
+    height: calc(100vh - 120px); /* Mobile default */
+    max-height: calc(100vh - 120px); /* Mobile default */
+    gap: 1rem;
+}
+
+.projects::-webkit-scrollbar {
+    width: 12px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Projects Section Heading - Mobile */
+.projects-heading {
+    color: #ffffff;
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer; /* Mobile: clickable */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
+}
+
+.projects-heading:hover {
+    opacity: 0.85; /* Mobile: gentler hover effect */
+    transform: translateY(-3px) scale(1.02); /* Mobile: subtle lift and scale effect */
+}
+
+.projects-heading:active {
+    transform: translateY(-1px) scale(1.01); /* Mobile: gentler press effect */
+    transition: transform 0.15s ease;
+}
+
+/* Back Button - Mobile only */
+.back-button {
+    display: none; /* Hidden by default */
+    color: #0d0d0d;
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    transition: opacity 0.3s ease;
+    align-self: flex-start;
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
+/* Animation Classes for Mobile Navigation */
+.about.slide-out {
+    transform: translateY(-100%) scale(0.95);
+    opacity: 0;
+}
+
+.cases.slide-in {
+    display: flex !important
+;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.cases.slide-out {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+}
+
+.about.slide-in {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.projects-heading::after {
+    content: '↓';
+    font-size: 20px;
+    color: #ffffff;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.projects-heading:hover::after {
+    transform: translateY(4px); /* Arrow moves down more smoothly on hover */
+}
+
+/* Card Component - Mobile */
+.card {
+    background: #fff;
+    padding: .5rem .5rem 1rem .5rem;
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+}
+
+.card:hover::after {
+    width: 100%;
+}
+
+.card-categories {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    background-color: transparent;
+    color: #333333;
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0;
+    border-radius: 0;
+    white-space: nowrap;
+    display: inline;
+    line-height: 1.4;
+}
+
+.tag-separator {
+    width: 1px;
+    height: 1rem;
+    background-color: #666666;
+    display: inline-block;
+}
+
+.card-title {
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem; /* Mobile default */
+    margin: 0.5rem 0;
+    color: #0d0d0d;
+}
+
+.card-description {
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: #0d0d0d;
+    font-size: 1rem; /* Mobile default */
+    margin-bottom: 1rem;
+}
+
+.card-button {
+    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    background: hsl(120, 100%, 50%);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    --hover-color: hsl(120, 100%, 70%);
+    --hover-text-color: #000;
+}
+
+.card-button:hover {
+    background: var(--hover-color) !important;
+    color: var(--hover-text-color) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* ==========================================================================
+   DESKTOP STYLES (1024px+)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+    .projects-heading {
+        display: none;
+    }
+
+    body {
+        flex-direction: row; /* Desktop: horizontal layout */
+    }
+    
+    .viewport {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+    
+    .about {
+        width: 40%;
+        height: 100vh;
+        padding: clamp(2rem, 3vw, 3rem);
+    }
+    
+    .cases {
+        display: flex !important
+;
+        width: 60%;
+        padding: clamp(2rem, 3vw, 3rem);
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+
+    
+    
+    .content {
+        gap: clamp(12px, 1.5vw, 16px); /* Desktop: responsive gap */
+        text-align: left; /* Desktop: left alignment */
+    }
+    
+    .content h1, .content h2 {
+        text-align: left; /* Desktop: left alignment */
+    }
+    
+    
+    h1, h2 {
+        font-size: clamp(28px, 2.8vw, 36px); /* Desktop: responsive font size - reduced */
+    }
+    
+
+    
+    .controls input[type="range"] {
+        width: clamp(120px, 12vw, 150px);
+        height: clamp(28px, 3vw, 35px);
+    }
+    
+    .controls input[type="range"]::-webkit-slider-thumb,
+    .controls input[type="range"]::-moz-range-thumb {
+        width: clamp(18px, 2vw, 22px);
+        height: clamp(18px, 2vw, 22px);
+    }
+    
+    .controls input[type="color"] {
+        width: clamp(40px, 4vw, 50px); /* Desktop: responsive size */
+        height: clamp(32px, 3.5vw, 40px); /* Desktop: responsive size */
+    }
+    
+    .card-title {
+        font-size: clamp(1.3rem, 1.5vw, 1.5rem); /* Desktop: responsive font size */
+    }
+    
+    .card-description {
+        font-size: clamp(1rem, 1.1vw, 1.5rem); /* Desktop: responsive font size */
+    }
+    
+    .projects {
+        height: calc(100vh - 40px - 120px); /* Desktop: adjusted for layout */
+        max-height: calc(100vh - 40px - 120px); /* Desktop: adjusted for layout */
+    }
+}
+
+/* ==========================================================================
+   ULTRA-WIDE SCREEN STYLES (1600px+)
+   ========================================================================== */
+
+@media (min-width: 1600px) {
+    .viewport {
+        max-width: 1600px;
+    }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & FOCUS STYLES
+   ========================================================================== */
+
+*:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY PREFERENCES
+   ========================================================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

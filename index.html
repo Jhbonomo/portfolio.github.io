@@ -1,47 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="css/reset.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <!-- Sora -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juliana's UX Research and Product Design Portfolio - Helping humans and complex systems get along">
+    <meta name="keywords" content="UX Research, Product Design, User Experience, Portfolio">
+    <meta name="author" content="Juliana">
+    <meta property="og:title" content="Juliana - UX Researcher & Product Designer">
+    <meta property="og:description" content="UX Research and Product Design Portfolio">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <title>Juliana - UX Researcher & Product Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/c7222e8417.js" crossorigin="anonymous"></script>
-    
-    
-    <title>Ju Holanda Portfolio</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Alternative font loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
-<body class="preload" id="index">
-    <header id="index-page"></header>
-
-    <main >
-        <div id="about-banner" class="gradient-text">
-            <div id="about-me" >  
-              <h1 class="text" style="margin-bottom: 5vh;">Hey there!</h1>
-              <p class="text" >
-                I'm Juliana, UX researcher and designer for web, mobile and data visualization. 
-                I worked in several market segments and different working formats. My biggest passion 
-                as a designer is to explore how people visualize and interact with information.</p>
-          
-          </div>
-          <div class="work-scroll"><div class="fas fa-arrow-down" id="icon"></div><h1 style="margin-bottom: 0" href="#">My work</a></div>  
-
+<body>
+<div class="viewport">
+    <div class="about">
+        <div class="content-wrap">
+            <div class="controls">
+                                 <label>Speed: <input type="range" id="speedSlider" min="0.05" max="1" step="0.05" value="0.5"></label>
+                <label>Points: <input type="range" id="pointsSlider" min="3" max="100" value="50"></label>
+                <label>Hue: <input type="range" id="hueSlider" min="0" max="360" value="120"></label>
+            </div>
+            <div class="content">
+                <h1><mark>Hi 👋, I'm Juliana.</mark></h1>
+                <h2><mark>Officially, I'm a product designer.</mark></h2>
+                <h2><mark>In practice, I help humans and complex systems get along.</mark></h2>
+                                                  <h2 class="reach-out"><mark>Reach out:</mark> <a href="https://www.linkedin.com/in/julianahb/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                      <svg width="32" height="32" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-left: 4px;">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                  </a></h2>
+            </div>
+       
         </div>
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="projects-heading">Projects</div>
+    </div>
+    <div class="cases" id="projects">
+                 <div class="back-button" id="backButton">↑ Back</div>
+        <h2 style="font-size: 48px;">Projects</h2>
+        <div class="projects">
+        <project-card
+            categories="UX research | Product design | Product Strategy | Government affairs"
+            title="How AI Changes the Way We Interact with Products"
+            description="As Quorum, an enterprise software for US government affairs, started experimenting with AI, our product team faced a key challenge: how to move beyond a feature-driven platform while unlocking AI's potential in ways that truly served user needs."
+            button="Read case"
+            href="projects/project-ai-interaction.html">
+        </project-card>
+        <project-card
+            categories="Product design | Design system | Science and technology"
+            title="Fostering scientific knowledge through sharing and collaboration"
+            description="PNIPE is a public platform by the Ministry of Science and Technology that centralizes lab and equipment information, enabling researchers to access resources, collaborate, and inform policies for stronger research infrastructure."
+            button="Read case"
+            href="projects/project-scientific-collaboration.html">
+        </project-card>
+        <project-card
+            categories="UX Research | Concepts | Government affairs"
+            title="Mapping the State of a User Experience"
+            description="In complex enterprise systems, the 'user' isn't always the paying customer, yet their experience has a direct impact on satisfaction, adoption, and ultimately churn. To uncover and communicate this hidden layer, I analyzed the findings across 4 years, focused on mapping how users actually perceived and navigated our product."
+            button="Read case"
+            href="projects/project-ux-mapping.html">
+        </project-card>
+        <project-card
+            categories="UX Research | Visual Design | Mobile | Certification course | Education"
+            title="A Museum in Ashes but still alive in the community"
+            description="Project for an educational app for the National Museum of Rio de Janeiro, celebrating the community and education programs that remained alive even while the physical space was closed after a devastating fire."
+            button="Read case"
+            href="projects/project-museum-app.html">
+        </project-card>
+        <project-card
+            categories="UX Research | Education"
+            title="What school teachers taught me about people and UX"
+            description="How I changed my approach to product design from user interviews with school teachers for an edtech for reading literacy"
+            button="Read case"
+            href="projects/project-teachers-ux.html">
+        </project-card>
+        <project-card
+            categories="Product design | Mobile | E-commerce"
+            title="Designing for scale in Brazilian retail"
+            description="Product design for Via's mobile e-commerce apps, improving the shopping experience for one of Brazil's largest retail companies. This project focused on creating intuitive, scalable mobile experiences that could serve millions of Brazilian consumers across diverse regions and socioeconomic backgrounds."
+            button="Read case"
+            href="projects/project-brazilian-retail.html">
+        </project-card>
+        </div>
+    </div>
+</div>
 
-        <div class="cards-list"></div>
-    </main>
-        <script src="src/header.js"></script>
-        <script src="src/cards.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/project-card.js"></script>
+    <script>
+        // Typing animation function with natural variation
+        function typeWriter(element, text, baseSpeed = 60, delay = 0) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    let i = 0;
+                    element.textContent = '';
+                    element.classList.add('typing'); // Show cursor when typing starts
+                    
+                    function type() {
+                        if (i < text.length) {
+                            element.textContent += text.charAt(i);
+                            i++;
+                            
+                            // Add natural variation to typing speed
+                            let currentSpeed = baseSpeed;
+                            
+                            // Slight random variation (±12ms)
+                            currentSpeed += (Math.random() - 0.5) * 24;
+                            
+                            // Slower on punctuation and spaces
+                            const char = text.charAt(i - 1);
+                            if (char === ' ' || char === ',' || char === '.' || char === '!' || char === '?') {
+                                currentSpeed += 40;
+                            }
+                            
+                            // Ensure minimum speed
+                            currentSpeed = Math.max(currentSpeed, 30);
+                            
+                            setTimeout(type, currentSpeed);
+                        } else {
+                            element.classList.remove('typing');
+                            element.classList.add('typing-complete');
+                            resolve();
+                        }
+                    }
+                    
+                    type();
+                }, delay);
+            });
+        }
 
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsHeading = document.querySelector('.projects-heading');
+            const aboutSection = document.querySelector('.about');
+            const casesSection = document.querySelector('.cases');
+            
+            // Store event handler functions so we can remove them properly
+            let projectsClickHandler = null;
+            let backClickHandler = null;
+            
+            // Only add click functionality on mobile
+            function handleMobileNavigation() {
+                const backButton = document.getElementById('backButton');
+                
+                // Remove existing event listeners first
+                if (projectsClickHandler) {
+                    projectsHeading.removeEventListener('click', projectsClickHandler);
+                }
+                if (backClickHandler) {
+                    backButton.removeEventListener('click', backClickHandler);
+                }
+                
+                if (window.innerWidth < 1024) {
+                    projectsHeading.style.cursor = 'pointer';
+                    
+                    // Projects heading click handler
+                    projectsClickHandler = () => {
+                        // Remove any existing animation classes from about
+                        aboutSection.classList.remove('slide-in');
+                        // Animate about section out
+                        aboutSection.classList.add('slide-out');
+                        
+                        // After animation, show cases section
+                        setTimeout(() => {
+                            aboutSection.style.display = 'none';
+                            casesSection.style.display = 'flex';
+                            // Trigger slide-in animation
+                            requestAnimationFrame(() => {
+                                casesSection.classList.add('slide-in');
+                            });
+                        }, 300); // Half of the animation duration
+                        
+                        // Show back button with delay
+                        setTimeout(() => {
+                            backButton.style.display = 'block';
+                            backButton.style.opacity = '0';
+                            requestAnimationFrame(() => {
+                                backButton.style.transition = 'opacity 0.3s ease';
+                                backButton.style.opacity = '1';
+                            });
+                        }, 600);
+                    };
+                    
+                    projectsHeading.addEventListener('click', projectsClickHandler);
+                    
+                    // Back button click handler
+                    backClickHandler = () => {
+                        // Animate cases section out
+                        casesSection.classList.remove('slide-in');
+                        casesSection.classList.add('slide-out');
+                        
+                        // After animation, show about section and reset cases
+                        setTimeout(() => {
+                            casesSection.style.display = 'none';
+                            // Reset cases section to initial state for next use
+                            casesSection.classList.remove('slide-in', 'slide-out');
+                            // Remove any inline styles that might interfere
+                            casesSection.style.removeProperty('transform');
+                            casesSection.style.removeProperty('opacity');
+                            
+                            aboutSection.style.display = 'flex';
+                            // Trigger slide-in animation
+                            requestAnimationFrame(() => {
+                                aboutSection.classList.remove('slide-out');
+                                aboutSection.classList.add('slide-in');
+                            });
+                            
+                            // Clean up about section after slide-in animation completes
+                            setTimeout(() => {
+                                aboutSection.classList.remove('slide-in');
+                            }, 800); // Match the animation duration
+                        }, 300);
+                        
+                        // Hide back button
+                        backButton.style.opacity = '0';
+                        setTimeout(() => {
+                            backButton.style.display = 'none';
+                        }, 300);
+                    };
+                    
+                    backButton.addEventListener('click', backClickHandler);
+                } else {
+                    // Remove click functionality on larger screens
+                    projectsHeading.style.cursor = 'default';
+                    // Reset display states for larger screens
+                    aboutSection.style.display = 'flex';
+                    casesSection.style.display = 'none';
+                    backButton.style.display = 'none';
+                    // Remove animation classes
+                    aboutSection.classList.remove('slide-out', 'slide-in');
+                    casesSection.classList.remove('slide-out', 'slide-in');
+                    // Remove any inline styles that might interfere
+                    casesSection.style.removeProperty('transform');
+                    casesSection.style.removeProperty('opacity');
+                }
+            }
+            
+            // Initial setup
+            handleMobileNavigation();
+            
+            // Handle resize events
+            window.addEventListener('resize', handleMobileNavigation);
+            
+            // Typing animation for mark tags
+            async function startTypingAnimation() {
+                const markElements = document.querySelectorAll('.content mark');
+                const originalTexts = [];
+                
+                // Store original text content
+                markElements.forEach((mark, index) => {
+                    originalTexts[index] = mark.textContent;
+                    mark.textContent = '';
+                });
+                
+                // Type each mark element sequentially
+                for (let i = 0; i < markElements.length; i++) {
+                    await typeWriter(markElements[i], originalTexts[i], 60, 0);
+                    // Shorter pause between lines
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                }
+                
+                // Show LinkedIn link after all text is typed
+                const linkedinLink = document.querySelector('.content h2 a');
+                if (linkedinLink) {
+                    linkedinLink.style.opacity = '1';
+                }
+            }
+            
+            // Start typing animation when page loads
+            startTypingAnimation();
+            
+            // Observe project cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
 </body>
-
 </html>
