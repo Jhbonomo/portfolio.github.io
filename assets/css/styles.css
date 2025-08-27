@@ -18,6 +18,81 @@ html, body {
 }
 
 /* ==========================================================================
+   FONT DEFINITIONS & FALLBACKS
+   ========================================================================== */
+
+/* Primary font stack with robust fallbacks */
+:root {
+    --font-primary: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    --font-secondary: 'Special Elite', 'Courier New', monospace;
+    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-fallback: Arial, Helvetica, sans-serif;
+}
+
+/* Ensure fonts are loaded with proper fallbacks */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-display: swap;
+    font-synthesis: none;
+}
+
+/* Prevent layout shifts during font loading */
+.content h1, .content h2 {
+    font-family: var(--font-secondary), var(--font-primary);
+    font-display: swap;
+    font-size-adjust: 0.5;
+}
+
+.projects-heading {
+    font-family: var(--font-primary);
+    font-display: swap;
+    font-size-adjust: 0.5;
+}
+
+/* Controls and labels use system fonts for better readability */
+.controls label {
+    font-family: var(--font-system);
+    font-weight: 500;
+}
+
+/* Card elements use system fonts */
+.card-title, .card-description, .card-categories {
+    font-family: var(--font-system);
+}
+
+/* ==========================================================================
+   FONT LOADING STATES
+   ========================================================================== */
+
+/* When fonts fail to load, use system fonts */
+body.fonts-fallback .content h1,
+body.fonts-fallback .content h2 {
+    font-family: var(--font-system);
+    font-weight: 600;
+}
+
+body.fonts-fallback .projects-heading {
+    font-family: var(--font-system);
+    font-weight: 600;
+}
+
+/* Ensure consistent spacing even with different fonts */
+.content h1, .content h2 {
+    min-height: 1.2em;
+    line-height: 1.4;
+}
+
+.projects-heading {
+    min-height: 1.2em;
+    line-height: 1.4;
+}
+
+/* Prevent layout shifts during font loading */
+.content h1, .content h2, .projects-heading {
+    contain: layout style;
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
@@ -88,7 +163,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-primary);
     font-size: 20px; /* Mobile default */
     line-height: 125%;
     text-align: left;
@@ -153,7 +228,7 @@ mark {
 }
 
 .content h1, .content h2 {
-    font-family: 'Special Elite', cursive;
+    font-family: var(--font-secondary), var(--font-primary);
     font-size: clamp(24px, 3vw, 32px); /* Mobile default - improved scaling */
     font-weight: 400; /* Mobile default */
     line-height: 140%;
@@ -281,7 +356,7 @@ mark {
 /* Projects Section Heading - Mobile */
 .projects-heading {
     color: #ffffff;
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-primary);
     font-size: 24px;
     font-weight: 600;
     text-align: center;
