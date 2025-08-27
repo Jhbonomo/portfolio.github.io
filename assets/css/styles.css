@@ -170,8 +170,8 @@ body {
 
 h1, h2 {
     font-family: var(--font-primary);
-    font-size: 20px; /* Mobile default */
-    line-height: 125%;
+    font-size: clamp(16px, 2.2vw, 22px); /* Consistent with content styles */
+    line-height: 2; /* Consistent with content styles */
     text-align: left;
     margin: 0;
 }
@@ -235,11 +235,18 @@ mark {
 
 .content h1, .content h2 {
     font-family: var(--font-secondary), var(--font-primary);
-    font-size: clamp(16px, 2.2vw, 22px); /* Further reduced font size */
+    font-size: clamp(16px, 2.2vw, 22px) !important; /* Further reduced font size with !important */
     font-weight: 400; /* Mobile default */
-    line-height: 2; /* Increased line height for better spacing */
+    line-height: 2 !important; /* Increased line height for better spacing with !important */
     text-align: center;
     margin: 0;
+}
+
+/* Ensure mark elements inherit the correct font size and line height */
+.content h1 mark, .content h2 mark {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-family: inherit !important;
 }
 
 
@@ -618,7 +625,7 @@ mark {
     
     
     h1, h2 {
-        font-size: clamp(18px, 2vw, 26px); /* Desktop: further reduced font size */
+        font-size: clamp(18px, 2vw, 26px) !important; /* Desktop: further reduced font size with !important */
     }
     
 
