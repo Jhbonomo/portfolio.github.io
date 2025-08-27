@@ -253,9 +253,8 @@
                         // Now add the slide-in class to trigger the animation
                         aboutSection.classList.add('slide-in');
                         
-                        // Hide back button
-                        backButton.style.display = 'none';
-                        backButton.style.opacity = '0';
+                        // Don't hide back button immediately - let the transition complete first
+                        // The back button will be hidden when the cases section slides out
                     };
                     
                     // Add both click and touchstart events for better mobile support
@@ -268,15 +267,18 @@
                             aboutSection.style.display = 'none';
                             aboutSection.classList.remove('slide-out');
                         }
-                        aboutSection.classList.remove('slide-in');
+                        // Don't remove slide-in class - keep the section visible
                     });
                     
                     casesSection.addEventListener('transitionend', () => {
                         if (casesSection.classList.contains('slide-out')) {
                             casesSection.style.display = 'none';
                             casesSection.classList.remove('slide-out');
+                            // Hide back button when cases section slides out
+                            backButton.style.display = 'none';
+                            backButton.style.opacity = '0';
                         }
-                        casesSection.classList.remove('slide-in');
+                        // Don't remove slide-in class - keep the section visible
                     });
                     
                     console.log('Mobile navigation setup complete. Projects heading is clickable.');
