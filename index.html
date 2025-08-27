@@ -165,16 +165,24 @@
                 // Remove existing event listeners first
                 if (projectsClickHandler) {
                     projectsHeading.removeEventListener('click', projectsClickHandler);
+                    projectsHeading.removeEventListener('touchstart', projectsClickHandler);
                 }
                 if (backClickHandler) {
                     backButton.removeEventListener('click', backClickHandler);
+                    backButton.removeEventListener('touchstart', backClickHandler);
                 }
                 
                 if (window.innerWidth < 1024) {
                     projectsHeading.style.cursor = 'pointer';
+                    projectsHeading.style.userSelect = 'none'; // Prevent text selection on mobile
                     
                     // Projects heading click handler
-                    projectsClickHandler = () => {
+                    projectsClickHandler = (e) => {
+                        e.preventDefault(); // Prevent default behavior
+                        e.stopPropagation(); // Stop event bubbling
+                        
+                        console.log('Projects heading clicked!'); // Debug log
+                        
                         // Remove any existing animation classes from about
                         aboutSection.classList.remove('slide-in');
                         // Animate about section out
@@ -201,10 +209,17 @@
                         }, 600);
                     };
                     
+                    // Add both click and touchstart events for better mobile support
                     projectsHeading.addEventListener('click', projectsClickHandler);
+                    projectsHeading.addEventListener('touchstart', projectsClickHandler);
                     
                     // Back button click handler
-                    backClickHandler = () => {
+                    backClickHandler = (e) => {
+                        e.preventDefault(); // Prevent default behavior
+                        e.stopPropagation(); // Stop event bubbling
+                        
+                        console.log('Back button clicked!'); // Debug log
+                        
                         // Animate cases section out
                         casesSection.classList.remove('slide-in');
                         casesSection.classList.add('slide-out');
@@ -238,10 +253,16 @@
                         }, 300);
                     };
                     
+                    // Add both click and touchstart events for better mobile support
                     backButton.addEventListener('click', backClickHandler);
+                    backButton.addEventListener('touchstart', backClickHandler);
+                    
+                    // Debug: Log mobile setup
+                    console.log('Mobile navigation setup complete. Projects heading is clickable.');
                 } else {
                     // Remove click functionality on larger screens
                     projectsHeading.style.cursor = 'default';
+                    projectsHeading.style.userSelect = 'auto';
                     // Reset display states for larger screens
                     aboutSection.style.display = 'flex';
                     casesSection.style.display = 'none';
@@ -252,11 +273,18 @@
                     // Remove any inline styles that might interfere
                     casesSection.style.removeProperty('transform');
                     casesSection.style.removeProperty('opacity');
+                    
+                    console.log('Desktop navigation setup complete.');
                 }
             }
             
             // Initial setup
             handleMobileNavigation();
+            
+            // Add a simple test to verify mobile detection
+            console.log('Window width:', window.innerWidth);
+            console.log('Is mobile (< 1024px):', window.innerWidth < 1024);
+            console.log('Projects heading element:', projectsHeading);
             
             // Handle resize events
             window.addEventListener('resize', handleMobileNavigation);
