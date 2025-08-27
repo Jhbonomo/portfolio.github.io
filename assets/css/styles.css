@@ -235,7 +235,7 @@ mark {
 
 .content h1, .content h2 {
     font-family: var(--font-secondary), var(--font-primary);
-    font-size: clamp(24px, 3vw, 32px); /* Mobile default - improved scaling */
+    font-size: clamp(18px, 2.5vw, 24px); /* Reduced font size for better readability */
     font-weight: 400; /* Mobile default */
     line-height: 140%;
     text-align: center;
@@ -618,7 +618,7 @@ mark {
     
     
     h1, h2 {
-        font-size: clamp(28px, 2.8vw, 36px); /* Desktop: responsive font size - reduced */
+        font-size: clamp(20px, 2.2vw, 28px); /* Desktop: reduced font size for better balance */
     }
     
 
