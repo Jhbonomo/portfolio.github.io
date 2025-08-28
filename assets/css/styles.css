@@ -311,18 +311,18 @@ mark {
 
 .content h1, .content h2 {
     font-family: var(--font-secondary), var(--font-primary);
-    font-size: clamp(16px, 2.2vw, 22px) !important; /* Further reduced font size with !important */
+    font-size: clamp(16px, 2.2vw, 22px);
     font-weight: 400; /* Mobile default */
-    line-height: 2 !important; /* Increased line height for better spacing with !important */
+    line-height: 2;
     text-align: center;
     margin: 0;
 }
 
 /* Ensure mark elements inherit the correct font size and line height */
 .content h1 mark, .content h2 mark {
-    font-size: inherit !important;
-    line-height: inherit !important;
-    font-family: inherit !important;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
 }
 
 
@@ -349,7 +349,7 @@ mark {
     display: none; /* Hidden by default on mobile */
     color: white;
     z-index: 10;
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif !important;
+    font-family: var(--font-primary);
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -491,12 +491,12 @@ mark {
 
 .projects-heading:hover {
     opacity: 0.85; /* Mobile: gentler hover effect */
-    transform: translateY(-3px) scale(1.02); /* Mobile: subtle lift and scale effect */
+    transform: translate3d(0, -3px, 0) scale(1.02); /* Hardware accelerated */
 }
 
 .projects-heading:active {
-    transform: translateY(-1px) scale(1.01); /* Mobile: gentler press effect */
-    transition: transform 0.15s ease;
+    transform: translate3d(0, -1px, 0) scale(1.01); /* Hardware accelerated */
+    transition: transform var(--transition-fast);
     background-color: rgba(255, 255, 255, 0.1); /* Visual feedback on touch */
 }
 
@@ -542,23 +542,24 @@ mark {
         will-change: transform, opacity;
     }
     
+    /* Optimized slide animations using transform for better performance */
     .about.slide-out {
-        transform: translateY(-100%);
+        transform: translate3d(0, -100%, 0); /* Hardware acceleration */
         opacity: 0;
     }
     
     .cases.slide-in {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0); /* Hardware acceleration */
         opacity: 1;
     }
     
     .cases.slide-out {
-        transform: translateY(100%);
+        transform: translate3d(0, 100%, 0); /* Hardware acceleration */
         opacity: 0;
     }
     
     .about.slide-in {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0); /* Hardware acceleration */
         opacity: 1;
     }
 
@@ -595,7 +596,7 @@ mark {
 /* Back Button - Mobile only */
 .back-button {
     display: none; /* Hidden by default */
-    font-family: var(--font-primary) !important;
+    font-family: var(--font-primary);
     font-size: var(--font-size-lg);
     font-weight: 500;
     cursor: pointer;
@@ -663,7 +664,7 @@ mark {
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0); /* Hardware accelerated */
     box-shadow: var(--shadow-md);
 }
 
@@ -730,7 +731,7 @@ mark {
 .card-button:hover {
     background: hsl(120, 100%, 70%);
     color: var(--color-text-primary);
-    transform: translateY(-1px);
+    transform: translate3d(0, -1px, 0); /* Hardware accelerated */
     box-shadow: var(--shadow-sm);
 }
 
@@ -761,7 +762,7 @@ mark {
     }
     
     .cases {
-        display: flex !important;
+        display: flex;
         width: 60%;
         padding: clamp(2rem, 2vw, 3rem);
         transform: translateY(0);
@@ -782,7 +783,7 @@ mark {
     
     
     h1, h2 {
-        font-size: clamp(18px, 2vw, 26px) !important; /* Desktop: further reduced font size with !important */
+        font-size: clamp(18px, 2vw, 26px); /* Desktop: further reduced font size */
     }
     
 
@@ -834,6 +835,25 @@ mark {
 *:focus {
     outline: 2px solid #fff;
     outline-offset: 2px;
+}
+
+/* ==========================================================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Hardware acceleration for animations */
+.about, .cases, .projects-heading, .card, .card-button {
+    will-change: transform, opacity;
+}
+
+/* Optimize paint and layout operations */
+.viewport {
+    contain: layout style;
+}
+
+/* Reduce repaints for static elements */
+.content {
+    contain: layout style paint;
 }
 
 /* ==========================================================================
