@@ -489,6 +489,13 @@ mark {
     margin: 0;
 }
 
+/* Larger font size for desktop and larger screens */
+@media (min-width: 1024px) {
+    .projects-title {
+        font-size: var(--font-size-5xl);
+    }
+}
+
 .projects-heading:hover {
     opacity: 0.85; /* Mobile: gentler hover effect */
     transform: translateY(-3px) scale(1.02); /* Mobile: subtle lift and scale effect */
