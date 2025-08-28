@@ -491,11 +491,11 @@ mark {
 
 .projects-heading:hover {
     opacity: 0.85; /* Mobile: gentler hover effect */
-    transform: translate3d(0, -3px, 0) scale(1.02); /* Hardware accelerated */
+    transform: translate3d(0, -3px, 0); /* Hardware accelerated - removed scale to prevent movement */
 }
 
 .projects-heading:active {
-    transform: translate3d(0, -1px, 0) scale(1.01); /* Hardware accelerated */
+    transform: translate3d(0, -1px, 0); /* Hardware accelerated - removed scale to prevent movement */
     transition: transform var(--transition-fast);
     background-color: rgba(255, 255, 255, 0.1); /* Visual feedback on touch */
 }
@@ -630,11 +630,11 @@ mark {
     content: '↓';
     font-size: 20px;
     color: #ffffff;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform var(--transition-slow);
 }
 
 .projects-heading:hover::after {
-    transform: translateY(4px); /* Arrow moves down more smoothly on hover */
+    transform: translate3d(0, 4px, 0); /* Arrow moves down more smoothly on hover - hardware accelerated */
 }
 
 /* ==========================================================================
