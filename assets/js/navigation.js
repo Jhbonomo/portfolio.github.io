@@ -94,11 +94,11 @@ class MobileNavigation {
         this.aboutSection.classList.add('slide-in');
         this.casesSection.classList.add('slide-out');
         
-        // Ensure proper initial positioning
-        this.aboutSection.style.transform = 'translateX(0)';
-        this.aboutSection.style.opacity = '1';
-        this.casesSection.style.transform = 'translateX(100%)';
-        this.casesSection.style.opacity = '0';
+        // Ensure proper initial positioning - REMOVE inline styles that conflict with CSS classes
+        // this.aboutSection.style.transform = 'translateX(0)';
+        // this.aboutSection.style.opacity = '1';
+        // this.casesSection.style.transform = 'translateX(100%)';
+        // this.casesSection.style.opacity = '0';
         
         // Projects heading click handler
         this.projectsClickHandler = (e) => {
@@ -179,11 +179,11 @@ class MobileNavigation {
         this.aboutSection.classList.remove('slide-in', 'slide-out');
         this.casesSection.classList.remove('slide-in', 'slide-out');
         
-        // Reset transforms and opacity
-        this.aboutSection.style.transform = '';
-        this.aboutSection.style.opacity = '';
-        this.casesSection.style.transform = '';
-        this.casesSection.style.opacity = '';
+        // Reset transforms and opacity - REMOVE inline styles that conflict with CSS classes
+        // this.aboutSection.style.transform = '';
+        // this.aboutSection.style.opacity = '';
+        // this.casesSection.style.transform = '';
+        // this.casesSection.style.opacity = '';
         
         // Hide back button
         this.backButton.style.display = 'none';
