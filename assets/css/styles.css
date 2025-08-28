@@ -559,6 +559,29 @@ mark {
         transform: translateY(0);
         opacity: 1;
     }
+
+    /* Ensure project cards fit within the viewport on mobile */
+    project-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure cases section content fits within viewport */
+    .cases {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .cases .content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        box-sizing: border-box;
+    }
 }
 
 /* Back Button - Mobile only */
