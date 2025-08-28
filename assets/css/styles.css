@@ -112,12 +112,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size-adjust: 0.5;
 }
 
-.projects-heading {
-    font-family: var(--font-primary);
-    font-display: swap;
-    font-size-adjust: 0.5;
-}
-
 /* Controls and labels use system fonts for better readability */
 .controls label {
     font-family: var(--font-system);
@@ -525,9 +519,10 @@ mark {
     opacity: 1;
 }
 
-/* Mobile Navigation Transitions - Applied only on mobile */
+/* ==========================================================================
+   MOBILE STYLES (max-width: 1023px) - CONSOLIDATED
+   ========================================================================== */
 
-/* Mobile slide states */
 @media (max-width: 1023px) {
     /* Container positioning for slide effect */
     .viewport {
@@ -576,16 +571,16 @@ mark {
 
     /* Ensure cases section content fits within viewport */
     .cases {
-        width: calc(100% - 32px) !important; /* Account for 16px margin on each side */
-        max-width: calc(100% - 32px) !important;
-        margin: 16px !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-        position: absolute !important; /* Change from fixed to absolute for proper margin handling */
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        margin: 16px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .cases .content {
@@ -893,6 +888,12 @@ mark {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        /* Mobile-specific positioning */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        min-height: 60px;
     }
     
     .projects-heading::after {
@@ -983,59 +984,7 @@ mark {
 }
 
 /* ==========================================================================
-   MOBILE NAVIGATION STYLES
+   MOBILE NAVIGATION STYLES - CONSOLIDATED
    ========================================================================== */
 
-@media (max-width: 1023px) {
-    /* Make the projects heading more prominent and always visible */
-    .projects-heading {
-        position: fixed !important;
-        bottom: 20px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        background: rgba(0, 0, 0, 0.9) !important;
-        border: 2px solid rgba(255, 255, 255, 0.5) !important;
-        border-radius: 12px !important;
-        padding: 1rem 1.5rem !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7) !important;
-        z-index: 1000 !important;
-        margin: 0 !important;
-        font-size: 20px !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        cursor: pointer !important;
-        min-height: 60px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    /* Add a pulsing animation to draw attention */
-    .projects-heading::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        animation: pulse 2s infinite;
-        z-index: -1;
-    }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        50% {
-            transform: scale(1.05);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-}
+/* Note: Mobile navigation styles are now consolidated in the MOBILE NAVIGATION FALLBACK section above */
