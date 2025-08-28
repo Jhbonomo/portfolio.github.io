@@ -3,6 +3,7 @@ class MindmapAnimation {
     constructor() {
         this.isAnimating = false;
         this.isVisible = false;
+        this.hasAnimated = false; // Track if animation has already run
         this.init();
     }
 
@@ -88,8 +89,9 @@ class MindmapAnimation {
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && !this.isVisible) {
+                if (entry.isIntersecting && !this.isVisible && !this.hasAnimated) {
                     this.isVisible = true;
+                    this.hasAnimated = true; // Mark as animated to prevent re-running
                     // Auto-start animation after a short delay
                     setTimeout(() => {
                         if (!this.isAnimating) {
