@@ -1107,6 +1107,7 @@ body.dark-theme .prototype-link a:hover {
 .modal-image-container {
     max-width: 90%;
     max-height: 80%;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
