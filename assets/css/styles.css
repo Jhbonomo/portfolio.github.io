@@ -481,7 +481,7 @@ mark {
 
 /* Projects title in cases section */
 .projects-title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-2xl);
     font-weight: 700;
     color: var(--color-text-primary);
     margin: 0;
