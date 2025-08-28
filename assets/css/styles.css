@@ -1,6 +1,75 @@
 /* Font imports are now handled in HTML for better performance */
 
 /* ==========================================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --color-primary: #111111;
+    --color-secondary: #ffffff;
+    --color-accent: #00ff88;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-light: #666666;
+    --color-background: #111111;
+    --color-surface: #ffffff;
+    --color-border: #cccccc;
+    --color-overlay: rgba(0, 0, 0, 0.8);
+    
+    /* Typography */
+    --font-primary: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    --font-secondary: 'Special Elite', 'Courier New', monospace;
+    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-fallback: Arial, Helvetica, sans-serif;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Z-index */
+    --z-index-base: 1;
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal: 1040;
+    --z-index-popover: 1050;
+    --z-index-tooltip: 1060;
+}
+
+/* ==========================================================================
    CRITICAL FONT FALLBACKS
    ========================================================================== */
 
@@ -27,13 +96,7 @@ html, body {
    FONT DEFINITIONS & FALLBACKS
    ========================================================================== */
 
-/* Primary font stack with robust fallbacks */
-:root {
-    --font-primary: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-    --font-secondary: 'Special Elite', 'Courier New', monospace;
-    --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --font-fallback: Arial, Helvetica, sans-serif;
-}
+/* Font definitions moved to CSS custom properties above */
 
 /* Ensure fonts are loaded with proper fallbacks */
 h1, h2, h3, h4, h5, h6 {
@@ -180,21 +243,40 @@ p{
     font-size: 1rem
 }
 mark {
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-secondary);
+    background-color: var(--color-overlay);
     position: relative;
 }
 
 /* Typing cursor effect - removed */
 
+/* LinkedIn link styling */
+.linkedin-link {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-normal);
+}
+
+.linkedin-link:hover {
+    opacity: 0.8;
+}
+
 /* LinkedIn icon styling */
+.linkedin-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: var(--spacing-xs);
+    transition: var(--transition-normal);
+}
+
+/* Legacy styles for backward compatibility */
 .content h1 a,
 .content h2 a {
     display: inline-block;
-    margin-left: 8px;
-    font-size: .75rem;
-    color: #ffffff;
-    transition: opacity 0.5s ease;
+    margin-left: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-secondary);
+    transition: var(--transition-normal);
 }
 
 .content h2 a {
@@ -399,9 +481,9 @@ mark {
 
 /* Projects title in cases section */
 .projects-title {
-    font-size: 48px;
+    font-size: var(--font-size-5xl);
     font-weight: 700;
-    color: #000000;
+    color: var(--color-text-primary);
     margin: 0;
     line-height: 1.2;
 }
@@ -439,18 +521,17 @@ mark {
 /* Back Button - Mobile only */
 .back-button {
     display: none; /* Hidden by default */
-    color: #0d0d0d;
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif !important;
-    font-size: 1.1rem;
+    font-family: var(--font-primary) !important;
+    font-size: var(--font-size-lg);
     font-weight: 500;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     margin: 0;
-    transition: opacity 0.3s ease;
-    background: #000;
-    color: #fff;
+    transition: var(--transition-normal);
+    background: var(--color-primary);
+    color: var(--color-secondary);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     white-space: nowrap;
 }
 
