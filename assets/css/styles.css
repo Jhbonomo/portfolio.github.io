@@ -491,13 +491,11 @@ mark {
 
 .projects-heading:hover {
     opacity: 0.85; /* Mobile: gentler hover effect */
-    transform: translate3d(0, -3px, 0); /* Hardware accelerated - removed scale to prevent movement */
+; /* Hardware accelerated - removed scale to prevent movement */
 }
 
-.projects-heading:active {
-    transform: translate3d(0, -1px, 0); /* Hardware accelerated - removed scale to prevent movement */
-    transition: transform var(--transition-fast);
-    background-color: rgba(255, 255, 255, 0.1); /* Visual feedback on touch */
+.projects-heading:active { /* Hardware accelerated - removed scale to prevent movement */
+    background-color: rgba(68, 68, 68, 0.1); /* Visual feedback on touch */
 }
 
 /* Add a subtle background to make it more visible */
