@@ -475,7 +475,6 @@ mark {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
     width: 100%;
     /* Ensure proper vertical alignment */
     align-items: baseline;
