@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/project-template.css">
+    <link rel="stylesheet" href="../assets/css/mindmap-animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -55,7 +57,7 @@
                     <!-- Image: Data analysis and mapping -->
                     <div class="image-container">
                         <div class="image-wrapper" data-zoom="true">
-                            <img src="" 
+                            <img src="../assets/images/SUS/survey questions.png" 
                                  alt="Data analysis and user experience mapping across multiple years" 
                                  class="interactive-image"
                                  loading="lazy">
@@ -79,22 +81,6 @@
                    </div>
             </section>
 
-            <!-- Context Matters Section -->
-            <section class="article-section">
-                <h2 class="section-title">Context Matters</h2>
-                <div class="article-content">
-                    <p>Users enter with different assumptions, skills, and needs—not as blank slates.</p>
-                    
-                    <!-- Mobile Before/After Animation -->
-                    <div class="mobile-before-after" id="mobileBeforeAfter">
-                        <img src="../assets/images/ux-mapping-before.jpg" alt="Before: Complex interface without guidance" class="before-image">
-                        <img src="../assets/images/ux-mapping-after.jpg" alt="After: Simplified interface with clear patterns" class="after-image">
-                    </div>
-                    
-                    <h3>Design that scaffolds learning</h3>
-                    <p>Issues like discoverability, engagement, and digital literacy aren't just usability problems; they're lessons to learn. Like a skilled teacher, thoughtful design can scaffold learning, spark curiosity, smooth the path, and ultimately build confidence.</p>
-                </div>
-            </section>
 
             <!-- Analyzing the Results -->
             <section class="article-section">
@@ -118,19 +104,11 @@
 
                     <p>Additionally, focusing on the system-wide challenges of learnability and complexity, I created a report that mapped the factors driving these issues. To address recurring problems, I conducted a deeper analysis of the specific features driving these difficulties in the Feature assessment.</p>
 
-                    <!-- Image: System wide assessment report -->
-                    <div class="image-container">
-                        <div class="image-wrapper" data-zoom="true">
-                            <img src="" 
-                                 alt="Finding patterns in user comments" 
-                                 class="interactive-image"
-                                 loading="lazy">
-                            <div class="image-overlay">
-                                <button class="zoom-btn" title="Click to zoom">🔍</button>
-                            </div>
-                        </div>
+                    <!-- Mindmap Animation: Feature-driven architecture -->
+                    <div class="mindmap-container">
+                        <div class="mindmap-animation"></div>
                         <figcaption class="image-caption">
-                            Example of system-wide findings and concepts
+                            The information architecture of a system driven organizes the tools feature by feature. A more user centered approach allows users to unify the content and organizing it according to their on their own terms.
                         </figcaption>
                     </div>
                 </div>
@@ -261,5 +239,6 @@
     </div>
 
     <script src="../assets/js/project-template.js"></script>
+    <script src="../assets/js/mindmap-animation.js"></script>
 </body>
 </html>
