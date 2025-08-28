@@ -541,22 +541,22 @@ mark {
     }
     
     .about.slide-out {
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         opacity: 0;
     }
     
     .cases.slide-in {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
     
     .cases.slide-out {
-        transform: translateX(100%);
+        transform: translateY(100%);
         opacity: 0;
     }
     
     .about.slide-in {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
