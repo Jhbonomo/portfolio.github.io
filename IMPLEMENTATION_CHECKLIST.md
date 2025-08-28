@@ -17,11 +17,11 @@
 - [x] **Fix mobile navigation** - remove automatic fallback that caused unwanted transitions
 - [x] **Update projects header layout** - create inline layout with Projects title left, back button right
 
-### Day 2: CSS Cleanup
-- [ ] Move all inline styles from `index.html` to `assets/css/styles.css`
-- [ ] Add CSS custom properties at the top of styles.css
-- [ ] Remove duplicate CSS rules
-- [ ] Test visual appearance matches original
+### Day 2: CSS Cleanup ✅
+- [x] Move all inline styles from `index.html` to `assets/css/styles.css`
+- [x] Add CSS custom properties at the top of styles.css
+- [x] Remove duplicate CSS rules
+- [x] Test visual appearance matches original
 
 ### Day 3-4: JavaScript Organization
 - [ ] Create `assets/js/navigation.js` for mobile navigation logic
@@ -51,11 +51,11 @@
 - [x] Font loading detection working
 - [x] Performance improved
 
-### CSS Structure
+### CSS Structure ✅
 - [x] No inline styles in HTML
-- [ ] CSS custom properties implemented
-- [ ] Organized CSS sections
-- [ ] No duplicate rules
+- [x] CSS custom properties implemented
+- [x] Organized CSS sections
+- [x] No duplicate rules
 - [x] Visual appearance maintained
 
 ### JavaScript Organization
@@ -71,8 +71,9 @@
 1. **Font loading optimization** ✅ (1 hour) - COMPLETED
 2. **Remove inline styles** ✅ (2 hours) - COMPLETED
 3. **Fix font size and mobile navigation** ✅ (1.5 hours) - COMPLETED
-4. **Add error handling** (2 hours)
-5. **Add `rel="noopener"` to external links** (30 minutes)
+4. **CSS custom properties implementation** ✅ (2 hours) - COMPLETED
+5. **Add error handling** (2 hours)
+6. **Add `rel="noopener"` to external links** (30 minutes)
 
 ### High Impact, Medium Effort
 1. **JavaScript code organization** (1 day)
@@ -97,14 +98,16 @@
 - ✅ **Font Size Fixes**: Resolved inheritance issues, reduced font sizes, increased line-height to 2
 - ✅ **Mobile Navigation Fix**: Removed automatic fallback that caused unwanted transitions
 - ✅ **Projects Header Layout**: Created inline layout with Projects title left, back button right
+- ✅ **CSS Custom Properties**: Added comprehensive design tokens for colors, typography, spacing, and more
+- ✅ **Inline Styles Cleanup**: Moved LinkedIn link and icon styles to external CSS
+- ✅ **Design Token Implementation**: Updated hardcoded values to use CSS custom properties
 
-### Next Steps (Day 2):
-- Continue with CSS cleanup and organization
-- Implement CSS custom properties
-- Remove remaining inline styles
-- Organize CSS into logical sections
+### Next Steps (Day 3-4):
+- JavaScript code organization
+- Extract inline JavaScript to separate files
+- Create modular JavaScript structure
 
 ---
 
-**Status**: Phase 1, Day 1.5 ✅ COMPLETED
-**Next**: Phase 1, Day 2 - CSS Cleanup
+**Status**: Phase 1, Day 2 ✅ COMPLETED
+**Next**: Phase 1, Day 3-4 - JavaScript Organization
