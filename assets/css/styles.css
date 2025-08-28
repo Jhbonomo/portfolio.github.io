@@ -487,7 +487,6 @@ mark {
     font-weight: 700;
     color: var(--color-text-primary);
     margin: 0;
-    line-height: 1.2;
 }
 
 .projects-heading:hover {
@@ -927,7 +926,6 @@ mark {
         border: none;
         border-radius: 8px;
         padding: 12px 16px;
-        margin-bottom: 20px;
         font-size: 16px;
         font-weight: 500;
         cursor: pointer;
