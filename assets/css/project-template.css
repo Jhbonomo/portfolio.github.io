@@ -1301,6 +1301,23 @@ body.dark-theme .theme-toggle:hover {
     
     .mobile-before-after {
         display: block; /* Show before/after transition on mobile */
+        height: 250px; /* Smaller height for mobile */
+        margin: 1.5rem 0;
+    }
+    
+    /* Mobile-specific animation timing */
+    .mobile-before-after .before-image,
+    .mobile-before-after .after-image {
+        transition: opacity 0.3s ease-in-out; /* Slightly slower for mobile */
+    }
+    
+    /* Mobile restart arrow positioning */
+    .mobile-before-after .restart-arrow {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
     
     .results-grid {
