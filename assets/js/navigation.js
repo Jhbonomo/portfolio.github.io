@@ -26,6 +26,14 @@ class MobileNavigation {
             });
         }
         
+        // Debug: Log all found elements
+        console.log('Navigation elements found:', {
+            projectsHeading: this.projectsHeading,
+            aboutSection: this.aboutSection,
+            casesSection: this.casesSection,
+            backButton: this.backButton
+        });
+        
         this.init();
     }
     
@@ -50,9 +58,14 @@ class MobileNavigation {
         // Remove existing event listeners first
         this.removeEventListeners();
         
-        if (isMobile()) {
+        const mobile = isMobile();
+        console.log('🔵 Mobile detection:', mobile, 'Window width:', window.innerWidth);
+        
+        if (mobile) {
+            console.log('🔵 Setting up MOBILE navigation');
             this.setupMobileNavigation();
         } else {
+            console.log('🔵 Setting up DESKTOP navigation');
             this.setupDesktopNavigation();
         }
     }
@@ -89,6 +102,7 @@ class MobileNavigation {
         
         // Projects heading click handler
         this.projectsClickHandler = (e) => {
+            console.log('🔵 CLICK DETECTED! Projects heading clicked!');
             e.preventDefault();
             e.stopPropagation();
             
@@ -141,6 +155,7 @@ class MobileNavigation {
         };
         
         // Add both click and touchstart events for better mobile support
+        console.log('🔵 Adding event listeners to projects heading:', this.projectsHeading);
         this.projectsHeading.addEventListener('click', this.projectsClickHandler);
         this.projectsHeading.addEventListener('touchstart', this.projectsClickHandler);
         
@@ -148,6 +163,7 @@ class MobileNavigation {
         this.backButton.addEventListener('touchstart', this.backClickHandler);
         
         logDebug('Mobile navigation setup complete with slide transitions.');
+        console.log('🔵 Mobile navigation setup complete. Projects heading should be clickable.');
     }
     
     setupDesktopNavigation() {
