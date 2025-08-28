@@ -1,7 +1,18 @@
 class EntangledLineAnimation {
     constructor() {
+        // Validate canvas element
         this.canvas = document.getElementById('canvas');
+        if (!this.canvas) {
+            console.error('Canvas element not found');
+            return;
+        }
+        
+        // Validate canvas context
         this.ctx = this.canvas.getContext('2d');
+        if (!this.ctx) {
+            console.error('Canvas 2D context not available');
+            return;
+        }
         
         // Animation properties
         this.speed = 1;
@@ -24,9 +35,15 @@ class EntangledLineAnimation {
         this.lightness = 50; // Fixed lightness (0-100)
         this.glowColor = '#000000'; // Pure black glow
         
-        // Device performance detection
-        this.isMobile = window.innerWidth <= 768;
-        this.isLowPerformance = this.isMobile || navigator.hardwareConcurrency <= 4;
+        // Device performance detection with error handling
+        try {
+            this.isMobile = window.innerWidth <= 768;
+            this.isLowPerformance = this.isMobile || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+        } catch (error) {
+            console.warn('Error detecting device performance, using conservative settings:', error);
+            this.isMobile = true;
+            this.isLowPerformance = true;
+        }
         
         // Adjust settings for performance
         if (this.isLowPerformance) {
@@ -35,11 +52,16 @@ class EntangledLineAnimation {
             this.frameInterval = 1000 / this.targetFPS;
         }
         
-        // Initialize
-        this.init();
-        this.setupControls();
-        this.showLoadingState();
-        this.startAnimation();
+        // Initialize with error handling
+        try {
+            this.init();
+            this.setupControls();
+            this.showLoadingState();
+            this.startAnimation();
+        } catch (error) {
+            console.error('Error initializing animation:', error);
+            this.showErrorState();
+        }
     }
     
     init() {
@@ -283,13 +305,32 @@ class EntangledLineAnimation {
     }
     
     showLoadingState() {
-        this.ctx.fillStyle = '#000';
-        this.ctx.fillRect(0, 0, this.width, this.height);
-        
-        this.ctx.fillStyle = '#fff';
-        this.ctx.font = '16px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText('Loading animation...', this.width / 2, this.height / 2);
+        try {
+            this.ctx.fillStyle = '#000';
+            this.ctx.fillRect(0, 0, this.width, this.height);
+            
+            this.ctx.fillStyle = '#fff';
+            this.ctx.font = '16px Arial';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText('Loading animation...', this.width / 2, this.height / 2);
+        } catch (error) {
+            console.error('Error showing loading state:', error);
+        }
+    }
+    
+    showErrorState() {
+        try {
+            this.ctx.fillStyle = '#000';
+            this.ctx.fillRect(0, 0, this.width, this.height);
+            
+            this.ctx.fillStyle = '#ff6b6b';
+            this.ctx.font = '14px Arial';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText('Animation unavailable', this.width / 2, this.height / 2 - 10);
+            this.ctx.fillText('Please refresh the page', this.width / 2, this.height / 2 + 10);
+        } catch (error) {
+            console.error('Error showing error state:', error);
+        }
     }
     
     startAnimation() {
@@ -307,18 +348,24 @@ class EntangledLineAnimation {
     animate(currentTime = 0) {
         if (!this.isRunning) return;
         
-        // Throttle frame rate for performance
-        if (currentTime - this.lastFrameTime < this.frameInterval) {
+        try {
+            // Throttle frame rate for performance
+            if (currentTime - this.lastFrameTime < this.frameInterval) {
+                this.animationId = requestAnimationFrame((time) => this.animate(time));
+                return;
+            }
+            
+            this.lastFrameTime = currentTime;
+            
+            this.updatePoints();
+            this.drawLines();
+            
             this.animationId = requestAnimationFrame((time) => this.animate(time));
-            return;
+        } catch (error) {
+            console.error('Error in animation loop:', error);
+            this.stopAnimation();
+            this.showErrorState();
         }
-        
-        this.lastFrameTime = currentTime;
-        
-        this.updatePoints();
-        this.drawLines();
-        
-        this.animationId = requestAnimationFrame((time) => this.animate(time));
     }
     
     destroy() {
@@ -327,7 +374,24 @@ class EntangledLineAnimation {
     }
 }
 
-// Initialize the animation when the page loads
+// Initialize the animation when the page loads with error handling
 window.addEventListener('load', () => {
-    new EntangledLineAnimation();
+    try {
+        new EntangledLineAnimation();
+    } catch (error) {
+        console.error('Failed to initialize animation:', error);
+        // Show a fallback message if animation fails completely
+        const canvas = document.getElementById('canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#666';
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Animation unavailable', canvas.width / 2, canvas.height / 2);
+            }
+        }
+    }
 });

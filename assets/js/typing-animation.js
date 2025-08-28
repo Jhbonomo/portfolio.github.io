@@ -3,18 +3,32 @@
  * Handles typing effects for mark elements and text animations
  */
 
-// Typing animation function with natural variation
+import { safeExecute, safeExecuteAsync, reportError } from './utils.js';
+
+// Typing animation function with natural variation and error handling
 export function typeWriter(element, text, baseSpeed = 60, delay = 0) {
     return new Promise((resolve) => {
+        // Validate inputs
+        if (!element || !text) {
+            console.warn('Invalid inputs for typeWriter:', { element, text });
+            resolve();
+            return;
+        }
+
         setTimeout(() => {
             let i = 0;
-            element.textContent = '';
-            element.classList.add('typing'); // Show cursor when typing starts
+            
+            safeExecute(() => {
+                element.textContent = '';
+                element.classList.add('typing'); // Show cursor when typing starts
+            }, null, 'typeWriter initialization');
             
             function type() {
                 if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
+                    safeExecute(() => {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    }, null, 'typeWriter character addition');
                     
                     // Add natural variation to typing speed
                     let currentSpeed = baseSpeed;
@@ -33,8 +47,10 @@ export function typeWriter(element, text, baseSpeed = 60, delay = 0) {
                     
                     setTimeout(type, currentSpeed);
                 } else {
-                    element.classList.remove('typing');
-                    element.classList.add('typing-complete');
+                    safeExecute(() => {
+                        element.classList.remove('typing');
+                        element.classList.add('typing-complete');
+                    }, null, 'typeWriter completion');
                     resolve();
                 }
             }
@@ -44,27 +60,44 @@ export function typeWriter(element, text, baseSpeed = 60, delay = 0) {
     });
 }
 
-// Start typing animation for mark tags
+// Start typing animation for mark tags with error handling
 export async function startTypingAnimation() {
-    const markElements = document.querySelectorAll('.content mark');
-    const originalTexts = [];
-    
-    // Store original text content
-    markElements.forEach((mark, index) => {
-        originalTexts[index] = mark.textContent;
-        mark.textContent = '';
-    });
-    
-    // Type each mark element sequentially
-    for (let i = 0; i < markElements.length; i++) {
-        await typeWriter(markElements[i], originalTexts[i], 60, 0);
-        // Shorter pause between lines
-        await new Promise(resolve => setTimeout(resolve, 200));
-    }
-    
-    // Show LinkedIn link after all text is typed
-    const linkedinLink = document.querySelector('.content h2 a');
-    if (linkedinLink) {
-        linkedinLink.style.opacity = '1';
-    }
+    return safeExecuteAsync(async () => {
+        const markElements = document.querySelectorAll('.content mark');
+        const originalTexts = [];
+        
+        if (markElements.length === 0) {
+            console.warn('No mark elements found for typing animation');
+            return;
+        }
+        
+        // Store original text content
+        markElements.forEach((mark, index) => {
+            originalTexts[index] = mark.textContent;
+            safeExecute(() => {
+                mark.textContent = '';
+            }, null, 'mark element text clearing');
+        });
+        
+        // Type each mark element sequentially
+        for (let i = 0; i < markElements.length; i++) {
+            try {
+                await typeWriter(markElements[i], originalTexts[i], 60, 0);
+                // Shorter pause between lines
+                await new Promise(resolve => setTimeout(resolve, 200));
+            } catch (error) {
+                reportError(error, `typing animation for mark element ${i}`);
+                // Continue with next element even if one fails
+                continue;
+            }
+        }
+        
+        // Show LinkedIn link after all text is typed
+        const linkedinLink = document.querySelector('.content h2 a');
+        if (linkedinLink) {
+            safeExecute(() => {
+                linkedinLink.style.opacity = '1';
+            }, null, 'LinkedIn link opacity setting');
+        }
+    }, null, 'startTypingAnimation');
 }

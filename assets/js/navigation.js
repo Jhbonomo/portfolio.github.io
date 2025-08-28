@@ -3,35 +3,47 @@
  * Handles mobile navigation between about and projects sections
  */
 
-import { isMobile, logDebug, debounce } from './utils.js';
+import { isMobile, logDebug, debounce, safeExecute, reportError } from './utils.js';
 
 class MobileNavigation {
     constructor() {
-        this.projectsHeading = document.querySelector('.projects-heading');
-        this.aboutSection = document.querySelector('.about');
-        this.casesSection = document.querySelector('.cases');
-        this.backButton = document.getElementById('backButton');
+        this.projectsHeading = safeExecute(() => document.querySelector('.projects-heading'), null, 'projects heading selection');
+        this.aboutSection = safeExecute(() => document.querySelector('.about'), null, 'about section selection');
+        this.casesSection = safeExecute(() => document.querySelector('.cases'), null, 'cases section selection');
+        this.backButton = safeExecute(() => document.getElementById('backButton'), null, 'back button selection');
         
         // Store event handler functions so we can remove them properly
         this.projectsClickHandler = null;
         this.backClickHandler = null;
         
+        // Validate required elements
+        if (!this.projectsHeading || !this.aboutSection || !this.casesSection || !this.backButton) {
+            console.warn('Some navigation elements not found:', {
+                projectsHeading: !!this.projectsHeading,
+                aboutSection: !!this.aboutSection,
+                casesSection: !!this.casesSection,
+                backButton: !!this.backButton
+            });
+        }
+        
         this.init();
     }
     
     init() {
-        // Initial setup
-        this.handleMobileNavigation();
-        
-        // Add a simple test to verify mobile detection
-        logDebug('Window width:', window.innerWidth);
-        logDebug('Is mobile (< 1024px):', isMobile());
-        logDebug('Projects heading element:', this.projectsHeading);
-        
-        // Handle resize events with debouncing
-        window.addEventListener('resize', debounce(() => {
+        return safeExecute(() => {
+            // Initial setup
             this.handleMobileNavigation();
-        }, 250));
+            
+            // Add a simple test to verify mobile detection
+            logDebug('Window width:', window.innerWidth);
+            logDebug('Is mobile (< 1024px):', isMobile());
+            logDebug('Projects heading element:', this.projectsHeading);
+            
+            // Handle resize events with debouncing
+            window.addEventListener('resize', debounce(() => {
+                this.handleMobileNavigation();
+            }, 250));
+        }, null, 'navigation initialization');
     }
     
     handleMobileNavigation() {
