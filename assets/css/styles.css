@@ -492,7 +492,7 @@ mark {
 /* Larger font size for desktop and larger screens */
 @media (min-width: 1024px) {
     .projects-title {
-        font-size: var(--font-size-5xl);
+        font-size: var(--font-size-5xl) !important;
     }
 }
 
