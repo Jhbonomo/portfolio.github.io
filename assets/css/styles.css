@@ -477,6 +477,8 @@ mark {
     align-items: center;
     margin-bottom: 2rem;
     width: 100%;
+    /* Ensure proper vertical alignment */
+    align-items: baseline;
 }
 
 /* Projects title in cases section */
@@ -607,6 +609,9 @@ mark {
     white-space: nowrap;
     opacity: 0;
     transform: translateY(-10px);
+    /* Ensure proper alignment with title */
+    line-height: 1;
+    vertical-align: baseline;
 }
 
 .back-button.visible {
