@@ -518,21 +518,26 @@ mark {
     opacity: 1;
 }
 
-/* Mobile Navigation Transitions */
-.about, .cases {
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
-    will-change: transform, opacity;
-}
+/* Mobile Navigation Transitions - Applied only on mobile */
 
 /* Mobile slide states */
 @media (max-width: 1023px) {
     /* Container positioning for slide effect */
+    .viewport {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+    }
+    
     .about, .cases {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+        will-change: transform, opacity;
     }
     
     .about.slide-out {

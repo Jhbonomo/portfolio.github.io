@@ -76,8 +76,16 @@ class MobileNavigation {
         // Initialize mobile layout - both sections visible but cases off-screen
         this.aboutSection.style.display = 'flex';
         this.casesSection.style.display = 'flex';
+        
+        // Set initial state
         this.aboutSection.classList.add('slide-in');
         this.casesSection.classList.add('slide-out');
+        
+        // Ensure proper initial positioning
+        this.aboutSection.style.transform = 'translateX(0)';
+        this.aboutSection.style.opacity = '1';
+        this.casesSection.style.transform = 'translateX(100%)';
+        this.casesSection.style.opacity = '0';
         
         // Projects heading click handler
         this.projectsClickHandler = (e) => {
@@ -85,6 +93,8 @@ class MobileNavigation {
             e.stopPropagation();
             
             logDebug('Projects heading clicked!');
+            logDebug('About section:', this.aboutSection);
+            logDebug('Cases section:', this.casesSection);
             
             // Slide out about section
             this.aboutSection.classList.remove('slide-in');
@@ -93,6 +103,13 @@ class MobileNavigation {
             // Slide in cases section
             this.casesSection.classList.remove('slide-out');
             this.casesSection.classList.add('slide-in');
+            
+            // Force repaint
+            this.aboutSection.offsetHeight;
+            this.casesSection.offsetHeight;
+            
+            logDebug('Classes after click - About:', this.aboutSection.className);
+            logDebug('Classes after click - Cases:', this.casesSection.className);
             
             // Show back button with animation
             this.backButton.style.display = 'block';
