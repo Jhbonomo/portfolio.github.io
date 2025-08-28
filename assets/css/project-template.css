@@ -27,6 +27,28 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Skip Link for Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+.skip-link:hover {
+    background: #0056b3;
+}
+
 /* ==========================================================================
    ACCORDION STYLES
    ========================================================================== */
