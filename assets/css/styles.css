@@ -5,7 +5,7 @@
    ========================================================================== */
 
 :root {
-    /* Colors */
+    /* ===== COLORS ===== */
     --color-primary: #111111;
     --color-secondary: #ffffff;
     --color-accent: #00ff88;
@@ -17,7 +17,7 @@
     --color-border: #cccccc;
     --color-overlay: rgba(0, 0, 0, 0.8);
     
-    /* Typography */
+    /* ===== TYPOGRAPHY ===== */
     --font-primary: 'Zilla Slab', Georgia, 'Times New Roman', serif;
     --font-secondary: 'Special Elite', 'Courier New', monospace;
     --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -34,7 +34,7 @@
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
     
-    /* Spacing */
+    /* ===== SPACING ===== */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -42,24 +42,24 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     
-    /* Border Radius */
+    /* ===== BORDERS & RADIUS ===== */
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
     --border-radius-lg: 12px;
     --border-radius-xl: 16px;
     
-    /* Transitions */
+    /* ===== TRANSITIONS & ANIMATIONS ===== */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
     --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     
-    /* Shadows */
+    /* ===== SHADOWS ===== */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     
-    /* Z-index */
+    /* ===== Z-INDEX SCALE ===== */
     --z-index-base: 1;
     --z-index-dropdown: 1000;
     --z-index-sticky: 1020;
@@ -242,7 +242,7 @@ mark {
     position: relative;
 }
 
-/* Typing cursor effect - removed */
+/* Typing cursor effect - removed (legacy code) */
 
 /* LinkedIn link styling */
 .linkedin-link {
@@ -636,12 +636,15 @@ mark {
     transform: translateY(4px); /* Arrow moves down more smoothly on hover */
 }
 
-/* Card Component - Mobile */
+/* ==========================================================================
+   CARD COMPONENT
+   ========================================================================== */
+
 .card {
-    background: #fff;
-    padding: .5rem .5rem 1rem .5rem;
+    background: var(--color-surface);
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
     margin: 0;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
     cursor: pointer;
     position: relative;
     border-radius: 0;
@@ -655,13 +658,13 @@ mark {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #000;
-    transition: width 0.3s ease;
+    background-color: var(--color-text-primary);
+    transition: width var(--transition-normal);
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+    box-shadow: var(--shadow-md);
 }
 
 .card:hover::after {
@@ -671,17 +674,17 @@ mark {
 .card-categories {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
     flex-wrap: wrap;
 }
 
 .category-tag {
     background-color: transparent;
-    color: #333333;
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    color: var(--color-text-secondary);
+    font-family: var(--font-primary);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     padding: 0;
     border-radius: 0;
     white-space: nowrap;
@@ -692,45 +695,43 @@ mark {
 .tag-separator {
     width: 1px;
     height: 1rem;
-    background-color: #666666;
+    background-color: var(--color-text-light);
     display: inline-block;
 }
 
 .card-title {
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-    font-size: 1.3rem; /* Mobile default */
-    margin: 0.5rem 0;
-    color: #0d0d0d;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg); /* Mobile default */
+    margin: var(--spacing-sm) 0;
+    color: var(--color-text-primary);
 }
 
 .card-description {
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
+    font-family: var(--font-primary);
     font-weight: 400;
-    color: #0d0d0d;
-    font-size: 1rem; /* Mobile default */
-    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base); /* Mobile default */
+    margin-bottom: var(--spacing-md);
 }
 
 .card-button {
-    font-family: 'Zilla Slab', Georgia, 'Times New Roman', serif;
-    background: hsl(120, 100%, 50%);
-    color: #000;
+    font-family: var(--font-primary);
+    background: var(--color-accent);
+    color: var(--color-text-primary);
     border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
-    --hover-color: hsl(120, 100%, 70%);
-    --hover-text-color: #000;
+    transition: var(--transition-normal);
 }
 
 .card-button:hover {
-    background: var(--hover-color) !important;
-    color: var(--hover-text-color) !important;
+    background: hsl(120, 100%, 70%);
+    color: var(--color-text-primary);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-sm);
 }
 
 
@@ -760,10 +761,9 @@ mark {
     }
     
     .cases {
-        display: flex !important
-;
+        display: flex !important;
         width: 60%;
-        padding: clamp(2rem, 3vw, 3rem);
+        padding: clamp(2rem, 2vw, 3rem);
         transform: translateY(0);
         opacity: 1;
     }
@@ -870,21 +870,21 @@ mark {
 @media (max-width: 1023px) {
     .projects-heading {
         position: fixed;
-        bottom: 80px; /* Increased from 20px to account for mobile browser UI */
+        bottom: var(--spacing-2xl); /* Standardized spacing */
         left: 50%;
         transform: translateX(-50%);
         background: rgba(0, 0, 0, 0.8);
         border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        padding: 1rem 1.5rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-md) var(--spacing-lg);
+        box-shadow: var(--shadow-lg);
+        z-index: var(--z-index-fixed);
         margin: 0;
-        font-size: 20px;
+        font-size: var(--font-size-xl);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         /* Ensure button is always visible */
-        max-width: calc(100vw - 40px);
+        max-width: calc(100vw - var(--spacing-xl));
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
