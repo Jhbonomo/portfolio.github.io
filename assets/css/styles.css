@@ -569,16 +569,16 @@ mark {
 
     /* Ensure cases section content fits within viewport */
     .cases {
-        width: calc(100% - 32px); /* Account for 16px margin on each side */
-        max-width: calc(100% - 32px);
-        margin: 16px;
-        overflow-x: hidden;
-        box-sizing: border-box;
-        position: absolute; /* Change from fixed to absolute for proper margin handling */
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        width: calc(100% - 32px) !important; /* Account for 16px margin on each side */
+        max-width: calc(100% - 32px) !important;
+        margin: 16px !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        position: absolute !important; /* Change from fixed to absolute for proper margin handling */
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
     }
 
     .cases .content {
