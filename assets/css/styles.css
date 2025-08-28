@@ -875,7 +875,7 @@ mark {
 @media (max-width: 1023px) {
     .projects-heading {
         position: fixed;
-        bottom: 20px;
+        bottom: 80px; /* Increased from 20px to account for mobile browser UI */
         left: 50%;
         transform: translateX(-50%);
         background: rgba(0, 0, 0, 0.8);
@@ -888,6 +888,11 @@ mark {
         font-size: 20px;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        /* Ensure button is always visible */
+        max-width: calc(100vw - 40px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .projects-heading::after {
@@ -960,6 +965,20 @@ mark {
         margin: 0;
         padding: 0;
         border-radius: 0;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .projects-heading {
+        bottom: 100px; /* Even more space for very small screens */
+        padding: 0.8rem 1.2rem;
+        font-size: 18px;
+    }
+    
+    .projects-heading::after {
+        font-size: 16px;
+        margin-left: 6px;
     }
 }
 
