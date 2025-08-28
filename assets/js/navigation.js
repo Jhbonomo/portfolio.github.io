@@ -73,10 +73,11 @@ class MobileNavigation {
         this.projectsHeading.style.cursor = 'pointer';
         this.projectsHeading.style.userSelect = 'none';
         
-        // Initially hide the cases section on mobile
-        this.casesSection.style.display = 'none';
-        this.casesSection.style.transform = 'translateY(100%)';
-        this.casesSection.style.opacity = '0';
+        // Initialize mobile layout - both sections visible but cases off-screen
+        this.aboutSection.style.display = 'flex';
+        this.casesSection.style.display = 'flex';
+        this.aboutSection.classList.add('slide-in');
+        this.casesSection.classList.add('slide-out');
         
         // Projects heading click handler
         this.projectsClickHandler = (e) => {
@@ -85,17 +86,19 @@ class MobileNavigation {
             
             logDebug('Projects heading clicked!');
             
-            // Show cases section
-            this.casesSection.style.display = 'flex';
-            this.casesSection.style.transform = 'translateY(0)';
-            this.casesSection.style.opacity = '1';
+            // Slide out about section
+            this.aboutSection.classList.remove('slide-in');
+            this.aboutSection.classList.add('slide-out');
             
-            // Hide about section
-            this.aboutSection.style.display = 'none';
+            // Slide in cases section
+            this.casesSection.classList.remove('slide-out');
+            this.casesSection.classList.add('slide-in');
             
-            // Show back button
+            // Show back button with animation
             this.backButton.style.display = 'block';
-            this.backButton.style.opacity = '1';
+            setTimeout(() => {
+                this.backButton.classList.add('visible');
+            }, 50);
         };
         
         // Back button click handler
@@ -105,17 +108,19 @@ class MobileNavigation {
             
             logDebug('Back button clicked!');
             
-            // Hide cases section
-            this.casesSection.style.display = 'none';
-            this.casesSection.style.transform = 'translateY(100%)';
-            this.casesSection.style.opacity = '0';
+            // Slide out cases section
+            this.casesSection.classList.remove('slide-in');
+            this.casesSection.classList.add('slide-out');
             
-            // Show about section
-            this.aboutSection.style.display = 'flex';
+            // Slide in about section
+            this.aboutSection.classList.remove('slide-out');
+            this.aboutSection.classList.add('slide-in');
             
-            // Hide back button
-            this.backButton.style.display = 'none';
-            this.backButton.style.opacity = '0';
+            // Hide back button with animation
+            this.backButton.classList.remove('visible');
+            setTimeout(() => {
+                this.backButton.style.display = 'none';
+            }, 400); // Match transition duration
         };
         
         // Add both click and touchstart events for better mobile support
@@ -125,7 +130,7 @@ class MobileNavigation {
         this.backButton.addEventListener('click', this.backClickHandler);
         this.backButton.addEventListener('touchstart', this.backClickHandler);
         
-        logDebug('Mobile navigation setup complete. Projects heading is clickable.');
+        logDebug('Mobile navigation setup complete with slide transitions.');
     }
     
     setupDesktopNavigation() {
@@ -133,12 +138,23 @@ class MobileNavigation {
         this.projectsHeading.style.cursor = 'default';
         this.projectsHeading.style.userSelect = 'auto';
         
-        // Show both sections on desktop
+        // Show both sections on desktop with no transitions
         this.aboutSection.style.display = 'flex';
         this.casesSection.style.display = 'flex';
-        this.casesSection.style.transform = 'translateY(0)';
-        this.casesSection.style.opacity = '1';
+        
+        // Remove mobile transition classes
+        this.aboutSection.classList.remove('slide-in', 'slide-out');
+        this.casesSection.classList.remove('slide-in', 'slide-out');
+        
+        // Reset transforms and opacity
+        this.aboutSection.style.transform = '';
+        this.aboutSection.style.opacity = '';
+        this.casesSection.style.transform = '';
+        this.casesSection.style.opacity = '';
+        
+        // Hide back button
         this.backButton.style.display = 'none';
+        this.backButton.classList.remove('visible');
         
         logDebug('Desktop navigation setup complete.');
     }

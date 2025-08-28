@@ -518,6 +518,44 @@ mark {
     opacity: 1;
 }
 
+/* Mobile Navigation Transitions */
+.about, .cases {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+/* Mobile slide states */
+@media (max-width: 1023px) {
+    /* Container positioning for slide effect */
+    .about, .cases {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .about.slide-out {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    
+    .cases.slide-in {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .cases.slide-out {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    
+    .about.slide-in {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Back Button - Mobile only */
 .back-button {
     display: none; /* Hidden by default */
@@ -533,6 +571,13 @@ mark {
     border: none;
     border-radius: var(--border-radius-md);
     white-space: nowrap;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.back-button.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .back-button:hover {
