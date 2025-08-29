@@ -462,6 +462,10 @@ mark {
     min-height: 60px; /* Ensure minimum touch target size */
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3); /* iOS tap highlight */
     touch-action: manipulation; /* Optimize for touch */
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* Safari support */
+    -moz-user-select: none; /* Firefox support */
+    -ms-user-select: none; /* IE support */
 }
 
 /* Projects header container for inline layout */

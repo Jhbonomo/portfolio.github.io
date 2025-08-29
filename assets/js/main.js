@@ -43,6 +43,9 @@ async function initializeApp() {
         // Initialize mobile navigation
         safeExecute(() => initializeNavigation(), null, 'navigation initialization');
         
+        // Initialize projects navigation
+        safeExecute(() => initializeProjectsNavigation(), null, 'projects navigation initialization');
+        
         // Start typing animation
         await safeExecuteAsync(() => startTypingAnimation(), null, 'typing animation');
         
@@ -84,6 +87,98 @@ if (document.readyState === 'loading') {
 } else {
     // DOM is already ready
     initializeWhenReady();
+}
+
+// Initialize projects navigation
+function initializeProjectsNavigation() {
+    const projectsHeading = document.querySelector('.projects-heading');
+    const aboutSection = document.querySelector('.about');
+    const casesSection = document.querySelector('.cases');
+    const backButton = document.getElementById('backButton');
+    
+    if (!projectsHeading || !aboutSection || !casesSection) {
+        console.warn('Projects navigation elements not found');
+        return;
+    }
+    
+    // Add click handler to projects heading
+    projectsHeading.addEventListener('click', () => {
+        navigateToProjects();
+    });
+    
+    // Add keyboard support for accessibility
+    projectsHeading.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navigateToProjects();
+        }
+    });
+    
+    // Navigation function
+    function navigateToProjects() {
+        // Add slide-out class to about section
+        aboutSection.classList.add('slide-out');
+        aboutSection.classList.remove('slide-in');
+        
+        // Add slide-in class to cases section
+        casesSection.classList.add('slide-in');
+        casesSection.classList.remove('slide-out');
+        
+        // Show back button
+        if (backButton) {
+            backButton.classList.add('visible');
+        }
+        
+        // Update URL without page reload
+        history.pushState({ section: 'projects' }, '', '#projects');
+    }
+    
+    // Add click handler to back button
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            // Add slide-in class to about section
+            aboutSection.classList.add('slide-in');
+            aboutSection.classList.remove('slide-out');
+            
+            // Add slide-out class to cases section
+            casesSection.classList.add('slide-out');
+            casesSection.classList.remove('slide-in');
+            
+            // Hide back button
+            backButton.classList.remove('visible');
+            
+            // Update URL without page reload
+            history.pushState({ section: 'about' }, '', '#');
+        });
+    }
+    
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.section === 'projects') {
+            // Navigate to projects
+            aboutSection.classList.add('slide-out');
+            aboutSection.classList.remove('slide-in');
+            casesSection.classList.add('slide-in');
+            casesSection.classList.remove('slide-out');
+            if (backButton) backButton.classList.add('visible');
+        } else {
+            // Navigate to about
+            aboutSection.classList.add('slide-in');
+            aboutSection.classList.remove('slide-out');
+            casesSection.classList.add('slide-out');
+            casesSection.classList.remove('slide-in');
+            if (backButton) backButton.classList.remove('visible');
+        }
+    });
+    
+    // Check initial URL state
+    if (window.location.hash === '#projects') {
+        aboutSection.classList.add('slide-out');
+        aboutSection.classList.remove('slide-in');
+        casesSection.classList.add('slide-in');
+        casesSection.classList.remove('slide-out');
+        if (backButton) backButton.classList.add('visible');
+    }
 }
 
 // Export for potential external use

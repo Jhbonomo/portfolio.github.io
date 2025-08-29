@@ -1326,7 +1326,7 @@ body.dark-theme .theme-toggle:hover {
     
     .project-meta-info {
         flex-direction: row;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     
     .image-gallery {
