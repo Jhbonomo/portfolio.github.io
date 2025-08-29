@@ -173,63 +173,49 @@ body.fonts-fallback .projects-heading {
 
 /* Global body styles - common across all breakpoints */
 body {
-    display: flex;
+    margin: 0;
+    padding: 0;
     background-color: #111111;
-    height: 100vh;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-direction: column; /* Mobile/tablet default */
+    font-family: var(--font-primary);
+    overflow-x: hidden; /* Only prevent horizontal scroll */
 }
 
 .viewport {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    position: relative; /* Required for absolute positioned children */
+    background-color: #111111;
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
 }
 
 .about {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     padding: 1rem;
-    position: absolute; /* Changed to absolute for slide animations */
-    top: 0;
-    left: 0;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Gentler, smoother slide animation */
-    transform: translateY(0); /* Start visible */
-    opacity: 1; /* Start visible */
+    background-color: #111111;
+    position: relative;
 }
 
 .cases {
     background-color: #fff;
-    padding: 1rem; /* Mobile default */
-    border-radius: 0;
-    width: 100%; /* Mobile default */
-    display: flex; /* Show by default on mobile - will be controlled by JS */
+    padding: 2rem 1rem;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    margin: 0; /* Mobile default */
-    height: 100vh; /* Full height for absolute positioning */
-    min-height: 50vh; /* Mobile default */
+    min-height: 100vh;
     box-sizing: border-box;
-    overflow: hidden; /* Common across all breakpoints */
-    position: absolute; /* Changed to absolute for slide animations */
-    top: 0;
-    left: 0;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Gentler, smoother slide animation */
-    transform: translateY(100%); /* Start off-screen from bottom */
-    opacity: 0; /* Start invisible */
     border-radius: clamp(20px, 2vw, 30px) clamp(20px, 2vw, 30px) 0 0;
-    width: auto;
+    margin-top: -20px; /* Slight overlap for visual connection */
+    position: relative;
+    z-index: 10; /* Ensure it's above canvas */
+    opacity: 1 !important; /* Force visibility */
+    visibility: visible !important; /* Force visibility */
 }
 
 h1, h2 {
@@ -342,6 +328,7 @@ mark {
     height: 100%;
     z-index: 0;
     background-color: #111111;
+    pointer-events: none; /* Allow clicking through canvas */
 }
 
 #canvas {
@@ -457,22 +444,15 @@ mark {
     font-weight: 600;
     text-align: center;
     margin: 2rem 0 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    user-select: none;
     position: relative;
-    z-index: 10; /* Increased z-index to ensure it's above other elements */
-    cursor: pointer; /* Mobile: clickable */
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition */
-    padding: 1rem; /* Add padding for better touch target */
-    min-height: 60px; /* Ensure minimum touch target size */
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3); /* iOS tap highlight */
-    touch-action: manipulation; /* Optimize for touch */
-    user-select: none; /* Prevent text selection */
-    -webkit-user-select: none; /* Safari support */
-    -moz-user-select: none; /* Firefox support */
-    -ms-user-select: none; /* IE support */
+    z-index: 20; /* Ensure it's above everything */
 }
 
 /* Projects header container for inline layout */
@@ -501,8 +481,9 @@ mark {
 }
 
 .projects-heading:hover {
-    opacity: 0.85; /* Mobile: gentler hover effect */
-; /* Hardware accelerated - removed scale to prevent movement */
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 .projects-heading:active { /* Hardware accelerated - removed scale to prevent movement */
@@ -529,52 +510,20 @@ mark {
 }
 
 /* ==========================================================================
-   SLIDE ANIMATIONS - GLOBAL
+   CLEAN LAYOUT
    ========================================================================== */
-
-/* Global slide animations for navigation */
-.about, .cases {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
-    will-change: transform, opacity;
-}
-
-/* Optimized slide animations using transform for better performance */
-.about.slide-out {
-    transform: translate3d(0, -100%, 0); /* Hardware acceleration */
-    opacity: 0;
-}
-
-.cases.slide-in {
-    transform: translate3d(0, 0, 0); /* Hardware acceleration */
-    opacity: 1;
-}
-
-.cases.slide-out {
-    transform: translate3d(0, 100%, 0); /* Hardware acceleration */
-    opacity: 0;
-}
-
-.about.slide-in {
-    transform: translate3d(0, 0, 0); /* Hardware acceleration */
-    opacity: 1;
-}
 
 /* ==========================================================================
    MOBILE STYLES (max-width: 1023px) - CONSOLIDATED
    ========================================================================== */
 
 @media (max-width: 1023px) {
-    /* Container positioning for slide effect */
+    /* Mobile adjustments */
     .viewport {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        position: static !important;
     }
 
     /* Ensure project cards fit within the viewport on mobile */
@@ -584,18 +533,11 @@ mark {
         box-sizing: border-box;
     }
 
-    /* Ensure cases section content fits within viewport */
+    /* Mobile cases section - simple layout */
     .cases {
-        width: calc(100% - 32px);
-        max-width: calc(100% - 32px);
-        margin: 16px;
-        overflow-x: hidden;
+        width: 100%;
+        padding: 1.5rem 1rem;
         box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
     }
 
     .cases .content {
@@ -607,35 +549,31 @@ mark {
     }
 }
 
-/* Back Button - Mobile only */
+/* Back to Top Button */
 .back-button {
-    display: none; /* Hidden by default */
+    display: inline-block;
     font-family: var(--font-primary);
     font-size: var(--font-size-lg);
     font-weight: 500;
     cursor: pointer;
     padding: var(--spacing-sm) var(--spacing-md);
-    margin: 0;
+    margin: 0 0 1rem 0;
     transition: var(--transition-normal);
     background: var(--color-primary);
     color: var(--color-secondary);
     border: none;
     border-radius: var(--border-radius-md);
     white-space: nowrap;
-    opacity: 0;
-    transform: translateY(-10px);
-    /* Ensure proper alignment with title */
+    opacity: 1;
+    transform: translateY(0);
     line-height: 1;
     vertical-align: baseline;
 }
 
-.back-button.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .back-button:hover {
-    opacity: 0.7;
+    background: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Animation Classes for Mobile Navigation - REMOVED DUPLICATE RULES */
@@ -757,30 +695,24 @@ mark {
 
 @media (min-width: 1024px) {
     .projects-heading {
-        display: none;
+        display: block;
     }
 
     body {
-        flex-direction: row; /* Desktop: horizontal layout */
+        flex-direction: column; /* Keep vertical layout */
     }
     
     .viewport {
-        flex-direction: row;
         margin: 0 auto;
     }
     
     .about {
-        width: 40%;
-        height: 100vh;
+        min-height: 100vh;
         padding: clamp(2rem, 3vw, 3rem);
     }
     
     .cases {
-        display: flex;
-        width: 60%;
         padding: clamp(2rem, 2vw, 3rem);
-        transform: translateY(0);
-        opacity: 1;
     }
     
 
@@ -827,8 +759,8 @@ mark {
     }
     
     .projects {
-        height: calc(100vh - 40px - 120px); /* Desktop: adjusted for layout */
-        max-height: calc(100vh - 40px - 120px); /* Desktop: adjusted for layout */
+        height: auto;
+        max-height: none;
     }
 }
 
@@ -852,17 +784,12 @@ mark {
 }
 
 /* ==========================================================================
-   PERFORMANCE OPTIMIZATIONS
+   SIMPLE TRANSITIONS
    ========================================================================== */
 
-/* Hardware acceleration for animations */
-.about, .cases, .projects-heading, .card, .card-button {
-    will-change: transform, opacity;
-}
-
-/* Optimize paint and layout operations */
-.viewport {
-    contain: layout style;
+/* Clean transitions */
+.projects-heading, .back-button, .card {
+    transition: all 0.3s ease;
 }
 
 /* Reduce repaints for static elements */
@@ -900,34 +827,12 @@ mark {
    MOBILE NAVIGATION FALLBACK
    ========================================================================== */
 
-/* On mobile, ensure the projects heading is always visible and clickable */
+/* Mobile projects heading - simple styling */
 @media (max-width: 1023px) {
     .projects-heading {
-        position: fixed;
-        bottom: var(--spacing-2xl); /* Standardized spacing */
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: var(--border-radius-lg);
-        padding: var(--spacing-md) var(--spacing-lg);
-        box-shadow: var(--shadow-lg);
-        z-index: var(--z-index-fixed);
-        margin: 0;
-        font-size: var(--font-size-xl);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        /* Ensure button is always visible */
-        max-width: calc(100vw - var(--spacing-xl));
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* Mobile-specific positioning */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        min-height: 60px;
+        margin: 2rem 0 1rem 0;
+        padding: 1rem 2rem;
+        font-size: 20px;
     }
     
     .projects-heading::after {
@@ -949,19 +854,9 @@ mark {
         }
     }
     
-    /* Ensure the cases section is properly positioned on mobile */
+    /* Mobile cases section */
     .cases {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 999;
-        background: #fff;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 20px 20px 40px 20px;
-        margin: 0;
+        padding: 1.5rem 1rem;
     }
     
     /* Position back button at the top with proper spacing */
@@ -1006,22 +901,3 @@ mark {
     }
 }
 
-/* Extra small mobile devices */
-@media (max-width: 480px) {
-    .projects-heading {
-        bottom: 100px; /* Even more space for very small screens */
-        padding: 0.8rem 1.2rem;
-        font-size: 18px;
-    }
-    
-    .projects-heading::after {
-        font-size: 16px;
-        margin-left: 6px;
-    }
-}
-
-/* ==========================================================================
-   MOBILE NAVIGATION STYLES - CONSOLIDATED
-   ========================================================================== */
-
-/* Note: Mobile navigation styles are now consolidated in the MOBILE NAVIGATION FALLBACK section above */
