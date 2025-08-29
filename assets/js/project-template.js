@@ -11,6 +11,7 @@ class ImageZoomModal {
         this.zoomInBtn = document.getElementById('zoomIn');
         this.zoomOutBtn = document.getElementById('zoomOut');
         this.resetZoomBtn = document.getElementById('resetZoom');
+        this.zoomIndicator = document.getElementById('zoomIndicator');
         
         this.currentScale = 1;
         this.minScale = 0.5;
@@ -123,6 +124,10 @@ class ImageZoomModal {
                 case '0':
                     e.preventDefault();
                     this.resetZoom();
+                    break;
+                case ' ': // Spacebar for double-tap equivalent
+                    e.preventDefault();
+                    this.toggleZoom();
                     break;
             }
         });
@@ -280,6 +285,9 @@ class ImageZoomModal {
         // Reset zoom and position
         this.resetZoom();
         
+        // Initialize accessibility
+        this.updateAccessibility();
+        
         // Prevent body scroll
         document.body.style.overflow = 'hidden';
     }
@@ -293,12 +301,24 @@ class ImageZoomModal {
     
     zoomIn() {
         this.currentScale = Math.min(this.currentScale + this.scaleStep, this.maxScale);
+        this.constrainPan();
         this.updateImageTransform();
+        
+        // Haptic feedback on zoom limits
+        if (this.currentScale === this.maxScale) {
+            this.hapticFeedback();
+        }
     }
     
     zoomOut() {
         this.currentScale = Math.max(this.currentScale - this.scaleStep, this.minScale);
+        this.constrainPan();
         this.updateImageTransform();
+        
+        // Haptic feedback on zoom limits
+        if (this.currentScale === this.minScale) {
+            this.hapticFeedback();
+        }
     }
     
     resetZoom() {
@@ -348,12 +368,24 @@ class ImageZoomModal {
         const zoomPercentage = Math.round(this.currentScale * 100);
         this.modalImage.setAttribute('aria-label', `Image zoomed to ${zoomPercentage}%`);
         
+        // Update zoom indicator
+        if (this.zoomIndicator) {
+            this.zoomIndicator.textContent = `${zoomPercentage}%`;
+        }
+        
         // Update zoom controls with current state
         if (this.zoomInBtn) {
             this.zoomInBtn.setAttribute('aria-label', `Zoom in (currently ${zoomPercentage}%)`);
         }
         if (this.zoomOutBtn) {
             this.zoomOutBtn.setAttribute('aria-label', `Zoom out (currently ${zoomPercentage}%)`);
+        }
+        
+        // Update zoom state for styling
+        if (this.currentScale > 1) {
+            this.modalImage.setAttribute('data-zoomed', 'true');
+        } else {
+            this.modalImage.removeAttribute('data-zoomed');
         }
     }
     
