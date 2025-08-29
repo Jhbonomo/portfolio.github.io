@@ -12,95 +12,13 @@ This document explains how to use the componentized image caption system in your
 ```
 **Output:** **Image:** Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
 
-## Caption Type Variants
+## Caption Styling
 
-### Chart Caption
-```html
-<figcaption class="image-caption image-caption--chart">
-    User engagement metrics over time showing peak usage patterns.
-</figcaption>
-```
-**Output:** **Chart:** User engagement metrics over time showing peak usage patterns.
+All image captions automatically include "**Image:**" as a prefix. The system uses a consistent approach where every caption starts with "Image:" followed by your description text.
 
-### Diagram Caption
-```html
-<figcaption class="image-caption image-caption--diagram">
-    System architecture showing data flow between components.
-</figcaption>
-```
-**Output:** **Diagram:** System architecture showing data flow between components.
+## Caption Size
 
-### Screenshot Caption
-```html
-<figcaption class="image-caption image-caption--screenshot">
-    User interface showing the new dashboard layout.
-</figcaption>
-```
-**Output:** **Screenshot:** User interface showing the new dashboard layout.
-
-### Prototype Caption
-```html
-<figcaption class="image-caption image-caption--prototype">
-    Interactive prototype demonstrating the user flow.
-</figcaption>
-```
-**Output:** **Prototype:** Interactive prototype demonstrating the user flow.
-
-### Wireframe Caption
-```html
-<figcaption class="image-caption image-caption--wireframe">
-    Initial wireframes exploring different layout options.
-</figcaption>
-```
-**Output:** **Wireframe:** Initial wireframes exploring different layout options.
-
-### Mockup Caption
-```html
-<figcaption class="image-caption image-caption--mockup">
-    High-fidelity mockup of the final design.
-</figcaption>
-```
-**Output:** **Mockup:** High-fidelity mockup of the final design.
-
-### User Flow Caption
-```html
-<figcaption class="image-caption image-caption--flow">
-    User journey mapping showing the complete experience.
-</figcaption>
-```
-**Output:** **User Flow:** User journey mapping showing the complete experience.
-
-### Research Caption
-```html
-<figcaption class="image-caption image-caption--research">
-    User research findings and insights from interviews.
-</figcaption>
-```
-**Output:** **Research:** User research findings and insights from interviews.
-
-### Data Caption
-```html
-<figcaption class="image-caption image-caption--data">
-    Analytics dashboard showing key performance metrics.
-</figcaption>
-```
-**Output:** **Data:** Analytics dashboard showing key performance metrics.
-
-## Size Variants
-
-### Small Caption
-```html
-<figcaption class="image-caption image-caption--small">
-    Brief description for smaller images.
-</figcaption>
-```
-
-### Large Caption
-```html
-<figcaption class="image-caption image-caption--large">
-    More detailed description for prominent images.
-</figcaption>
-```
+All image captions use a consistent size of `1.25rem` for optimal readability across all images.
 
 ## Alignment Variants
 
@@ -149,7 +67,7 @@ This document explains how to use the componentized image caption system in your
 You can combine multiple classes for more specific styling:
 
 ```html
-<figcaption class="image-caption image-caption--data image-caption--large image-caption--left image-caption--no-italic">
+<figcaption class="image-caption image-caption--left image-caption--no-italic">
     Comprehensive analytics showing user behavior patterns across different segments.
 </figcaption>
 ```
@@ -158,7 +76,7 @@ You can combine multiple classes for more specific styling:
 
 ```html
 <div class="image-container">
-    <figcaption class="image-caption image-caption--chart image-caption--large">
+    <figcaption class="image-caption">
         Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
     </figcaption>
     <div class="image-wrapper" data-zoom="true">
@@ -175,21 +93,6 @@ You can combine multiple classes for more specific styling:
 
 ## Available Classes Summary
 
-### Type Classes
-- `image-caption--chart`
-- `image-caption--diagram`
-- `image-caption--screenshot`
-- `image-caption--prototype`
-- `image-caption--wireframe`
-- `image-caption--mockup`
-- `image-caption--flow`
-- `image-caption--research`
-- `image-caption--data`
-
-### Size Classes
-- `image-caption--small`
-- `image-caption--large`
-
 ### Alignment Classes
 - `image-caption--left`
 - `image-caption--right`
@@ -201,9 +104,7 @@ You can combine multiple classes for more specific styling:
 
 ## Best Practices
 
-1. **Choose the most appropriate type** for your content
-2. **Use size variants** to match the importance of the image
-3. **Consider alignment** based on your layout needs
-4. **Add source attribution** when using external images or data
-5. **Keep descriptions concise** but informative
-6. **Combine classes thoughtfully** to achieve the desired styling
+1. **Consider alignment** based on your layout needs
+2. **Add source attribution** when using external images or data
+3. **Keep descriptions concise** but informative
+4. **Combine classes thoughtfully** to achieve the desired styling

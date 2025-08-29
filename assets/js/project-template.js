@@ -188,8 +188,6 @@ class ImageZoomModal {
     }
     
     handleTouchStart(e) {
-        e.preventDefault();
-        
         if (e.touches.length === 1) {
             // Single touch - start panning
             this.isDragging = true;
@@ -197,6 +195,19 @@ class ImageZoomModal {
             const touch = e.touches[0];
             this.startX = touch.clientX - this.translateX;
             this.startY = touch.clientY - this.translateY;
+            
+            // Check for double tap
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - (this.lastTap || 0);
+            
+            if (tapLength < 300 && tapLength > 0) {
+                // Double tap detected - toggle zoom
+                this.toggleZoom();
+                e.preventDefault();
+                return;
+            }
+            this.lastTap = currentTime;
+            
         } else if (e.touches.length === 2) {
             // Two touches - start pinch-to-zoom
             this.isDragging = false;
@@ -204,18 +215,24 @@ class ImageZoomModal {
             this.initialDistance = this.getTouchDistance(e.touches);
             this.initialScale = this.currentScale;
             this.lastTouchDistance = this.initialDistance;
+            e.preventDefault();
         }
     }
     
     handleTouchMove(e) {
-        e.preventDefault();
+        // Throttle updates for better performance
+        const now = Date.now();
+        if (now - (this.lastUpdate || 0) < 16) return; // ~60fps
+        this.lastUpdate = now;
         
         if (e.touches.length === 1 && this.isDragging) {
             // Single touch - continue panning
             const touch = e.touches[0];
             this.translateX = touch.clientX - this.startX;
             this.translateY = touch.clientY - this.startY;
+            this.constrainPan();
             this.updateImageTransform();
+            e.preventDefault();
         } else if (e.touches.length === 2 && this.isPinching) {
             // Two touches - handle pinch-to-zoom
             const currentDistance = this.getTouchDistance(e.touches);
@@ -235,8 +252,15 @@ class ImageZoomModal {
                 this.translateY = centerY - (centerY - this.translateY) * scaleChange;
                 
                 this.currentScale = newScale;
+                this.constrainPan();
                 this.updateImageTransform();
+                
+                // Haptic feedback on zoom limits
+                if (newScale === this.minScale || newScale === this.maxScale) {
+                    this.hapticFeedback();
+                }
             }
+            e.preventDefault();
         }
     }
     
@@ -284,10 +308,60 @@ class ImageZoomModal {
         this.updateImageTransform();
     }
     
+    toggleZoom() {
+        if (this.currentScale > 1) {
+            this.resetZoom();
+        } else {
+            this.currentScale = 2;
+            this.constrainPan();
+            this.updateImageTransform();
+        }
+        this.updateAccessibility();
+    }
+    
+    constrainPan() {
+        if (!this.modalImage || !this.modal) return;
+        
+        const imageRect = this.modalImage.getBoundingClientRect();
+        const modalRect = this.modal.getBoundingClientRect();
+        
+        // Calculate bounds to keep image visible
+        const scaledWidth = imageRect.width * this.currentScale;
+        const scaledHeight = imageRect.height * this.currentScale;
+        
+        const maxTranslateX = Math.max(0, (scaledWidth - modalRect.width) / 2);
+        const maxTranslateY = Math.max(0, (scaledHeight - modalRect.height) / 2);
+        
+        this.translateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, this.translateX));
+        this.translateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, this.translateY));
+    }
+    
+    hapticFeedback() {
+        if ('vibrate' in navigator) {
+            navigator.vibrate(50);
+        }
+    }
+    
+    updateAccessibility() {
+        if (!this.modalImage) return;
+        
+        const zoomPercentage = Math.round(this.currentScale * 100);
+        this.modalImage.setAttribute('aria-label', `Image zoomed to ${zoomPercentage}%`);
+        
+        // Update zoom controls with current state
+        if (this.zoomInBtn) {
+            this.zoomInBtn.setAttribute('aria-label', `Zoom in (currently ${zoomPercentage}%)`);
+        }
+        if (this.zoomOutBtn) {
+            this.zoomOutBtn.setAttribute('aria-label', `Zoom out (currently ${zoomPercentage}%)`);
+        }
+    }
+    
     updateImageTransform() {
         if (!this.modalImage) return;
         
         this.modalImage.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.currentScale})`;
+        this.updateAccessibility();
     }
 }
 
