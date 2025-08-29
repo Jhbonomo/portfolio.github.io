@@ -680,6 +680,7 @@ body.fonts-fallback .content h2 {
     .about {
         min-height: 100vh;
         padding: clamp(2rem, 3vw, 3rem);
+        max-width: 40%;
     }
     
     /* Hide projects button on desktop */
