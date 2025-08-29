@@ -189,7 +189,7 @@ body.fonts-fallback .content h2 {
     width: 100%;
     background-color: var(--color-surface);
     padding: 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
     position: sticky;
 }
 
