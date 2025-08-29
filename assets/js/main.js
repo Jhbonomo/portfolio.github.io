@@ -5,18 +5,25 @@
 
 // Simple projects navigation
 function initializeProjectsNavigation() {
-    const projectsHeading = document.querySelector('.projects-heading');
+    const projectsButton = document.querySelector('.projects-button');
     const casesSection = document.querySelector('.cases');
     const backButton = document.getElementById('backButton');
     
-    if (!projectsHeading || !casesSection) {
+    if (!projectsButton || !casesSection) {
         console.warn('Projects navigation elements not found');
         return;
     }
     
-    // Simple click to scroll to projects
-    projectsHeading.addEventListener('click', () => {
-        casesSection.scrollIntoView({ behavior: 'smooth' });
+    // Simple click to scroll to projects with offset
+    projectsButton.addEventListener('click', () => {
+        const offset = 20; // 80px offset from top
+        const elementPosition = casesSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     });
     
     // Simple click to scroll to top

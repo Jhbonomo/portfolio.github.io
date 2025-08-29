@@ -56,6 +56,8 @@ class EntangledLineAnimation {
         try {
             this.init();
             this.setupControls();
+            this.updateSliderColors();
+            this.updateButtonColors();
             this.showLoadingState();
             this.startAnimation();
         } catch (error) {
@@ -138,14 +140,18 @@ class EntangledLineAnimation {
         if (speedSlider) {
             speedSlider.addEventListener('input', (e) => {
                 this.speed = parseFloat(e.target.value);
+                this.updateSliderProgress(speedSlider);
             });
+            this.updateSliderProgress(speedSlider);
         }
         
         if (pointsSlider) {
             pointsSlider.addEventListener('input', (e) => {
                 this.numPoints = parseInt(e.target.value);
                 this.generatePoints();
+                this.updateSliderProgress(pointsSlider);
             });
+            this.updateSliderProgress(pointsSlider);
         }
         
         if (hueSlider) {
@@ -153,7 +159,9 @@ class EntangledLineAnimation {
                 this.hue = parseInt(e.target.value);
                 this.updateSliderColors();
                 this.updateButtonColors();
+                this.updateSliderProgress(hueSlider);
             });
+            this.updateSliderProgress(hueSlider);
         }
         
         // Initialize slider colors
@@ -268,22 +276,39 @@ class EntangledLineAnimation {
         });
     }
     
+    updateSliderProgress(slider) {
+        const min = parseFloat(slider.min);
+        const max = parseFloat(slider.max);
+        const value = parseFloat(slider.value);
+        const progress = ((value - min) / (max - min)) * 100;
+        slider.style.setProperty('--slider-progress', `${progress}%`);
+    }
+    
     updateSliderColors() {
         const speedSlider = document.getElementById('speedSlider');
         const pointsSlider = document.getElementById('pointsSlider');
         const hueSlider = document.getElementById('hueSlider');
         
+        // Create the HSL color string
+        const hslColor = `hsl(${this.hue}, 100%, 50%)`;
+        
         if (speedSlider) {
-            speedSlider.style.setProperty('--slider-color', `hsl(${this.hue}, 100%, 50%)`);
+            speedSlider.style.setProperty('--slider-color', hslColor);
+            this.updateSliderProgress(speedSlider);
         }
         
         if (pointsSlider) {
-            pointsSlider.style.setProperty('--slider-color', `hsl(${this.hue}, 100%, 50%)`);
+            pointsSlider.style.setProperty('--slider-color', hslColor);
+            this.updateSliderProgress(pointsSlider);
         }
         
         if (hueSlider) {
-            hueSlider.style.setProperty('--slider-color', `hsl(${this.hue}, 100%, 50%)`);
+            hueSlider.style.setProperty('--slider-color', hslColor);
+            this.updateSliderProgress(hueSlider);
         }
+        
+        // Also update the CSS custom property for the accent color
+        document.documentElement.style.setProperty('--color-accent', hslColor);
     }
     
     updateButtonColors() {
@@ -293,6 +318,13 @@ class EntangledLineAnimation {
                 card.updateButtonColor();
             }
         });
+        
+        // Also update the projects button color
+        const projectsButton = document.querySelector('.projects-button');
+        if (projectsButton) {
+            const hslColor = `hsl(${this.hue}, 100%, 50%)`;
+            projectsButton.style.setProperty('--button-accent-color', hslColor);
+        }
     }
     
     hexToRgb(hex) {

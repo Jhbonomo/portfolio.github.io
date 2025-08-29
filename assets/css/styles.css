@@ -1,7 +1,9 @@
-/* Font imports are now handled in HTML for better performance */
+/* ==========================================================================
+   PORTFOLIO STYLESHEET - JULIANA'S UX PORTFOLIO
+   ========================================================================== */
 
 /* ==========================================================================
-   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ========================================================================== */
 
 :root {
@@ -70,16 +72,7 @@
 }
 
 /* ==========================================================================
-   CRITICAL FONT FALLBACKS
-   ========================================================================== */
-
-/* Critical font fallbacks to prevent FOUT (Flash of Unstyled Text) */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* ==========================================================================
-   CSS RESET & BASE STYLES
+   2. CSS RESET & BASE STYLES
    ========================================================================== */
 
 * {
@@ -92,192 +85,114 @@ html, body {
     display: flex;
 }
 
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    width: 100%;
+}
+
 /* ==========================================================================
-   FONT DEFINITIONS & FALLBACKS
+   3. TYPOGRAPHY & FONT MANAGEMENT
    ========================================================================== */
 
-/* Font definitions moved to CSS custom properties above */
-
-/* Ensure fonts are loaded with proper fallbacks */
+/* Base typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     font-display: swap;
     font-synthesis: none;
-}
-
-/* Prevent layout shifts during font loading */
-.content h1, .content h2 {
-    font-family: var(--font-secondary), var(--font-primary);
-    font-display: swap;
-    font-size-adjust: 0.5;
-}
-
-/* Controls and labels use system fonts for better readability */
-.controls label {
-    font-family: var(--font-system);
-    font-weight: 500;
-}
-
-/* Card elements use system fonts */
-.card-title, .card-description, .card-categories {
-    font-family: var(--font-system);
-}
-
-/* ==========================================================================
-   FONT LOADING STATES
-   ========================================================================== */
-
-/* When fonts fail to load, use system fonts */
-body.fonts-fallback .content h1,
-body.fonts-fallback .content h2 {
-    font-family: var(--font-system);
-    font-weight: 600;
-}
-
-body.fonts-fallback .projects-heading {
-    font-family: var(--font-system);
-    font-weight: 600;
-}
-
-/* Ensure consistent spacing even with different fonts */
-.content h1, .content h2 {
-    min-height: 1.2em;
-    line-height: 1.4;
-}
-
-.projects-heading {
-    min-height: 1.2em;
-    line-height: 1.4;
-}
-
-/* Prevent layout shifts during font loading */
-.content h1, .content h2, .projects-heading {
-    contain: layout style;
-}
-
-/* ==========================================================================
-   RESPONSIVE BREAKPOINTS
-   ========================================================================== */
-
-/* 
-   Breakpoint Strategy:
-   - Mobile: 0px - 767px (max-width: 767px)
-   - Tablet: 768px - 1023px (min-width: 768px) and (max-width: 1023px)
-   - Regular Desktop: 1024px - 1439px (min-width: 1024px) and (max-width: 1439px)
-   - Large Viewports: 1440px+ (min-width: 1440px)
-*/
-
-/* ==========================================================================
-   MOBILE FIRST - BASE STYLES (0px - 767px)
-   ========================================================================== */
-
-/* Global body styles - common across all breakpoints */
-body {
     margin: 0;
-    padding: 0;
-    background-color: #111111;
-    font-family: var(--font-primary);
-    overflow-x: hidden; /* Only prevent horizontal scroll */
-}
-
-.viewport {
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    background-color: #111111;
-    height: auto !important;
-    overflow: visible !important;
-    position: static !important;
-}
-
-.about {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 1rem;
-    background-color: #111111;
-    position: relative;
-}
-
-.cases {
-    background-color: #fff;
-    padding: 2rem 1rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    box-sizing: border-box;
-    border-radius: clamp(20px, 2vw, 30px) clamp(20px, 2vw, 30px) 0 0;
-    margin-top: -20px; /* Slight overlap for visual connection */
-    position: relative;
-    z-index: 10; /* Ensure it's above canvas */
-    opacity: 1 !important; /* Force visibility */
-    visibility: visible !important; /* Force visibility */
 }
 
 h1, h2 {
-    font-family: var(--font-primary);
-    font-size: clamp(16px, 2.2vw, 22px); /* Consistent with content styles */
-    line-height: 2; /* Consistent with content styles */
+    font-size: clamp(16px, 2.2vw, 22px);
+    line-height: 2;
     text-align: left;
-    margin: 0;
 }
 
-p{
-    font-size: 1rem
+p {
+    font-size: 1rem;
 }
+
+/* Content typography */
+.content h1, .content h2 {
+    font-family: var(--font-secondary), var(--font-primary);
+    font-size: clamp(1.8rem, 2vw, 2.6rem);
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+    min-height: 1.2em;
+    contain: layout style;
+}
+
+.content h1 mark, .content h2 mark {
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+}
+
+/* Mark elements */
 mark {
     color: var(--color-secondary);
     background-color: var(--color-overlay);
     position: relative;
 }
 
-/* Typing cursor effect - removed (legacy code) */
-
-/* LinkedIn link styling */
-.linkedin-link {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition-normal);
+/* Font fallbacks for better loading */
+body.fonts-fallback .content h1,
+body.fonts-fallback .content h2 {
+    font-family: var(--font-system);
+    font-weight: 600;
 }
 
-.linkedin-link:hover {
-    opacity: 0.8;
+/* ==========================================================================
+   4. LAYOUT CONTAINERS
+   ========================================================================== */
+
+/* Main viewport container */
+.viewport {
+    max-width: 1400px;
+    width: 100vw;
+    background-color: var(--color-background);
+    padding: 1rem;
 }
 
-/* LinkedIn icon styling */
-.linkedin-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: var(--spacing-xs);
-    transition: var(--transition-normal);
+/* About section */
+.about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--color-background);
+    position: relative;
+    max-width: 1400px;
 }
 
-/* Legacy styles for backward compatibility */
-.content h1 a,
-.content h2 a {
-    display: inline-block;
-    margin-left: var(--spacing-xs);
-    font-size: var(--font-size-xs);
-    color: var(--color-secondary);
-    transition: var(--transition-normal);
+/* Cases container */
+.cases-container {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.content h2 a {
-    opacity: 0; /* Start hidden */
-    margin-left: 0; /* Remove extra margin */
-    vertical-align: middle; /* Center vertically */
+/* Cases section */
+.cases {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: clamp(20px, 2vw, 30px) clamp(20px, 2vw, 30px) 0 0;
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-surface);
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
-.content h2 a:hover {
-    opacity: 0.8;
-}
-
-
-/* Content Area - Global Styles */
+/* Content wrapper */
 .content-wrap {
     height: 100%;
     width: 100%;
@@ -289,46 +204,33 @@ mark {
     z-index: 1;
 }
 
+/* Content area */
 .content {
-    color: #ffffff;
+    color: var(--color-secondary);
     text-align: center;
     display: flex;
     width: 100%;
     flex-direction: column;
-    gap: 16px; /* Mobile default */
+    gap: 16px;
     position: relative;
     z-index: 2;
     height: inherit;
     justify-content: center;
+    contain: layout style paint;
 }
 
-.content h1, .content h2 {
-    font-family: var(--font-secondary), var(--font-primary);
-    font-size: clamp(16px, 2.2vw, 22px);
-    font-weight: 400; /* Mobile default */
-    line-height: 2;
-    text-align: center;
-    margin: 0;
-}
+/* ==========================================================================
+   5. CANVAS & ANIMATION
+   ========================================================================== */
 
-/* Ensure mark elements inherit the correct font size and line height */
-.content h1 mark, .content h2 mark {
-    font-size: inherit;
-    line-height: inherit;
-    font-family: inherit;
-}
-
-
-
-/* Canvas & Animation - Mobile */
 .canvas-container {
     position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-color: #111111;
-    pointer-events: none; /* Allow clicking through canvas */
+    background-color: var(--color-background);
+    pointer-events: none;
 }
 
 #canvas {
@@ -338,160 +240,215 @@ mark {
     display: block;
 }
 
-/* Controls Panel - Global Styles */
+/* ==========================================================================
+   6. CONTROLS PANEL
+   ========================================================================== */
+
 .controls {
-    display: none; /* Hidden by default on mobile */
+    display: flex;
+    gap: 1rem;
+    width: 100%;
     color: white;
     z-index: 10;
     font-family: var(--font-primary);
-    display: flex;
     flex-direction: row;
-    gap: 1rem;
     align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
 }
 
 .controls label {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-weight: 500;
+    align-items: left;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    color: #ffffff;
-    font-size: 1rem;
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    min-width: 40px;
 }
 
 .controls input {
     margin: 0;
 }
 
-/* Custom slider styling - Global */
+/* Custom slider styling */
 .controls input[type="range"] {
-    accent-color: var(--slider-color);
     background: transparent;
     cursor: pointer;
-    width: 80px;
+    width: 100%;
     height: 20px;
-    margin-bottom: 1rem;
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    /* Ensure proper vertical alignment */
+    vertical-align: middle;
+    flex: 1;
 }
 
 .controls input[type="range"]::-webkit-slider-thumb {
-    background: var(--slider-color);
-    border: none;
+    background: var(--slider-color, var(--color-accent));
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
+    transition: all var(--transition-normal);
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Center the thumb on the track */
+    margin-top: -6px;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.controls input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .controls input[type="range"]::-moz-range-thumb {
-    background: var(--slider-color);
-    border: none;
+    background: var(--slider-color, var(--color-accent));
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Center the thumb on the track */
+    margin-top: -6px;
+}
+
+.controls input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.controls input[type="range"]::-moz-range-thumb:active {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .controls input[type="range"]::-webkit-slider-track {
     background: rgba(255, 255, 255, 0.2);
-    height: 3px;
-    border-radius: 1px;
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    /* Center the track vertically */
+    margin: 8px 0;
 }
 
 .controls input[type="range"]::-moz-range-track {
     background: rgba(255, 255, 255, 0.2);
-    height: 3px;
-    border-radius: 1px;
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    /* Center the track vertically */
+    margin: 8px 0;
+}
+
+/* Firefox progress styling */
+.controls input[type="range"]::-moz-range-progress {
+    background: var(--slider-color, var(--color-accent));
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+    /* Center the progress bar vertically */
+    margin: 8px 0;
+}
+
+/* Progress-based track styling */
+.controls input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--slider-color, var(--color-accent)) 0%, var(--slider-color, var(--color-accent)) var(--slider-progress, 50%), rgba(255, 255, 255, 0.2) var(--slider-progress, 50%), rgba(255, 255, 255, 0.2) 100%);
+    height: 4px;
+    border-radius: 2px;
+    transition: background var(--transition-normal);
+    border: none;
+    cursor: pointer;
+    /* Center the track vertically */
+    margin: 8px 0;
 }
 
 .controls input[type="color"] {
-    width: 30px; /* Mobile default */
-    height: 25px; /* Mobile default */
+    width: 30px;
+    height: 25px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 }
 
-/* Project Cards - Global styles */
-.projects {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 2rem;
-    scrollbar-width: medium;
-    height: auto;
-    max-height: none;
-    gap: 1rem;
-}
+/* ==========================================================================
+   7. BUTTONS & INTERACTIVE ELEMENTS
+   ========================================================================== */
 
-.projects::-webkit-scrollbar {
-    width: 12px;
-}
-
-.projects::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-/* Projects Section Heading - Mobile */
-.projects-heading {
-    color: #ffffff;
-    font-family: var(--font-primary);
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
-    margin: 2rem 0 1rem 0;
+/* Projects button */
+.projects-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem 2rem;
-    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: 600;
+    color: var(--color-secondary);
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    border: 2px solid var(--button-accent-color, rgba(255, 255, 255, 0.3));
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
     user-select: none;
     position: relative;
-    z-index: 20; /* Ensure it's above everything */
+    z-index: 20;
+    margin: 2rem 0 1rem 0;
+    appearance: none;
+    -webkit-appearance: none;
+    text-decoration: none;
+    outline: none;
 }
 
-/* Projects header container for inline layout */
-.projects-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    /* Ensure proper vertical alignment */
-    align-items: baseline;
+.button-text {
+    white-space: nowrap;
 }
 
-/* Projects title in cases section */
-.projects-title {
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin: 0;
+.button-arrow {
+    font-size: 0.9em;
+    transition: transform var(--transition-normal);
 }
 
-/* Larger font size for desktop and larger screens */
-@media (min-width: 1024px) {
-    .projects-title {
-        font-size: var(--font-size-5xl) !important;
-    }
-}
-
-.projects-heading:hover {
+/* Projects button states */
+.projects-button:hover {
     background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--button-accent-color, rgba(255, 255, 255, 0.5));
     transform: translateY(-2px);
 }
 
-.projects-heading:active { /* Hardware accelerated - removed scale to prevent movement */
-    background-color: rgba(68, 68, 68, 0.1); /* Visual feedback on touch */
+.projects-button:hover .button-arrow {
+    transform: translateY(2px);
 }
 
-/* Add a subtle background to make it more visible */
-.projects-heading::before {
+.projects-button:active {
+    background: rgba(68, 68, 68, 0.1);
+    transform: translateY(0);
+}
+
+.projects-button:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.projects-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -499,57 +456,17 @@ mark {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     z-index: -1;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-normal);
 }
 
-.projects-heading:hover::before {
+.projects-button:hover::before {
     opacity: 1;
 }
 
-/* ==========================================================================
-   CLEAN LAYOUT
-   ========================================================================== */
-
-/* ==========================================================================
-   MOBILE STYLES (max-width: 1023px) - CONSOLIDATED
-   ========================================================================== */
-
-@media (max-width: 1023px) {
-    /* Mobile adjustments */
-    .viewport {
-        width: 100% !important;
-        height: auto !important;
-        overflow: visible !important;
-        position: static !important;
-    }
-
-    /* Ensure project cards fit within the viewport on mobile */
-    project-card {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Mobile cases section - simple layout */
-    .cases {
-        width: 100%;
-        padding: 1.5rem 1rem;
-        box-sizing: border-box;
-    }
-
-    .cases .content {
-        width: 100%;
-        max-width: 100%;
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
-        box-sizing: border-box;
-    }
-}
-
-/* Back to Top Button */
+/* Back button */
 .back-button {
     display: inline-block;
     font-family: var(--font-primary);
@@ -573,24 +490,70 @@ mark {
 .back-button:hover {
     background: #333;
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
 }
 
-/* Animation Classes for Mobile Navigation - REMOVED DUPLICATE RULES */
-
-.projects-heading::after {
-    content: '↓';
-    font-size: 20px;
-    color: #ffffff;
-    transition: transform var(--transition-slow);
+/* LinkedIn link */
+.linkedin-link {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: var(--transition-normal);
 }
 
-.projects-heading:hover::after {
-    transform: translate3d(0, 4px, 0); /* Arrow moves down more smoothly on hover - hardware accelerated */
+.linkedin-link:hover {
+    color: #0077B5;
+}
+
+.linkedin-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: var(--spacing-xs);
+    transition: var(--transition-normal);
 }
 
 /* ==========================================================================
-   CARD COMPONENT
+   8. PROJECTS SECTION
+   ========================================================================== */
+
+/* Projects header */
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.projects-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+/* Projects container */
+.projects {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
+    scrollbar-width: medium;
+    height: auto;
+    max-height: none;
+    gap: 1rem;
+}
+
+.projects::-webkit-scrollbar {
+    width: 12px;
+}
+
+.projects::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   9. CARD COMPONENTS
    ========================================================================== */
 
 .card {
@@ -616,7 +579,7 @@ mark {
 }
 
 .card:hover {
-    transform: translate3d(0, -4px, 0); /* Hardware accelerated */
+    transform: translate3d(0, -4px, 0);
     box-shadow: var(--shadow-md);
 }
 
@@ -624,6 +587,7 @@ mark {
     width: 100%;
 }
 
+/* Card content */
 .card-categories {
     display: flex;
     align-items: center;
@@ -654,7 +618,7 @@ mark {
 
 .card-title {
     font-family: var(--font-primary);
-    font-size: var(--font-size-lg); /* Mobile default */
+    font-size: var(--font-size-lg);
     margin: var(--spacing-sm) 0;
     color: var(--color-text-primary);
 }
@@ -663,7 +627,7 @@ mark {
     font-family: var(--font-primary);
     font-weight: 400;
     color: var(--color-text-primary);
-    font-size: var(--font-size-base); /* Mobile default */
+    font-size: var(--font-size-base);
     margin-bottom: var(--spacing-md);
 }
 
@@ -683,27 +647,24 @@ mark {
 .card-button:hover {
     background: hsl(120, 100%, 70%);
     color: var(--color-text-primary);
-    transform: translate3d(0, -1px, 0); /* Hardware accelerated */
+    transform: translate3d(0, -1px, 0);
     box-shadow: var(--shadow-sm);
 }
 
-
-
 /* ==========================================================================
-   DESKTOP STYLES (1024px+)
+   10. RESPONSIVE DESIGN
    ========================================================================== */
 
+/* Desktop styles (1024px+) */
 @media (min-width: 1024px) {
-    .projects-heading {
-        display: block;
-    }
-
     body {
-        flex-direction: column; /* Keep vertical layout */
+        flex-direction: column;
     }
     
     .viewport {
         margin: 0 auto;
+        display: flex;
+        flex-direction: row;
     }
     
     .about {
@@ -711,32 +672,35 @@ mark {
         padding: clamp(2rem, 3vw, 3rem);
     }
     
-    .cases {
-        padding: clamp(2rem, 2vw, 3rem);
+    /* Hide projects button on desktop */
+    .projects-button {
+        display: none;
     }
     
-
-    
-    
     .content {
-        gap: clamp(12px, 1.5vw, 16px); /* Desktop: responsive gap */
-        text-align: left; /* Desktop: left alignment */
+        gap: clamp(12px, 1.5vw, 16px);
+        text-align: left;
     }
     
     .content h1, .content h2 {
-        text-align: left; /* Desktop: left alignment */
+        text-align: left;
     }
     
-    
     h1, h2 {
-        font-size: clamp(18px, 2vw, 26px); /* Desktop: further reduced font size */
+        font-size: clamp(18px, 2vw, 26px);
     }
     
 
     
+    .controls label {
+        font-size: 1rem;
+        min-width: 120px;
+    }
+    
     .controls input[type="range"] {
-        width: clamp(120px, 12vw, 150px);
+        width: 100%;
         height: clamp(28px, 3vw, 35px);
+        flex: 1;
     }
     
     .controls input[type="range"]::-webkit-slider-thumb,
@@ -746,99 +710,61 @@ mark {
     }
     
     .controls input[type="color"] {
-        width: clamp(40px, 4vw, 50px); /* Desktop: responsive size */
-        height: clamp(32px, 3.5vw, 40px); /* Desktop: responsive size */
+        width: clamp(40px, 4vw, 50px);
+        height: clamp(32px, 3.5vw, 40px);
     }
     
     .card-title {
-        font-size: clamp(1.3rem, 1.5vw, 1.5rem); /* Desktop: responsive font size */
+        font-size: clamp(1.3rem, 1.5vw, 1.5rem);
     }
     
     .card-description {
-        font-size: clamp(1rem, 1.1vw, 1.5rem); /* Desktop: responsive font size */
+        font-size: clamp(1rem, 1.1vw, 1.5rem);
     }
     
-    .projects {
-        height: auto;
-        max-height: none;
+    .projects-title {
+        font-size: var(--font-size-5xl) !important;
     }
 }
 
-/* ==========================================================================
-   ULTRA-WIDE SCREEN STYLES (1600px+)
-   ========================================================================== */
-
-@media (min-width: 1600px) {
-    .viewport {
-        max-width: 1600px;
-    }
-}
-
-/* ==========================================================================
-   ACCESSIBILITY & FOCUS STYLES
-   ========================================================================== */
-
-*:focus {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
-}
-
-/* ==========================================================================
-   SIMPLE TRANSITIONS
-   ========================================================================== */
-
-/* Clean transitions */
-.projects-heading, .back-button, .card {
-    transition: all 0.3s ease;
-}
-
-/* Reduce repaints for static elements */
-.content {
-    contain: layout style paint;
-}
-
-/* ==========================================================================
-   UTILITY CLASSES
-   ========================================================================== */
-
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-/* ==========================================================================
-   ACCESSIBILITY PREFERENCES
-   ========================================================================== */
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    
+    .controls input[type="range"] {
+        width: 100%;
+        flex: 1;
     }
     
-    html {
-        scroll-behavior: auto;
+    .cases > h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        color: #000;
+        line-height: 1.2;
+    }
+    
+    project-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cases .content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        box-sizing: border-box;
     }
 }
 
-/* ==========================================================================
-   MOBILE NAVIGATION FALLBACK
-   ========================================================================== */
-
-/* Mobile projects heading - simple styling */
-@media (max-width: 1023px) {
-    .projects-heading {
-        margin: 2rem 0 1rem 0;
-        padding: 1rem 2rem;
-        font-size: 20px;
-    }
-    
-    .projects-heading::after {
-        content: '↓';
+/* Mobile button adjustments */
+@media (max-width: 768px) {
+    .projects-button {
+        padding: 0.875rem 1.5rem;
         font-size: 18px;
-        margin-left: 8px;
+        margin: 1.5rem 0 1rem 0;
+    }
+    
+    .button-arrow {
         animation: bounce 2s infinite;
     }
     
@@ -853,51 +779,91 @@ mark {
             transform: translateY(-3px);
         }
     }
-    
-    /* Mobile cases section */
-    .cases {
-        padding: 1.5rem 1rem;
-    }
-    
-    /* Position back button at the top with proper spacing */
-    .back-button {
-        position: relative;
-        background: #000;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        padding: 12px 16px;
+}
+
+@media (max-width: 480px) {
+    .projects-button {
+        padding: 0.75rem 1.25rem;
         font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: inline-block;
-        align-self: flex-start;
+        width: auto;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .projects-button:hover {
+        transform: none;
     }
     
-    .back-button:hover {
-        background: #333;
-        transform: translateY(-1px);
+    .projects-button:hover .button-arrow {
+        transform: none;
     }
     
-    /* Clean up the projects title */
-    .cases > h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 0 20px 0;
-        color: #000;
-        line-height: 1.2;
+    .projects-button:active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(0.98);
+    }
+}
+
+/* Ultra-wide screens (1600px+) */
+@media (min-width: 1600px) {
+    .viewport {
+        max-width: 1600px;
+    }
+}
+
+/* ==========================================================================
+   11. ACCESSIBILITY
+   ========================================================================== */
+
+/* Focus styles */
+*:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
     
-    /* Clean up the projects container */
-    .cases > .projects {
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-        height: auto;
-        max-height: none;
-        overflow-y: visible;
+    html {
+        scroll-behavior: auto;
     }
+}
+
+/* ==========================================================================
+   12. UTILITY CLASSES
+   ========================================================================== */
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   13. LEGACY & COMPATIBILITY
+   ========================================================================== */
+
+/* Legacy content link styles */
+.content h1 a,
+.content h2 a {
+    display: inline-block;
+    margin-left: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-secondary);
+    transition: var(--transition-normal);
+}
+
+.content h2 a {
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+.content h2 a:hover {
+    opacity: 0.8;
 }
 
