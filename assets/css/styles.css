@@ -169,6 +169,7 @@ body.fonts-fallback .content h2 {
     background-color: var(--color-background);
     position: relative;
     max-width: 1400px;
+    overflow: hidden;
 }
 
 /* Cases container */
@@ -786,6 +787,35 @@ body.fonts-fallback .content h2 {
         padding: 0.75rem 1.25rem;
         font-size: 16px;
         width: auto;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        max-width: 90%;
+    }
+}
+
+/* iPhone SE and very small screens */
+@media (max-width: 375px) {
+    .about {
+        justify-content: flex-start;
+        padding: 0.5rem;
+    }
+    
+    .projects-button {
+        padding: 0.625rem 1rem;
+        font-size: 14px;
+        margin: 0.5rem auto;
+        width: fit-content;
+        min-width: 120px;
+        align-self: center;
+    }
+    
+    .button-text {
+        font-size: 14px;
+    }
+    
+    .button-arrow {
+        font-size: 12px;
     }
 }
 
@@ -840,7 +870,7 @@ body.fonts-fallback .content h2 {
    ========================================================================== */
 
 .loading {
-    opacity: 0.7;
+            opacity: 0.7;
     pointer-events: none;
 }
 
