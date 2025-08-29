@@ -794,20 +794,24 @@ body.fonts-fallback .content h2 {
     }
 }
 
+/* Samsung A55 and similar devices */
+@media (max-width: 412px) {
+    .projects-button {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: 100;
+    }
+}
+
 /* iPhone SE and very small screens */
 @media (max-width: 375px) {
-    .about {
-        justify-content: flex-start;
-        padding: 0.5rem;
-    }
-    
     .projects-button {
         padding: 0.625rem 1rem;
         font-size: 14px;
-        margin: 0.5rem auto;
-        width: fit-content;
-        min-width: 120px;
-        align-self: center;
+        bottom: 15px;
     }
     
     .button-text {
