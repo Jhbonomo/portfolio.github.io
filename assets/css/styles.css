@@ -160,7 +160,7 @@ body.fonts-fallback .content h2 {
 /* About section */
 .about {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -491,6 +491,13 @@ body.fonts-fallback .content h2 {
     background: #333;
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
+}
+
+/* Hide back button on desktop screens */
+@media (min-width: 1024px) {
+    .back-button {
+        display: none !important;
+    }
 }
 
 /* LinkedIn link */
