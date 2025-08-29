@@ -798,12 +798,120 @@ body.dark-theme .prototype-link a:hover {
     transform: scale(1.1);
 }
 
+/* ==========================================================================
+   IMAGE CAPTION COMPONENTS
+   ========================================================================== */
+
+/* Base Image Caption Component */
 .image-caption {
-    font-size: 0.9rem;
-    color: #6c757d;
+    font-size: 1rem;
+    color: --var(--font-primary);
     text-align: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-style: italic;
+    line-height: 1.4;
+}
+
+/* Default Image Caption with "Image:" prefix */
+.image-caption::before {
+    content: "Image: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Alternative Caption Types */
+.image-caption--chart::before {
+    content: "Chart: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--diagram::before {
+    content: "Diagram: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--screenshot::before {
+    content: "Screenshot: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--prototype::before {
+    content: "Prototype: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--wireframe::before {
+    content: "Wireframe: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--mockup::before {
+    content: "Mockup: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--flow::before {
+    content: "User Flow: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--research::before {
+    content: "Research: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+.image-caption--data::before {
+    content: "Data: ";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Caption Size Variants */
+.image-caption--small {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.image-caption--large {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Caption Alignment Variants */
+.image-caption--left {
+    text-align: left;
+}
+
+.image-caption--right {
+    text-align: right;
+}
+
+/* Caption Style Variants */
+.image-caption--no-italic {
+    font-style: normal;
+}
+
+.image-caption--bold {
+    font-weight: bold;
+}
+
+/* Caption with Source Attribution */
+.image-caption--with-source {
+    font-size: 0.85rem;
+}
+
+.image-caption--with-source::after {
+    content: " (Source: " attr(data-source) ")";
+    font-style: normal;
+    opacity: 0.8;
 }
 
 /* Image Gallery */
