@@ -23,6 +23,12 @@ class ImageZoomModal {
         this.translateX = 0;
         this.translateY = 0;
         
+        // Pinch-to-zoom variables
+        this.initialDistance = 0;
+        this.initialScale = 1;
+        this.isPinching = false;
+        this.lastTouchDistance = 0;
+        
         this.init();
     }
     
@@ -130,10 +136,10 @@ class ImageZoomModal {
         document.addEventListener('mousemove', (e) => this.pan(e));
         document.addEventListener('mouseup', () => this.endPan());
         
-        // Touch events
-        this.modalImage.addEventListener('touchstart', (e) => this.startPan(e));
-        document.addEventListener('touchmove', (e) => this.pan(e));
-        document.addEventListener('touchend', () => this.endPan());
+        // Touch events with pinch-to-zoom
+        this.modalImage.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+        document.addEventListener('touchmove', (e) => this.handleTouchMove(e));
+        document.addEventListener('touchend', (e) => this.handleTouchEnd(e));
     }
     
     startPan(e) {
@@ -162,6 +168,82 @@ class ImageZoomModal {
     
     endPan() {
         this.isDragging = false;
+    }
+    
+    // Calculate distance between two touch points
+    getTouchDistance(touches) {
+        if (touches.length < 2) return 0;
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    // Calculate center point between two touches
+    getTouchCenter(touches) {
+        if (touches.length < 2) return { x: 0, y: 0 };
+        return {
+            x: (touches[0].clientX + touches[1].clientX) / 2,
+            y: (touches[0].clientY + touches[1].clientY) / 2
+        };
+    }
+    
+    handleTouchStart(e) {
+        e.preventDefault();
+        
+        if (e.touches.length === 1) {
+            // Single touch - start panning
+            this.isDragging = true;
+            this.isPinching = false;
+            const touch = e.touches[0];
+            this.startX = touch.clientX - this.translateX;
+            this.startY = touch.clientY - this.translateY;
+        } else if (e.touches.length === 2) {
+            // Two touches - start pinch-to-zoom
+            this.isDragging = false;
+            this.isPinching = true;
+            this.initialDistance = this.getTouchDistance(e.touches);
+            this.initialScale = this.currentScale;
+            this.lastTouchDistance = this.initialDistance;
+        }
+    }
+    
+    handleTouchMove(e) {
+        e.preventDefault();
+        
+        if (e.touches.length === 1 && this.isDragging) {
+            // Single touch - continue panning
+            const touch = e.touches[0];
+            this.translateX = touch.clientX - this.startX;
+            this.translateY = touch.clientY - this.startY;
+            this.updateImageTransform();
+        } else if (e.touches.length === 2 && this.isPinching) {
+            // Two touches - handle pinch-to-zoom
+            const currentDistance = this.getTouchDistance(e.touches);
+            const center = this.getTouchCenter(e.touches);
+            
+            if (this.initialDistance > 0) {
+                const scale = currentDistance / this.initialDistance;
+                const newScale = Math.max(this.minScale, Math.min(this.maxScale, this.initialScale * scale));
+                
+                // Calculate zoom center offset
+                const scaleChange = newScale / this.currentScale;
+                const rect = this.modalImage.getBoundingClientRect();
+                const centerX = center.x - rect.left;
+                const centerY = center.y - rect.top;
+                
+                this.translateX = centerX - (centerX - this.translateX) * scaleChange;
+                this.translateY = centerY - (centerY - this.translateY) * scaleChange;
+                
+                this.currentScale = newScale;
+                this.updateImageTransform();
+            }
+        }
+    }
+    
+    handleTouchEnd(e) {
+        this.isDragging = false;
+        this.isPinching = false;
+        this.initialDistance = 0;
     }
     
     openModal(src, alt) {
