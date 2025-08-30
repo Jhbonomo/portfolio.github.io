@@ -348,6 +348,61 @@ input:checked + .slider:before {
     font-style: italic;
 }
 
+/* On-screen arrow controls */
+.on-screen-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    z-index: 10;
+}
+
+.arrow-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.arrow-btn {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #007bff;
+    background: rgba(255, 255, 255, 0.9);
+    color: #007bff;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    backdrop-filter: blur(2px);
+}
+
+.arrow-btn:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.arrow-btn:active {
+    transform: scale(0.95);
+    background: #0056b3;
+}
+
+.arrow-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
 /* Mobile-specific game styles */
 @media (max-width: 768px) {
     .pattern-game-container {
@@ -377,6 +432,24 @@ input:checked + .slider:before {
         background: #dc3545;
         border: 2px solid #c82333;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Mobile arrow controls */
+    .arrow-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+        border-width: 2px;
+    }
+    
+    .on-screen-controls {
+        bottom: 15px;
+        right: 15px;
+        gap: 0.3rem;
+    }
+    
+    .arrow-row {
+        gap: 0.75rem;
     }
     
     .game-instructions p {
@@ -466,7 +539,7 @@ input:checked + .slider:before {
     border-radius: 8px;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s ease;
     pointer-events: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -725,6 +798,7 @@ body.dark-theme .prototype-link a:hover {
     margin-bottom: 1.5rem;
     font-weight: 500;
     color: #2c2c2c;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 /* ==========================================================================
@@ -889,78 +963,6 @@ body.dark-theme .prototype-link a:hover {
     object-fit: cover;
 }
 
-/* Mobile Before/After Transition */
-.mobile-before-after {
-    display: none; /* Hidden by default, shown on mobile */
-    position: relative;
-    height: 300px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    margin: 2rem 0;
-}
-
-.mobile-before-after .before-image,
-.mobile-before-after .after-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.2s ease-in-out;
-}
-
-.mobile-before-after .before-image {
-    opacity: 1;
-    z-index: 2;
-}
-
-.mobile-before-after .after-image {
-    opacity: 0;
-    z-index: 1;
-}
-
-.mobile-before-after.active .before-image {
-    opacity: 0;
-}
-
-.mobile-before-after.active .after-image {
-    opacity: 1;
-}
-
-/* Restart Arrow */
-.mobile-before-after .restart-arrow {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
-
-.mobile-before-after .restart-arrow:hover {
-    background: rgba(0, 0, 0, 0.9);
-    transform: scale(1.1);
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
 .hero-image .image-wrapper {
     max-width: 100%;
 }
@@ -996,7 +998,9 @@ body.dark-theme .prototype-link a:hover {
     border-bottom: 1px solid #dee2e6;
     position: relative;
     padding-left: 2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
+
 
 .insights-list li::before {
     content: '→';
@@ -1400,28 +1404,30 @@ body.dark-theme .theme-toggle:hover {
     }
     
     .image-gallery {
-        display: none; /* Hide side-by-side on mobile */
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        gap: 1.5rem;
     }
     
-    .mobile-before-after {
-        display: block; /* Show before/after transition on mobile */
+    .image-gallery .image-wrapper {
         height: 250px; /* Smaller height for mobile */
+    }
+    
+    .animation-container {
         margin: 1.5rem 0;
     }
     
-    /* Mobile-specific animation timing */
-    .mobile-before-after .before-image,
-    .mobile-before-after .after-image {
-        transition: opacity 0.3s ease-in-out; /* Slightly slower for mobile */
+    .interactive-animation {
+        max-height: 300px;
     }
     
-    /* Mobile restart arrow positioning */
-    .mobile-before-after .restart-arrow {
-        top: 0.5rem;
-        right: 0.5rem;
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+    .swipe-indicator {
+        bottom: 10%;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .swipe-hand {
+        font-size: 1.5rem;
     }
     
     .results-grid {
@@ -1441,8 +1447,6 @@ body.dark-theme .theme-toggle:hover {
 }
 
 @media (max-width: 480px) {
-
-    
     .project-title {
         font-size: clamp(1.5rem, 4vw, 2rem);
     }
@@ -1457,6 +1461,14 @@ body.dark-theme .theme-toggle:hover {
     
     .article-content {
         font-size: 1rem;
+    }
+    
+    .image-gallery {
+        gap: 1rem;
+    }
+    
+    .image-gallery .image-wrapper {
+        height: 200px; /* Even smaller for very small screens */
     }
     
     .modal-close {
