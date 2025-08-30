@@ -423,14 +423,14 @@ input:checked + .slider:before {
     }
     
     .game-dot {
-        background: #28a745;
-        border: 2px solid #1e7e34;
+        background: #ff6b6b; /* Keep red dot consistent */
+        border: 2px solid #e03131;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .game-target {
-        background: #dc3545;
-        border: 2px solid #c82333;
+        background: #51cf66; /* Keep green target consistent */
+        border: 2px solid #2f9e44;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
