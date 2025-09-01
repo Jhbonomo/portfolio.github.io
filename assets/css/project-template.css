@@ -641,8 +641,7 @@ input:checked + .slider:before {
 }
 
 .header-controls {
-    display: flex;
-    gap: 1rem;
+    display: none; /* Hide font size and theme toggle buttons on project pages */
 }
 
 .font-size-btn, .theme-toggle {
