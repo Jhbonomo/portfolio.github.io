@@ -628,12 +628,57 @@ body.fonts-fallback .content h2 {
     display: inline-block;
 }
 
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-icon {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5;
+}
+
 .card-title {
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: clamp(var(--font-size-2xl), 2vw, var(--font-size-3xl));
-    margin: var(--spacing-sm) 0;
+    margin: 0;
     color: var(--color-text-primary);
+    flex: 1;
+}
+
+/* Mobile layout for card header */
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: var(--spacing-sm);
+    }
+    
+    .card-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .card-title {
+        flex: none;
+        text-align: left;
+    }
 }
 
 .card-description {

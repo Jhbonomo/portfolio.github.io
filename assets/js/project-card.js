@@ -4,7 +4,10 @@ class ProjectCard extends HTMLElement {
     // Use light DOM so external CSS applies
     this.innerHTML = `
       <div class="card">
-        <h3 class="card-title"></h3>
+        <div class="card-header">
+          <div class="card-icon"></div>
+          <h3 class="card-title"></h3>
+        </div>
         <div class="card-categories"></div>
         <p class="card-description"></p>
         <button class="card-button"></button>
@@ -13,7 +16,7 @@ class ProjectCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['categories', 'title', 'description', 'button', 'href'];
+    return ['categories', 'title', 'description', 'button', 'href', 'icon'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -22,6 +25,7 @@ class ProjectCard extends HTMLElement {
     if (name === 'description') this.querySelector('.card-description').textContent = newValue;
     if (name === 'button') this.querySelector('.card-button').textContent = newValue;
     if (name === 'href') this.setupNavigation(newValue);
+    if (name === 'icon') this.updateIcon(newValue);
   }
 
   updateCategories(categoriesString) {
@@ -47,6 +51,23 @@ class ProjectCard extends HTMLElement {
     }
   }
 
+  updateIcon(iconName) {
+    const iconContainer = this.querySelector('.card-icon');
+    if (iconContainer && iconName) {
+      iconContainer.innerHTML = '';
+      
+      // Create the icon element
+      const iconElement = document.createElement('i');
+      iconElement.setAttribute('data-lucide', iconName);
+      iconContainer.appendChild(iconElement);
+      
+      // Initialize the icon if Lucide is available
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+  }
+
   connectedCallback() {
     // Set initial values
     this.attributeChangedCallback('categories', '', this.getAttribute('categories') || '');
@@ -54,6 +75,7 @@ class ProjectCard extends HTMLElement {
     this.attributeChangedCallback('description', '', this.getAttribute('description') || '');
     this.attributeChangedCallback('button', '', this.getAttribute('button') || '');
     this.attributeChangedCallback('href', '', this.getAttribute('href') || '');
+    this.attributeChangedCallback('icon', '', this.getAttribute('icon') || '');
     
     // Set initial button color
     this.updateButtonColor();

@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
 <div class="viewport">
@@ -58,21 +59,24 @@
                 title="How AI Changes the Way We Interact with Products"
                 description="As Quorum, an enterprise platform for US government affairs, began exploring AI, our biggest challenge was clear: move past feature-driven thinking and harness AI in ways that genuinely empowered users."
                 button="Read case"
-                href="projects/project-ai-interaction.html">
+                href="projects/project-ai-interaction.html"
+                icon="brain">
             </project-card>
             <project-card
                 categories="Product design | Design system | Science and technology"
                 title="Fostering scientific knowledge through sharing and collaboration"
                 description="The launch of PNIPE, a Ministry of Science and Technology platform that centralizes lab and equipment data, enabling researchers to access resources, collaborate, and strengthen national research infrastructure and public policies."
                 button="Read case"
-                href="projects/project-scientific-collaboration.html">
+                href="projects/project-scientific-collaboration.html"
+                icon="microscope">
             </project-card>
             <project-card
                 categories="UX Research | Concepts | Government affairs"
                 title="Mapping the State of a User Experience"
                 description="In complex enterprise systems, users aren't always paying customers, yet their experience drives adoption and retention. I analyzed four years of usability surveys to map how users actually perceived and navigated our product."
                 button="Read case"
-                href="projects/project-ux-mapping.html">
+                href="projects/project-ux-mapping.html"
+                icon="search">
             </project-card>
             <project-card
                 categories="UX Research | Visual Design | Mobile | Certification course | Education"
@@ -81,21 +85,24 @@
                 Conceptual project of an Educational mobile app for the National Museum of Rio de Janeiro, highlighting community and education programs that stayed active despite the museum's closure after a devastating fire.
                 "
                 button="Read case"
-                href="projects/project-museum-app.html">
+                href="projects/project-museum-app.html"
+                icon="landmark">
             </project-card>
             <project-card
                 categories="UX Research | Education"
                 title="What school teachers taught me about people and UX"
                 description="How I changed my approach to product design from user interviews with school teachers for an edtech for reading literacy"
                 button="Read case"
-                href="projects/project-teachers-ux.html">
+                href="projects/project-teachers-ux.html"
+                icon="graduation-cap">
             </project-card>
             <project-card
                 categories="Product design | Mobile | E-commerce"
                 title="Designing for scale in Brazilian retail"
-                description="Product design for Via’s mobile e-commerce apps, enhancing a seamless, scalable shopping experience for millions of Brazilian consumers across diverse regions and backgrounds."
+                description="Product design for Via's mobile e-commerce apps, enhancing a seamless, scalable shopping experience for millions of Brazilian consumers across diverse regions and backgrounds."
                 button="Read case"
-                href="projects/project-brazilian-retail.html">
+                href="projects/project-brazilian-retail.html"
+                icon="shopping-bag">
             </project-card>
             </div>
         </div>
@@ -105,5 +112,11 @@
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/project-card.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      // Ensure Lucide is loaded before creating project cards
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    </script>
 </body>
 </html>
