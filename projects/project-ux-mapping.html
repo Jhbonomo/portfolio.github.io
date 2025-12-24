@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
     <meta name="description" content="Mapping the State of a User Experience - A case study on transforming 4 years of research data into actionable insights for enterprise UX improvement">
     <meta name="keywords" content="UX Research, User Experience, Enterprise Software, Data Analysis, Stakeholder Communication, UX Strategy">
     <meta name="author" content="Juliana">
@@ -305,7 +312,7 @@ An example of more user centered reporting tools, allowing user to curate their 
         </div>
     </div>
 
-    <script src="../assets/js/project-template.js"></script>
-    <script src="../assets/js/mindmap-animation.js"></script>
+    <script src="../assets/js/project-template.js" defer></script>
+    <script src="../assets/js/mindmap-animation.js" defer></script>
 </body>
 </html>

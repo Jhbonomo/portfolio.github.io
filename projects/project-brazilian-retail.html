@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
     <meta name="description" content="Designing for scale in Brazilian retail - A case study on mobile e-commerce product design for Via, one of Brazil's largest retail companies">
     <meta name="keywords" content="Mobile Product Design, E-commerce, Brazilian Retail, Via, Visual Design, Shopping Experience">
     <meta name="author" content="Juliana">
@@ -236,6 +243,6 @@
         </div>
     </div>
 
-    <script src="../assets/js/project-template.js"></script>
+    <script src="../assets/js/project-template.js" defer></script>
 </body>
 </html>
