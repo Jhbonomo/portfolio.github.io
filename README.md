@@ -1,33 +1,38 @@
-# Juliana's UX Research & Product Design Portfolio
+# 🚀 Portfolio - Juliana
 
-A modern, interactive portfolio showcasing UX research and product design projects with a focus on helping humans and complex systems get along.
+Portfolio pessoal de UX Research e Product Design, construído com tecnologias web modernas e otimizado para performance e segurança.
 
-## 🏗️ Project Structure
+## ✨ Features Implementadas
 
-```
-Animation/
-├── index.html                 # Main portfolio homepage
-├── README.md                  # This file
-├── demo.html                  # Demo page (if needed)
-├── assets/                    # Static assets
-│   ├── css/                   # Stylesheets
-│   │   ├── styles.css         # Main portfolio styles
-│   │   └── project-template.css # Project page template styles
-│   ├── js/                    # JavaScript files
-│   │   ├── animation.js       # Canvas animations
-│   │   ├── project-card.js    # Project card component
-│   │   └── project-template.js # Project page functionality
-│   └── images/                # Image assets (future use)
-├── projects/                  # Individual project pages
-│   ├── project-teachers-ux.html
-│   └── project-museum-app.html
-├── templates/                 # Template files
-│   └── project-template.html  # Base template for new projects
-└── docs/                      # Documentation
-    └── PROJECT-TEMPLATE-README.md
-```
+### 🔒 Segurança
+- ✅ Content Security Policy (CSP) para prevenir XSS
+- ✅ X-Frame-Options para prevenir clickjacking
+- ✅ X-Content-Type-Options e Referrer-Policy
+- ✅ Permissions-Policy para limitar APIs do navegador
+- ✅ Versionamento fixo de dependências CDN
 
-## 🚀 Features
+### ⚡ Performance
+- ✅ Scripts com `defer` para carregamento não-bloqueante
+- ✅ Lazy loading de imagens
+- ✅ Minificação automática de CSS/JS via Vite
+- ✅ Remoção automática de `console.log` em produção
+- ✅ Autoprefixer para compatibilidade CSS
+- ✅ Canvas optimization com device pixel ratio
+
+### 🎨 UI/UX
+- ✅ Dark mode com preferência do sistema
+- ✅ Animações de canvas otimizadas por FPS
+- ✅ Componentes Web customizados (ProjectCard)
+- ✅ Design responsivo mobile-first
+- ✅ Acessibilidade com ARIA labels
+
+### 🛠️ Desenvolvimento
+- ✅ Vite para build rápido e dev server com HMR
+- ✅ ESLint para qualidade de código
+- ✅ Prettier para formatação consistente
+- ✅ PostCSS com autoprefixer
+- ✅ Error handling robusto em JavaScript
+- ✅ Graceful degradation
 
 ### Main Portfolio
 
