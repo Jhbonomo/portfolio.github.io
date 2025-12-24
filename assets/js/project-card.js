@@ -51,18 +51,18 @@ class ProjectCard extends HTMLElement {
     try {
       const categoriesContainer = this.querySelector('.card-categories');
       if (!categoriesContainer) return;
-      
+
       categoriesContainer.innerHTML = '';
-      
+
       if (categoriesString) {
         const categories = categoriesString.split('|').map(cat => cat.trim());
-        
+
         categories.forEach((category, index) => {
           const tag = document.createElement('span');
           tag.className = 'category-tag';
           tag.textContent = category;
           categoriesContainer.appendChild(tag);
-          
+
           // Add separator between tags (except for the last one)
           if (index < categories.length - 1) {
             const separator = document.createElement('span');
@@ -81,12 +81,12 @@ class ProjectCard extends HTMLElement {
       const iconContainer = this.querySelector('.card-icon');
       if (iconContainer && iconName) {
         iconContainer.innerHTML = '';
-        
+
         // Create the icon element
         const iconElement = document.createElement('i');
         iconElement.setAttribute('data-lucide', iconName);
         iconContainer.appendChild(iconElement);
-        
+
         // Initialize the icon if Lucide is available
         if (window.lucide) {
           lucide.createIcons();
@@ -105,10 +105,10 @@ class ProjectCard extends HTMLElement {
     this.attributeChangedCallback('button', '', this.getAttribute('button') || '');
     this.attributeChangedCallback('href', '', this.getAttribute('href') || '');
     this.attributeChangedCallback('icon', '', this.getAttribute('icon') || '');
-    
+
     // Set initial button color
     this.updateButtonColor();
-    
+
     // Setup click handlers
     this.setupClickHandlers();
   }
@@ -123,16 +123,16 @@ class ProjectCard extends HTMLElement {
         const normalLightness = 50;
         const normalColor = `hsl(${hue}, 100%, ${normalLightness}%)`;
         button.style.backgroundColor = normalColor;
-        
+
         // Calculate accessible text color for normal state
         const normalTextColor = this.getAccessibleTextColor(normalColor);
         button.style.color = normalTextColor;
-        
+
         // Hover state (luminosity +20%)
         const hoverLightness = Math.min(70, normalLightness + 20);
         const hoverColor = `hsl(${hue}, 100%, ${hoverLightness}%)`;
         button.style.setProperty('--hover-color', hoverColor);
-        
+
         // Calculate accessible text color for hover state
         const hoverTextColor = this.getAccessibleTextColor(hoverColor);
         button.style.setProperty('--hover-text-color', hoverTextColor);
@@ -145,7 +145,7 @@ class ProjectCard extends HTMLElement {
     // Convert HSL to RGB for proper contrast calculation
     const rgb = this.hslToRgb(backgroundColor);
     const luminance = this.calculateLuminance(rgb);
-    
+
     // Use white text for dark backgrounds, black text for light backgrounds
     // This ensures WCAG AA compliance (4.5:1 contrast ratio)
     return luminance > 0.179 ? '#000000' : '#ffffff';
@@ -156,36 +156,32 @@ class ProjectCard extends HTMLElement {
     // Extract HSL values from string like "hsl(120, 100%, 50%)"
     const match = hslString.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
     if (!match) return [0, 0, 0];
-    
+
     const h = parseInt(match[1]) / 360;
     const s = parseInt(match[2]) / 100;
     const l = parseInt(match[3]) / 100;
-    
+
     const c = (1 - Math.abs(2 * l - 1)) * s;
-    const x = c * (1 - Math.abs((h * 6) % 2 - 1));
+    const x = c * (1 - Math.abs(((h * 6) % 2) - 1));
     const m = l - c / 2;
-    
+
     let r, g, b;
-    
-    if (h < 1/6) {
+
+    if (h < 1 / 6) {
       [r, g, b] = [c, x, 0];
-    } else if (h < 2/6) {
+    } else if (h < 2 / 6) {
       [r, g, b] = [x, c, 0];
-    } else if (h < 3/6) {
+    } else if (h < 3 / 6) {
       [r, g, b] = [0, c, x];
-    } else if (h < 4/6) {
+    } else if (h < 4 / 6) {
       [r, g, b] = [0, x, c];
-    } else if (h < 5/6) {
+    } else if (h < 5 / 6) {
       [r, g, b] = [x, 0, c];
     } else {
       [r, g, b] = [c, 0, x];
     }
-    
-    return [
-      Math.round((r + m) * 255),
-      Math.round((g + m) * 255),
-      Math.round((b + m) * 255)
-    ];
+
+    return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
   }
 
   // Calculate relative luminance (WCAG 2.1 formula)
@@ -194,7 +190,7 @@ class ProjectCard extends HTMLElement {
       val = val / 255;
       return val <= 0.03928 ? val / 12.92 : Math.pow((val + 0.055) / 1.055, 2.4);
     });
-    
+
     return 0.2126 * r + 0.7152 * g + 0.0722 * b;
   }
 
@@ -210,19 +206,19 @@ class ProjectCard extends HTMLElement {
     try {
       const card = this.querySelector('.card');
       const button = this.querySelector('.card-button');
-      
+
       if (!card || !button) return;
-      
+
       // Make the entire card clickable
-      card.addEventListener('click', (e) => {
+      card.addEventListener('click', e => {
         // Don't trigger if clicking the button specifically
         if (e.target !== button) {
           this.navigateToProject();
         }
       });
-      
+
       // Button click handler
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', e => {
         e.stopPropagation();
         this.navigateToProject();
       });

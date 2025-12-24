@@ -1,7 +1,7 @@
 export default {
   plugins: {
     autoprefixer: {
-      overrideBrowserslist: ['defaults', 'not IE 11']
-    }
-  }
+      overrideBrowserslist: ['defaults', 'not IE 11'],
+    },
+  },
 };

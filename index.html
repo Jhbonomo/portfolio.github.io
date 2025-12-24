@@ -1,126 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <meta name="description" content="Juliana's UX Research and Product Design Portfolio - Helping humans and complex systems get along">
-    <meta name="keywords" content="UX Research, Product Design, User Experience, Portfolio">
-    <meta name="author" content="Juliana">
-    <meta property="og:title" content="Juliana - UX Researcher & Product Designer">
-    <meta property="og:description" content="UX Research and Product Design Portfolio">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#000000">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+    />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+
+    <meta
+      name="description"
+      content="Juliana's UX Research and Product Design Portfolio - Helping humans and complex systems get along"
+    />
+    <meta name="keywords" content="UX Research, Product Design, User Experience, Portfolio" />
+    <meta name="author" content="Juliana" />
+    <meta property="og:title" content="Juliana - UX Researcher & Product Designer" />
+    <meta property="og:description" content="UX Research and Product Design Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#000000" />
     <title>Juliana - UX Researcher & Product Designer</title>
     <!-- Optimized font loading with single import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
     <!-- Lucide Icons with SRI and version pinning -->
-    <script src="https://unpkg.com/lucide@0.294.0/dist/umd/lucide.js" 
-            integrity="sha384-6e+qYvbYvL3xoPxF2VvMJvGvqvDxVXxvXxVqQqQwQwQwQwQwQwQwQwQwQwQwQwQw" 
-            crossorigin="anonymous" 
-            defer></script>
-</head>
-<body>
-<div class="viewport">
-    <div class="about">
+    <script
+      src="https://unpkg.com/lucide@0.294.0/dist/umd/lucide.js"
+      integrity="sha384-6e+qYvbYvL3xoPxF2VvMJvGvqvDxVXxvXxVqQqQwQwQwQwQwQwQwQwQwQwQwQwQw"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <div class="viewport">
+      <div class="about">
         <div class="content-wrap">
-            <div class="controls">
-                                 <label>Speed: <input type="range" id="speedSlider" min="0.05" max="1" step="0.05" value="0.5"></label>
-                <label>Points: <input type="range" id="pointsSlider" min="3" max="100" value="50"></label>
-                <label>Hue: <input type="range" id="hueSlider" min="0" max="360" value="120"></label>
-            </div>
-            <div class="content">
-                <h1><mark>Hi, I'm Juliana.</mark></h1>
-                <h2><mark>Officially, I'm a product designer.</mark></h2>
-                <h2><mark>In practice, I help humans and complex systems get along.</mark></h2>
-                                                  <h2 class="reach-out"><mark>Reach out:</mark> <a href="https://www.linkedin.com/in/julianahb/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                      <svg width="32" height="32" fill="currentColor" class="linkedin-icon">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                  </a></h2>
-            </div>
-       
+          <div class="controls">
+            <label
+              >Speed:
+              <input type="range" id="speedSlider" min="0.05" max="1" step="0.05" value="0.5"
+            /></label>
+            <label
+              >Points: <input type="range" id="pointsSlider" min="3" max="100" value="50"
+            /></label>
+            <label>Hue: <input type="range" id="hueSlider" min="0" max="360" value="120" /></label>
+          </div>
+          <div class="content">
+            <h1><mark>Hi, I'm Juliana.</mark></h1>
+            <h2><mark>Officially, I'm a product designer.</mark></h2>
+            <h2><mark>In practice, I help humans and complex systems get along.</mark></h2>
+            <h2 class="reach-out">
+              <mark>Reach out:</mark>
+              <a
+                href="https://www.linkedin.com/in/julianahb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="linkedin-link"
+              >
+                <svg width="32" height="32" fill="currentColor" class="linkedin-icon">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+            </h2>
+          </div>
         </div>
         <div class="canvas-container">
-            <canvas id="canvas"></canvas>
+          <canvas id="canvas"></canvas>
         </div>
         <button class="projects-button" type="button" aria-label="View projects">
-            <span class="button-text">Projects</span>
-            <span class="button-arrow" aria-hidden="true">↓</span>
+          <span class="button-text">Projects</span>
+          <span class="button-arrow" aria-hidden="true">↓</span>
         </button>
-    </div>
-    <div class="cases-container">
+      </div>
+      <div class="cases-container">
         <div class="cases" id="projects">
-            <div class="projects-header">
-                <h2 class="projects-title">Projects</h2>
-                                 <div class="back-button" id="backButton">↑ Back</div>
-            </div>
-            <div class="projects">
+          <div class="projects-header">
+            <h2 class="projects-title">Projects</h2>
+            <div class="back-button" id="backButton">↑ Back</div>
+          </div>
+          <div class="projects">
             <project-card
-                categories="UX research | Product design | Product Strategy | Government affairs"
-                title="How AI Changes the Way We Interact with Products"
-                description="As Quorum, an enterprise platform for US government affairs, began exploring AI, our biggest challenge was clear: move past feature-driven thinking and harness AI in ways that genuinely empowered users."
-                button="Read case"
-                href="projects/project-ai-interaction.html"
-                icon="brain">
+              categories="UX research | Product design | Product Strategy | Government affairs"
+              title="How AI Changes the Way We Interact with Products"
+              description="As Quorum, an enterprise platform for US government affairs, began exploring AI, our biggest challenge was clear: move past feature-driven thinking and harness AI in ways that genuinely empowered users."
+              button="Read case"
+              href="projects/project-ai-interaction.html"
+              icon="brain"
+            >
             </project-card>
             <project-card
-                categories="Product design | Design system | Science and technology"
-                title="Fostering scientific knowledge through sharing and collaboration"
-                description="The launch of PNIPE, a Ministry of Science and Technology platform that centralizes lab and equipment data, enabling researchers to access resources, collaborate, and strengthen national research infrastructure and public policies."
-                button="Read case"
-                href="projects/project-scientific-collaboration.html"
-                icon="microscope">
+              categories="Product design | Design system | Science and technology"
+              title="Fostering scientific knowledge through sharing and collaboration"
+              description="The launch of PNIPE, a Ministry of Science and Technology platform that centralizes lab and equipment data, enabling researchers to access resources, collaborate, and strengthen national research infrastructure and public policies."
+              button="Read case"
+              href="projects/project-scientific-collaboration.html"
+              icon="microscope"
+            >
             </project-card>
             <project-card
-                categories="UX Research | Concepts | Government affairs"
-                title="Mapping the State of a User Experience"
-                description="In complex enterprise systems, users aren't always paying customers, yet their experience drives adoption and retention. I analyzed four years of usability surveys to map how users actually perceived and navigated our product."
-                button="Read case"
-                href="projects/project-ux-mapping.html"
-                icon="search">
+              categories="UX Research | Concepts | Government affairs"
+              title="Mapping the State of a User Experience"
+              description="In complex enterprise systems, users aren't always paying customers, yet their experience drives adoption and retention. I analyzed four years of usability surveys to map how users actually perceived and navigated our product."
+              button="Read case"
+              href="projects/project-ux-mapping.html"
+              icon="search"
+            >
             </project-card>
             <project-card
-                categories="UX Research | Visual Design | Mobile | Certification course | Education"
-                title="A Museum in Ashes but still alive in the community"
-                description="
+              categories="UX Research | Visual Design | Mobile | Certification course | Education"
+              title="A Museum in Ashes but still alive in the community"
+              description="
                 Conceptual project of an Educational mobile app for the National Museum of Rio de Janeiro, highlighting community and education programs that stayed active despite the museum's closure after a devastating fire.
                 "
-                button="Read case"
-                href="projects/project-museum-app.html"
-                icon="landmark">
+              button="Read case"
+              href="projects/project-museum-app.html"
+              icon="landmark"
+            >
             </project-card>
             <project-card
-                categories="UX Research | Education"
-                title="What school teachers taught me about people and UX"
-                description="How I changed my approach to product design from user interviews with school teachers for an edtech for reading literacy"
-                button="Read case"
-                href="projects/project-teachers-ux.html"
-                icon="graduation-cap">
+              categories="UX Research | Education"
+              title="What school teachers taught me about people and UX"
+              description="How I changed my approach to product design from user interviews with school teachers for an edtech for reading literacy"
+              button="Read case"
+              href="projects/project-teachers-ux.html"
+              icon="graduation-cap"
+            >
             </project-card>
             <project-card
-                categories="Product design | Mobile | E-commerce"
-                title="Designing for scale in Brazilian retail"
-                description="Product design for Via's mobile e-commerce apps, enhancing a seamless, scalable shopping experience for millions of Brazilian consumers across diverse regions and backgrounds."
-                button="Read case"
-                href="projects/project-brazilian-retail.html"
-                icon="shopping-bag">
+              categories="Product design | Mobile | E-commerce"
+              title="Designing for scale in Brazilian retail"
+              description="Product design for Via's mobile e-commerce apps, enhancing a seamless, scalable shopping experience for millions of Brazilian consumers across diverse regions and backgrounds."
+              button="Read case"
+              href="projects/project-brazilian-retail.html"
+              icon="shopping-bag"
+            >
             </project-card>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
     <script src="assets/js/animation.js" defer></script>
     <script src="assets/js/project-card.js" defer></script>
@@ -133,5 +164,5 @@
         }
       });
     </script>
-</body>
+  </body>
 </html>

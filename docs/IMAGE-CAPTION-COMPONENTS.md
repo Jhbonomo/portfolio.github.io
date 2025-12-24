@@ -5,11 +5,13 @@ This document explains how to use the componentized image caption system in your
 ## Basic Usage
 
 ### Default Image Caption
+
 ```html
 <figcaption class="image-caption">
-    Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
+  Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
 </figcaption>
 ```
+
 **Output:** **Image:** Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
 
 ## Caption Styling
@@ -23,43 +25,46 @@ All image captions use a consistent size of `1.25rem` for optimal readability ac
 ## Alignment Variants
 
 ### Left-Aligned Caption
+
 ```html
-<figcaption class="image-caption image-caption--left">
-    Caption aligned to the left.
-</figcaption>
+<figcaption class="image-caption image-caption--left">Caption aligned to the left.</figcaption>
 ```
 
 ### Right-Aligned Caption
+
 ```html
-<figcaption class="image-caption image-caption--right">
-    Caption aligned to the right.
-</figcaption>
+<figcaption class="image-caption image-caption--right">Caption aligned to the right.</figcaption>
 ```
 
 ## Style Variants
 
 ### Non-Italic Caption
+
 ```html
 <figcaption class="image-caption image-caption--no-italic">
-    Caption without italic styling.
+  Caption without italic styling.
 </figcaption>
 ```
 
 ### Bold Caption
+
 ```html
-<figcaption class="image-caption image-caption--bold">
-    Caption with bold text.
-</figcaption>
+<figcaption class="image-caption image-caption--bold">Caption with bold text.</figcaption>
 ```
 
 ## Source Attribution
 
 ### Caption with Source
+
 ```html
-<figcaption class="image-caption image-caption--with-source" data-source="User Research Study, 2024">
-    User interview insights from the discovery phase.
+<figcaption
+  class="image-caption image-caption--with-source"
+  data-source="User Research Study, 2024"
+>
+  User interview insights from the discovery phase.
 </figcaption>
 ```
+
 **Output:** **Image:** User interview insights from the discovery phase. (Source: User Research Study, 2024)
 
 ## Combining Multiple Classes
@@ -68,7 +73,7 @@ You can combine multiple classes for more specific styling:
 
 ```html
 <figcaption class="image-caption image-caption--left image-caption--no-italic">
-    Comprehensive analytics showing user behavior patterns across different segments.
+  Comprehensive analytics showing user behavior patterns across different segments.
 </figcaption>
 ```
 
@@ -76,28 +81,32 @@ You can combine multiple classes for more specific styling:
 
 ```html
 <div class="image-container">
-    <figcaption class="image-caption">
-        Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
-    </figcaption>
-    <div class="image-wrapper" data-zoom="true">
-        <img src="../assets/images/AI/prompts.jpeg" 
-             alt="Dashboard showing AI interaction patterns" 
-             class="interactive-image"
-             loading="lazy">
-        <div class="image-overlay">
-            <button class="zoom-btn" title="Click to zoom">🔍</button>
-        </div>
+  <figcaption class="image-caption">
+    Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
+  </figcaption>
+  <div class="image-wrapper" data-zoom="true">
+    <img
+      src="../assets/images/AI/prompts.jpeg"
+      alt="Dashboard showing AI interaction patterns"
+      class="interactive-image"
+      loading="lazy"
+    />
+    <div class="image-overlay">
+      <button class="zoom-btn" title="Click to zoom">🔍</button>
     </div>
+  </div>
 </div>
 ```
 
 ## Available Classes Summary
 
 ### Alignment Classes
+
 - `image-caption--left`
 - `image-caption--right`
 
 ### Style Classes
+
 - `image-caption--no-italic`
 - `image-caption--bold`
 - `image-caption--with-source`

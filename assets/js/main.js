@@ -11,28 +11,28 @@ function initializeProjectsNavigation() {
     const projectsButton = document.querySelector('.projects-button');
     const casesSection = document.querySelector('.cases');
     const backButton = document.getElementById('backButton');
-    
+
     if (!projectsButton || !casesSection) {
       return; // Silently fail if elements not found (may not be on this page)
     }
-    
+
     // Smooth scroll to projects with offset
     projectsButton.addEventListener('click', () => {
       try {
         const offset = 20;
         const elementPosition = casesSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
-        
+
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       } catch (error) {
         // Fallback to instant scroll if smooth scroll fails
         casesSection.scrollIntoView();
       }
     });
-    
+
     // Scroll to top button
     if (backButton) {
       backButton.addEventListener('click', () => {

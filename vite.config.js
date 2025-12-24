@@ -4,12 +4,12 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig({
   root: '.',
   base: './',
-  
+
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-    
+
     rollupOptions: {
       input: {
         main: 'index.html',
@@ -21,47 +21,47 @@ export default defineConfig({
         projectUxMapping: 'projects/project-ux-mapping.html',
       },
     },
-    
+
     // Minificação
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true, // Remove console.log em produção
-        drop_debugger: true
-      }
+        drop_debugger: true,
+      },
     },
-    
+
     // Otimizações
     cssMinify: true,
     assetsInlineLimit: 4096, // Inline assets < 4kb
   },
-  
+
   // Dev server
   server: {
     port: 3000,
     open: true,
-    cors: true
+    cors: true,
   },
-  
+
   // Preview server
   preview: {
-    port: 4173
+    port: 4173,
   },
-  
+
   // CSS
   css: {
     postcss: './postcss.config.js',
-    devSourcemap: true
+    devSourcemap: true,
   },
-  
+
   plugins: [
     createHtmlPlugin({
       minify: true,
       inject: {
         data: {
-          injectScript: '<script type="module" src="/assets/js/main.js"></script>'
-        }
-      }
-    })
-  ]
+          injectScript: '<script type="module" src="/assets/js/main.js"></script>',
+        },
+      },
+    }),
+  ],
 });

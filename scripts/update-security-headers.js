@@ -8,7 +8,7 @@ const projectFiles = [
   'projects/project-museum-app.html',
   'projects/project-scientific-collaboration.html',
   'projects/project-teachers-ux.html',
-  'projects/project-ux-mapping.html'
+  'projects/project-ux-mapping.html',
 ];
 
 const securityHeaders = `
@@ -23,27 +23,24 @@ const securityHeaders = `
 projectFiles.forEach(file => {
   try {
     let content = readFileSync(file, 'utf-8');
-    
+
     // Adiciona security headers após viewport se não existir
     if (!content.includes('Content-Security-Policy')) {
-      content = content.replace(
-        /(<meta name="viewport"[^>]*>)/,
-        `$1${securityHeaders}`
-      );
+      content = content.replace(/(<meta name="viewport"[^>]*>)/, `$1${securityHeaders}`);
     }
-    
+
     // Atualiza Lucide para versão fixa com defer
     content = content.replace(
       /<script src="https:\/\/unpkg\.com\/lucide@latest\/dist\/umd\/lucide\.js"><\/script>/g,
       '<script src="https://unpkg.com/lucide@0.294.0/dist/umd/lucide.js" defer></script>'
     );
-    
+
     // Adiciona defer aos scripts customizados
     content = content.replace(
       /<script src="(\.\.\/assets\/js\/[^"]+)">/g,
       '<script src="$1" defer>'
     );
-    
+
     writeFileSync(file, content, 'utf-8');
     console.log(`✅ Atualizado: ${file}`);
   } catch (error) {

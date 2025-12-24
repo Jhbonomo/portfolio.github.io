@@ -1,269 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-    
-    <meta name="description" content="How AI Changes the Way We Interact with Products - A comprehensive case study on transitioning from feature-driven to user-centered AI design at Quorum, including research insights, design patterns, and strategic implementation">
-    <meta name="keywords" content="AI Design, Product Design, User Experience, Case Study, Enterprise Software, Government Affairs, AI Interaction, UX Research, Design Strategy, AI Patterns, Copilot Design, Natural Language Interface">
-    <meta name="author" content="Juliana">
-    <meta property="og:title" content="How AI Changes the Way We Interact with Products - Juliana's Portfolio">
-    <meta property="og:description" content="As Quorum started experimenting with AI, our product team faced a key challenge: how to move beyond a feature-driven platform while unlocking AI's potential in ways that truly served user needs.">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="../assets/images/AI/og-image.jpg">
-    <meta property="og:url" content="https://yourdomain.com/projects/project-ai-interaction.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How AI Changes the Way We Interact with Products">
-    <meta name="twitter:description" content="A case study on transitioning from feature-driven to user-centered AI design at Quorum">
-    <meta name="theme-color" content="#ffffff">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';"
+    />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+
+    <meta
+      name="description"
+      content="How AI Changes the Way We Interact with Products - A comprehensive case study on transitioning from feature-driven to user-centered AI design at Quorum, including research insights, design patterns, and strategic implementation"
+    />
+    <meta
+      name="keywords"
+      content="AI Design, Product Design, User Experience, Case Study, Enterprise Software, Government Affairs, AI Interaction, UX Research, Design Strategy, AI Patterns, Copilot Design, Natural Language Interface"
+    />
+    <meta name="author" content="Juliana" />
+    <meta
+      property="og:title"
+      content="How AI Changes the Way We Interact with Products - Juliana's Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="As Quorum started experimenting with AI, our product team faced a key challenge: how to move beyond a feature-driven platform while unlocking AI's potential in ways that truly served user needs."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="../assets/images/AI/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com/projects/project-ai-interaction.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How AI Changes the Way We Interact with Products" />
+    <meta
+      name="twitter:description"
+      content="A case study on transitioning from feature-driven to user-centered AI design at Quorum"
+    />
+    <meta name="theme-color" content="#ffffff" />
     <title>How AI Changes the Way We Interact with Products - Juliana's Portfolio</title>
-    
+
     <!-- Preload critical resources -->
-    <link rel="preload" href="../assets/css/project-template.css" as="style">
-    <link rel="preload" href="../assets/images/AI/prompts.jpeg" as="image">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/project-template.css">
-    
+    <link rel="preload" href="../assets/css/project-template.css" as="style" />
+    <link rel="preload" href="../assets/images/AI/prompts.jpeg" as="image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/project-template.css" />
+
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "How AI Changes the Way We Interact with Products",
         "description": "A case study on transitioning from feature-driven to user-centered AI design at Quorum",
         "author": {
-            "@type": "Person",
-            "name": "Juliana"
+          "@type": "Person",
+          "name": "Juliana"
         },
         "publisher": {
-            "@type": "Organization",
-            "name": "Juliana's Portfolio"
+          "@type": "Organization",
+          "name": "Juliana's Portfolio"
         },
         "datePublished": "2023",
         "dateModified": "2024",
         "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://yourdomain.com/projects/project-ai-interaction.html"
+          "@type": "WebPage",
+          "@id": "https://yourdomain.com/projects/project-ai-interaction.html"
         },
         "image": "../assets/images/AI/prompts.jpeg",
         "keywords": "AI Design, Product Design, User Experience, Case Study"
-    }
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Skip Navigation for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Navigation -->
     <nav class="navigation" role="navigation" aria-label="Main navigation">
-        <a href="../index.html" class="back-link" aria-label="Back to portfolio">← Back</a>
-        <div class="header-controls">
-            <button class="font-size-btn" id="fontSizeBtn" aria-label="Toggle font size">Aa</button>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-        </div>
+      <a href="../index.html" class="back-link" aria-label="Back to portfolio">← Back</a>
+      <div class="header-controls">
+        <button class="font-size-btn" id="fontSizeBtn" aria-label="Toggle font size">Aa</button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
     </nav>
-    
+
     <div class="newspaper-container">
-        <!-- Header -->
-        <header class="newspaper-header">
-            <div class="project-meta">
-                <div class="project-categories">UX research | Product design | Product Strategy | Government affairs</div>
-                <h1 class="project-title">How AI Changes the Way We Interact with Products</h1>
-                <div class="project-subtitle">As Quorum, an enterprise platform for US government affairs, began exploring AI, our biggest challenge was clear: move past feature-driven thinking and harness AI in ways that genuinely empowered users.</div>
-                <div class="project-meta-info">
-                    <span class="project-date">2025</span>
-                    <span class="project-duration">Design collaboration</span>
-                    <span class="project-role">Cross-functional collaboration</span>
-                    <span class="project-company">Quorum</span>
+      <!-- Header -->
+      <header class="newspaper-header">
+        <div class="project-meta">
+          <div class="project-categories">
+            UX research | Product design | Product Strategy | Government affairs
+          </div>
+          <h1 class="project-title">How AI Changes the Way We Interact with Products</h1>
+          <div class="project-subtitle">
+            As Quorum, an enterprise platform for US government affairs, began exploring AI, our
+            biggest challenge was clear: move past feature-driven thinking and harness AI in ways
+            that genuinely empowered users.
+          </div>
+          <div class="project-meta-info">
+            <span class="project-date">2025</span>
+            <span class="project-duration">Design collaboration</span>
+            <span class="project-role">Cross-functional collaboration</span>
+            <span class="project-company">Quorum</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="newspaper-content" id="main-content">
+        <!-- My Role -->
+        <section class="article-section">
+          <h2 class="section-title">My Role</h2>
+          <div class="article-content">
+            <p>
+              When AI became a strategic focus at Quorum, I partnered with the PM and Designer from
+              AI team for the beta launch of the AI chat feature. I led early research on prompts
+              and UX. As scope expanded, I facilitated design discussions with the Product Director
+              to reimagine interactions and define a long-term cross-product AI strategy.
+            </p>
+          </div>
+        </section>
+
+        <!-- Collective Learning -->
+        <section class="article-section">
+          <h2 class="section-title">Collective Learning</h2>
+          <div class="article-content">
+            <p>
+              As Product Design Manager, it became clear that shifting the company mindset toward
+              being AI-driven required me to keep our team in sync with fast-moving technology. Our
+              design team stepped up, turning AI capabilities into tangible value across the
+              organization.
+            </p>
+
+            <p>
+              I drove initiatives through benchmarking and hands-on experimentation with AI tools,
+              guiding designers to explore how patterns like copilots and natural language
+              interactions could redefine interfaces and internal processes.
+            </p>
+
+            <h3>Learning Approach</h3>
+            <ul class="insights-list">
+              <li>
+                <strong>Team Benchmarking:</strong> I led a collaborative research initiative on AI
+                tools and trends, analyzing products like GitHub Copilot, Augment, and Lovable.
+              </li>
+              <li>
+                <strong>Hands-on Experimentation:</strong> Team members directly experienced AI
+                tools to understand capabilities, some of the team's initiatives later became wider
+                initiatives across the company.
+              </li>
+              <li>
+                <strong>Pattern Recognition:</strong> Identified common AI interaction patterns and
+                their implications, analyzing use cases for these patterns and how they could be
+                applied to our product
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- The Challenge -->
+        <section class="article-section">
+          <h2 class="section-title">Evaluating a beta AI product</h2>
+          <div class="article-content">
+            <p>
+              As Quorum rolled out AI features, I analyzed prompts and adoption patterns to find
+              where AI could truly ease workflows, not just add “intelligence.” Combining survey
+              insights with usage data, I turned early user signals into clear opportunities for
+              improvement.
+            </p>
+
+            <!-- Image: Opportunity analysis -->
+            <div class="image-container">
+              <figcaption class="image-caption">
+                Dashboard tracking user interactions with conversational AI, revealing patterns in
+                prompt usage.
+              </figcaption>
+              <div class="image-wrapper" data-zoom="true">
+                <img
+                  src="../assets/images/AI/prompts.jpeg"
+                  alt="Analyzing AI opportunities and user needs mapping showing prompt patterns and user interaction data"
+                  class="interactive-image"
+                  loading="lazy"
+                />
+                <div class="image-overlay">
+                  <button class="zoom-btn" title="Click to zoom" aria-label="Zoom image">🔍</button>
                 </div>
+              </div>
             </div>
-        </header>
+            <h3>General paradigms to consider for AI design</h3>
+            <ul class="insights-list">
+              <li>
+                Redesigning features with AI raised critical questions about the paradigm shift and
+                its impact on our solutions.
+              </li>
+              <li>
+                Every new technology faces barriers to adoption, from personal preferences to
+                broader issues of trust.
+              </li>
+              <li>
+                Embedding small, contextual AI “pills” in the interface proved more valuable, and
+                drove seamless adoption than forcing users into a chat experience.
+              </li>
+            </ul>
 
-        <!-- Main Content -->
-        <main class="newspaper-content" id="main-content">
-            <!-- My Role -->
-            <section class="article-section">
-                <h2 class="section-title">My Role</h2>
-                <div class="article-content">
-                    <p>When AI became a strategic focus at Quorum, I partnered with the PM and Designer from AI team for the beta launch of the AI chat feature. I led early research on prompts and UX. As scope expanded, I facilitated design discussions with the Product Director to reimagine interactions and define a long-term cross-product AI strategy. </p>             
+            <!-- Large Hero Image -->
+            <div class="image-container hero-image">
+              <figcaption class="image-caption">
+                The bill key takeaways (by Diego Venciguerra, Quorum AI product designer) show how
+                AI can enhance workflows by delivering precise insights that save time.
+              </figcaption>
+              <div class="image-wrapper" data-zoom="true">
+                <img
+                  src="../assets/images/AI/keytakeaway.png"
+                  alt="AI-powered interface vision prototype and design patterns"
+                  class="interactive-image"
+                  loading="lazy"
+                />
+                <div class="image-overlay">
+                  <button class="zoom-btn" title="Click to zoom">🔍</button>
                 </div>
-            </section>
-
-            <!-- Collective Learning -->
-            <section class="article-section">
-                <h2 class="section-title">Collective Learning</h2>
-                <div class="article-content">
-              
-
-                        <p>As Product Design Manager, it became clear that shifting the company mindset toward being AI-driven required me to keep our team in sync with fast-moving technology. Our design team stepped up, turning AI capabilities into tangible value across the organization.</p>
-                    
-                        <p>I drove initiatives through benchmarking and hands-on experimentation with AI tools, guiding designers to explore how patterns like copilots and natural language interactions could redefine interfaces and internal processes.</p>
-                        
-                    
-                    <h3>Learning Approach</h3>
-                    <ul class="insights-list">
-                        <li><strong>Team Benchmarking:</strong> I led a collaborative research initiative on AI tools and trends, analyzing products like GitHub Copilot, Augment, and Lovable.</li>
-                        <li><strong>Hands-on Experimentation:</strong> Team members directly experienced AI tools to understand capabilities, some of the team's initiatives later became wider initiatives across the company.</li>
-                        <li><strong>Pattern Recognition:</strong> Identified common AI interaction patterns and their implications, analyzing use cases for these patterns and how they could be applied to our product</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- The Challenge -->
-            <section class="article-section">
-                <h2 class="section-title">Evaluating a beta AI product</h2>
-                <div class="article-content">
-                   <p>As Quorum rolled out AI features, I analyzed prompts and adoption patterns to find where AI could truly ease workflows, not just add “intelligence.” Combining survey insights with usage data, I turned early user signals into clear opportunities for improvement.
-                   </p>      
-                    
-                    <!-- Image: Opportunity analysis -->
-                    <div class="image-container">
-                        <figcaption class="image-caption">
-                            Dashboard tracking user interactions with conversational AI, revealing patterns in prompt usage.
-                        </figcaption>
-                        <div class="image-wrapper" data-zoom="true">
-                            <img src="../assets/images/AI/prompts.jpeg" 
-                                 alt="Analyzing AI opportunities and user needs mapping showing prompt patterns and user interaction data" 
-                                 class="interactive-image"
-                                 loading="lazy">
-                            <div class="image-overlay">
-                                <button class="zoom-btn" title="Click to zoom" aria-label="Zoom image">🔍</button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>General paradigms to consider for AI design</h3>
-                    <ul class="insights-list">
-                        <li>Redesigning features with AI raised critical questions about the paradigm shift and its impact on our solutions. </li>
-                        <li>Every new technology faces barriers to adoption, from personal preferences to broader issues of trust.</li>
-                      <li>Embedding small, contextual AI “pills” in the interface proved more valuable, and drove seamless adoption than forcing users into a chat experience.</li>
-                    </ul>
-                     
-                               
-                    <!-- Large Hero Image -->
-                    <div class="image-container hero-image">
-                        <figcaption class="image-caption">
-                            The bill key takeaways (by Diego Venciguerra, Quorum AI product designer) show how AI can enhance workflows by delivering precise insights that save time.
-                        </figcaption>
-                        <div class="image-wrapper" data-zoom="true">
-                            <img src="../assets/images/AI/keytakeaway.png" 
-                                 alt="AI-powered interface vision prototype and design patterns" 
-                                 class="interactive-image"
-                                 loading="lazy">
-                            <div class="image-overlay">
-                                <button class="zoom-btn" title="Click to zoom">🔍</button>
-                            </div>
-                        </div>
-                    </div>
-                         
-                         <div class="problem-highlight">
-                             <blockquote>
-                                 "The AI review right at the top of the page is the most useful to me. I can get right to it and decide if I care or not"
-"
-                             </blockquote>
-                         </div>
-                    
-                </div>
-            </section>
-
-            <!-- Vision and Documentation -->
-            <section class="article-section">
-                <h2 class="section-title">Vision and Documentation</h2>
-                <div class="article-content">
-            
-
-                    <p>As our AI explorations deepened, the challenge wasn't just adding “intelligent” features, but rethinking UX patterns in an AI-augmented world. 
-                        Since stakeholders lacked a clear vision of what an AI-powered interface could be, product and design partnered to create a forward-looking prototype and document key AI design patterns.</p> 
-                    
-                    <p>I gradually involved my team, turning it into a collective effort. The final prototype became a complete product overhaul, enriched by diverse perspectives and serving as a shared reference across product, engineering, and leadership.</p>
-
-                                 
-                    <h3>AI that fits naturally into workflows</h3>
-
-                    <p>We pinpointed where AI could truly help, designing it to fit naturally into existing workflows, enhancing familiar processes without forcing users to change how they work.
-                    </p>
-
-                    <h3>Documentation deliverables</h3>
-                    <ul class="insights-list">
-                        <li><strong>Vision prototype:</strong> Interactive mockup showing AI-augmented workflows</li>
-                        <li><strong>Design patterns:</strong> Documented common AI interaction patterns and best practices</li>
-                        <li><strong>User journey maps:</strong> Visualized how AI could enhance specific user workflows</li>
-                    </ul>
-                
-                    
-                    <!-- Large Hero Image -->
-                    
-                    <div class="image-container hero-image">
-                        <h3>Examples of the vision prototype</h3>
-                        <figcaption class="image-caption">
-                            Vision prototype showing how AI could transform the Quorum interface and user experience
-                        </figcaption>
-                        <div class="image-wrapper" data-zoom="true">
-                            <img src="../assets/images/AI/quorum-vision-patterns.png" 
-                                 alt="AI-powered interface vision prototype and design patterns" 
-                                 class="interactive-image"
-                                 loading="lazy">
-                            <div class="image-overlay">
-                                <button class="zoom-btn" title="Click to zoom">🔍</button>
-                            </div>
-                        </div>
-                    </div>
-
-                                        <!-- Large Hero Image -->
-                    <div class="image-container hero-image">
-                        <figcaption class="image-caption">
-                            Beyond AI explorations, we reimagined existing features to create more user-centered experiences. By organizing around five key system personas (a company's strategy hub plus four major hubs) allowed us to create a more streamlined navigation while enabling smoother, more contextual AI integration.
-                        </figcaption>
-                        <div class="image-wrapper" data-zoom="true">
-                            <img src="../assets/images/AI/landscapes.png" 
-                                 alt="AI-powered interface vision prototype and design patterns" 
-                                 class="interactive-image"
-                                 loading="lazy">
-                            <div class="image-overlay">
-                                <button class="zoom-btn" title="Click to zoom">🔍</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <footer class="newspaper-footer">
-            <div class="footer-content">
-                <p>Thank you for reading. This project shifted Quorum's AI design from feature-driven to user-centered, with insights and patterns that still guide our strategy.</p>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/julianahb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
+              </div>
             </div>
-        </footer>
+
+            <div class="problem-highlight">
+              <blockquote>
+                "The AI review right at the top of the page is the most useful to me. I can get
+                right to it and decide if I care or not" "
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- Vision and Documentation -->
+        <section class="article-section">
+          <h2 class="section-title">Vision and Documentation</h2>
+          <div class="article-content">
+            <p>
+              As our AI explorations deepened, the challenge wasn't just adding “intelligent”
+              features, but rethinking UX patterns in an AI-augmented world. Since stakeholders
+              lacked a clear vision of what an AI-powered interface could be, product and design
+              partnered to create a forward-looking prototype and document key AI design patterns.
+            </p>
+
+            <p>
+              I gradually involved my team, turning it into a collective effort. The final prototype
+              became a complete product overhaul, enriched by diverse perspectives and serving as a
+              shared reference across product, engineering, and leadership.
+            </p>
+
+            <h3>AI that fits naturally into workflows</h3>
+
+            <p>
+              We pinpointed where AI could truly help, designing it to fit naturally into existing
+              workflows, enhancing familiar processes without forcing users to change how they work.
+            </p>
+
+            <h3>Documentation deliverables</h3>
+            <ul class="insights-list">
+              <li>
+                <strong>Vision prototype:</strong> Interactive mockup showing AI-augmented workflows
+              </li>
+              <li>
+                <strong>Design patterns:</strong> Documented common AI interaction patterns and best
+                practices
+              </li>
+              <li>
+                <strong>User journey maps:</strong> Visualized how AI could enhance specific user
+                workflows
+              </li>
+            </ul>
+
+            <!-- Large Hero Image -->
+
+            <div class="image-container hero-image">
+              <h3>Examples of the vision prototype</h3>
+              <figcaption class="image-caption">
+                Vision prototype showing how AI could transform the Quorum interface and user
+                experience
+              </figcaption>
+              <div class="image-wrapper" data-zoom="true">
+                <img
+                  src="../assets/images/AI/quorum-vision-patterns.png"
+                  alt="AI-powered interface vision prototype and design patterns"
+                  class="interactive-image"
+                  loading="lazy"
+                />
+                <div class="image-overlay">
+                  <button class="zoom-btn" title="Click to zoom">🔍</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Large Hero Image -->
+            <div class="image-container hero-image">
+              <figcaption class="image-caption">
+                Beyond AI explorations, we reimagined existing features to create more user-centered
+                experiences. By organizing around five key system personas (a company's strategy hub
+                plus four major hubs) allowed us to create a more streamlined navigation while
+                enabling smoother, more contextual AI integration.
+              </figcaption>
+              <div class="image-wrapper" data-zoom="true">
+                <img
+                  src="../assets/images/AI/landscapes.png"
+                  alt="AI-powered interface vision prototype and design patterns"
+                  class="interactive-image"
+                  loading="lazy"
+                />
+                <div class="image-overlay">
+                  <button class="zoom-btn" title="Click to zoom">🔍</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="newspaper-footer">
+        <div class="footer-content">
+          <p>
+            Thank you for reading. This project shifted Quorum's AI design from feature-driven to
+            user-centered, with insights and patterns that still guide our strategy.
+          </p>
+          <div class="footer-links">
+            <a
+              href="https://www.linkedin.com/in/julianahb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!-- Image Zoom Modal -->
     <div class="image-modal" id="imageModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-image-container">
-                <img id="modalImage" src="" alt="">
-            </div>
-            <div class="modal-controls">
-                <button class="zoom-control" id="zoomIn">+</button>
-                <button class="zoom-control" id="zoomOut">−</button>
-                <button class="zoom-control" id="resetZoom">Reset</button>
-            </div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-image-container">
+          <img id="modalImage" src="" alt="" />
         </div>
+        <div class="modal-controls">
+          <button class="zoom-control" id="zoomIn">+</button>
+          <button class="zoom-control" id="zoomOut">−</button>
+          <button class="zoom-control" id="resetZoom">Reset</button>
+        </div>
+      </div>
     </div>
 
     <script src="../assets/js/project-template.js" defer></script>
-</body>
+  </body>
 </html>

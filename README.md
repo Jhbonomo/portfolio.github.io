@@ -30,17 +30,19 @@ Animation/
 ## 🚀 Features
 
 ### Main Portfolio
+
 - **Interactive Canvas Animation**: Dynamic background with customizable parameters
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Project Cards**: Interactive cards with hover effects and navigation
 - **Smooth Animations**: Typing effects and scroll-triggered animations
 
 ### Project Pages
+
 - **Newspaper-Style Layout**: Clean, readable design inspired by digital newspapers
 - **Interactive Images**: Zoom, pan, and explore project images
 - **Dark/Light Theme**: Toggle between themes for comfortable reading
 - **Font Size Control**: Adjustable text size for accessibility
-- **Keyboard Shortcuts**: 
+- **Keyboard Shortcuts**:
   - `Ctrl/Cmd + +/-` for page zoom
   - `Ctrl/Cmd + 0` to reset zoom
   - `+/-/0` for image zoom (when modal is open)
@@ -71,16 +73,19 @@ Animation/
 ## 📂 File Organization
 
 ### Assets
+
 - **CSS**: All stylesheets organized by purpose
 - **JS**: Modular JavaScript files for different functionalities
 - **Images**: Centralized image storage (ready for future use)
 
 ### Projects
+
 - Each project has its own HTML file in the `projects/` directory
 - Consistent structure using the project template
 - Easy to add new projects by copying the template
 
 ### Templates
+
 - Reusable template for creating new project pages
 - Comprehensive documentation in `docs/`
 
@@ -108,4 +113,4 @@ Animation/
 
 ---
 
-*Helping humans and complex systems get along through thoughtful UX research and product design.*
+_Helping humans and complex systems get along through thoughtful UX research and product design._
