@@ -20,51 +20,80 @@ class ProjectCard extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'categories') this.updateCategories(newValue);
-    if (name === 'title') this.querySelector('.card-title').textContent = newValue;
-    if (name === 'description') this.querySelector('.card-description').textContent = newValue;
-    if (name === 'button') this.querySelector('.card-button').textContent = newValue;
-    if (name === 'href') this.setupNavigation(newValue);
-    if (name === 'icon') this.updateIcon(newValue);
+    try {
+      if (name === 'categories') {
+        this.updateCategories(newValue);
+      }
+      if (name === 'title') {
+        const titleEl = this.querySelector('.card-title');
+        if (titleEl) titleEl.textContent = newValue;
+      }
+      if (name === 'description') {
+        const descEl = this.querySelector('.card-description');
+        if (descEl) descEl.textContent = newValue;
+      }
+      if (name === 'button') {
+        const btnEl = this.querySelector('.card-button');
+        if (btnEl) btnEl.textContent = newValue;
+      }
+      if (name === 'href') {
+        this.setupNavigation(newValue);
+      }
+      if (name === 'icon') {
+        this.updateIcon(newValue);
+      }
+    } catch (error) {
+      console.error(`Error updating attribute ${name}:`, error);
+    }
   }
 
   updateCategories(categoriesString) {
-    const categoriesContainer = this.querySelector('.card-categories');
-    categoriesContainer.innerHTML = '';
-    
-    if (categoriesString) {
-      const categories = categoriesString.split('|').map(cat => cat.trim());
+    try {
+      const categoriesContainer = this.querySelector('.card-categories');
+      if (!categoriesContainer) return;
       
-      categories.forEach((category, index) => {
-        const tag = document.createElement('span');
-        tag.className = 'category-tag';
-        tag.textContent = category;
-        categoriesContainer.appendChild(tag);
+      categoriesContainer.innerHTML = '';
+      
+      if (categoriesString) {
+        const categories = categoriesString.split('|').map(cat => cat.trim());
         
-        // Add separator between tags (except for the last one)
-        if (index < categories.length - 1) {
-          const separator = document.createElement('span');
-          separator.className = 'tag-separator';
-          categoriesContainer.appendChild(separator);
-        }
-      });
+        categories.forEach((category, index) => {
+          const tag = document.createElement('span');
+          tag.className = 'category-tag';
+          tag.textContent = category;
+          categoriesContainer.appendChild(tag);
+          
+          // Add separator between tags (except for the last one)
+          if (index < categories.length - 1) {
+            const separator = document.createElement('span');
+            separator.className = 'tag-separator';
+            categoriesContainer.appendChild(separator);
+          }
+        });
+      }
+    } catch (error) {
+      console.error('Error updating categories:', error);
     }
   }
 
   updateIcon(iconName) {
-    const iconContainer = this.querySelector('.card-icon');
-    if (iconContainer && iconName) {
-      iconContainer.innerHTML = '';
-      
-      // Create the icon element
-      const iconElement = document.createElement('i');
-      iconElement.setAttribute('data-lucide', iconName);
-      iconContainer.appendChild(iconElement);
-      
-      // Initialize the icon if Lucide is available
-      if (window.lucide) {
-        lucide.createIcons();
+    try {
+      const iconContainer = this.querySelector('.card-icon');
+      if (iconContainer && iconName) {
+        iconContainer.innerHTML = '';
+        
+        // Create the icon element
+        const iconElement = document.createElement('i');
+        iconElement.setAttribute('data-lucide', iconName);
+        iconContainer.appendChild(iconElement);
+        
+        // Initialize the icon if Lucide is available
+        if (window.lucide) {
+          lucide.createIcons();
+        }
       }
+    } catch (error) {
+      console.error('Error updating icon:', error);
     }
   }
 
@@ -178,31 +207,46 @@ class ProjectCard extends HTMLElement {
 
   // Setup click handlers for navigation
   setupClickHandlers() {
-    const card = this.querySelector('.card');
-    const button = this.querySelector('.card-button');
-    
-    // Make the entire card clickable
-    card.addEventListener('click', (e) => {
-      // Don't trigger if clicking the button specifically
-      if (e.target !== button) {
+    try {
+      const card = this.querySelector('.card');
+      const button = this.querySelector('.card-button');
+      
+      if (!card || !button) return;
+      
+      // Make the entire card clickable
+      card.addEventListener('click', (e) => {
+        // Don't trigger if clicking the button specifically
+        if (e.target !== button) {
+          this.navigateToProject();
+        }
+      });
+      
+      // Button click handler
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
         this.navigateToProject();
-      }
-    });
-    
-    // Button click handler
-    button.addEventListener('click', (e) => {
-      e.stopPropagation();
-      this.navigateToProject();
-    });
+      });
+    } catch (error) {
+      console.error('Error setting up click handlers:', error);
+    }
   }
 
   // Navigate to the project page
   navigateToProject() {
-    const href = this.getAttribute('href') || this.getAttribute('data-href');
-    if (href) {
-      window.location.href = href;
+    try {
+      const href = this.getAttribute('href') || this.getAttribute('data-href');
+      if (href) {
+        window.location.href = href;
+      }
+    } catch (error) {
+      console.error('Error navigating to project:', error);
     }
   }
 }
 
-customElements.define('project-card', ProjectCard);
+// Register custom element with error handling
+try {
+  customElements.define('project-card', ProjectCard);
+} catch (error) {
+  console.error('Error defining project-card custom element:', error);
+}
