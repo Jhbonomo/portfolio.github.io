@@ -39,8 +39,9 @@ export default defineConfig({
   // Dev server
   server: {
     port: 3000,
-    open: true,
+    open: '/index.html', // Abre diretamente o index.html
     cors: true,
+    strictPort: false,
   },
 
   // Preview server
