@@ -773,41 +773,9 @@ body.fonts-fallback .content h2 {
         height: clamp(32px, 3.5vw, 40px);
     }
     
-
-
-    
     .projects-title {
         font-size: var(--font-size-3xl);
         display: none;
-    }
-}
-
-    
-    .controls input[type="range"] {
-        width: 100%;
-        flex: 1;
-    }
-    
-    .cases > h2 {
-        font-size: 32px;
-        font-weight: 700;
-        margin: 0 0 20px 0;
-        color: #000;
-        line-height: 1.2;
-    }
-    
-    project-card {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .cases .content {
-        width: 100%;
-        max-width: 100%;
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
-        box-sizing: border-box;
     }
 }
 
